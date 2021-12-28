@@ -1,4 +1,4 @@
-package main;
+package dev.chirp.main;
 
 public class Main {
     public static void main(String[] args) {
