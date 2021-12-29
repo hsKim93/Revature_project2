@@ -8,17 +8,19 @@ public class User {
     private String userName;
     private String firstName;
     private String lastName;
-    private boolean isManager;
+    private String email;
+    private boolean isAdmin;
 
     public User() {
     }
 
-    public User(int userId, String userName, String firstName, String lastName, boolean isManager) {
+    public User(int userId, String userName, String firstName, String lastName, String email, boolean isAdmin) {
         this.userId = userId;
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.isManager = isManager;
+        this.email = email;
+        this.isAdmin = isAdmin;
     }
 
     public int getUserId() {
@@ -53,12 +55,33 @@ public class User {
         this.lastName = lastName;
     }
 
-    public boolean isManager() {
-        return isManager;
+    public String getEmail() {
+        return email;
     }
 
-    public void setManager(boolean manager) {
-        isManager = manager;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return userId == user.userId && isAdmin == user.isAdmin && Objects.equals(userName, user.userName) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, userName, firstName, lastName, email, isAdmin);
     }
 
     @Override
@@ -68,20 +91,8 @@ public class User {
                 ", userName='" + userName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", isManager=" + isManager +
+                ", email='" + email + '\'' +
+                ", isAdmin=" + isAdmin +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return userId == user.userId && isManager == user.isManager && Objects.equals(userName, user.userName) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(userId, userName, firstName, lastName, isManager);
     }
 }
