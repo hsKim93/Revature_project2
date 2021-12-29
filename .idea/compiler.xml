@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Project2" />
         <module name="Revature_project2" />
+        <module name="Revature_project_2" />
       </profile>
     </annotationProcessing>
   </component>
