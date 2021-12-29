@@ -1,7 +1,7 @@
 # ignore all logs
 *.log
 
-/target/
+target/
 */target/**
 
 .apt_generated
