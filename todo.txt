@@ -1,0 +1,63 @@
+1. Entities
+    - User  -> Hyungsuk
+    - Post -> Irfan
+    - Comment -> Loc
+
+
+2. DAO (Need interfaces)
+    - User
+        - requestLogin
+        - createAccount
+        - getUserById
+        - getUserByFirstName
+        - editUserInformationById
+    - Post
+        - getPostById
+        - deletePostById
+        - getAllPostsByUserId
+        - getAllPosts
+
+    - Comment
+        - getCommentById
+        - deleteCommentById
+        - getAllCommentsByPostId
+        - getAllComments
+    - Relationship - likes + follows ...
+
+3. Service (Need interfaces)
+    - User
+        - Regular user
+            - requestLogin
+            - createAccount
+            - getUserById
+            - getUserByFirstName
+            - editUserInformationById
+        - Admin
+            - deleteUserById
+    - Post
+        - Regular user
+            - getPostById
+            - deletePostById
+            - getAllPostsByUserId
+            - createPost
+        - Admin
+            - getAllPosts
+    - Comment
+        - Regular user
+            - getCommentById
+            - deleteCommentById
+            - getAllCommentsByPostId
+            - createComment
+        - Admin
+            - getAllComments
+    - Relationship
+        - Likes
+            - getLikesByPostId - return how many likes
+            - likeByIds(userId, postId)
+            - unlikeByIds(userId, postId)
+        - Follows
+            - getFollowingByUserId - return list of followings
+            - getFollowersByUserId - return list of followers
+            - followByIds(myId, targetId)
+            - unfollowByIds(myId, targetId)
+
