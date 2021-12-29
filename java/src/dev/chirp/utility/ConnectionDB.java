@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class connection {
+public class ConnectionDB {
     public static Connection createConnection() {
         try {
             String dbURL = String.format(
