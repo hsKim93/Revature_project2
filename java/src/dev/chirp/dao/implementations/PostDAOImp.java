@@ -12,7 +12,7 @@ public class PostDAOImp implements PostDAOInt {
     @Override
     public  boolean createPost(Post post){
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "insert into posts values(default, ?, '?', default)";
+            String sql = "insert into project2.posts values(default, ?, ?, default) returning post_id";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, post.getUserId());
@@ -34,7 +34,7 @@ public class PostDAOImp implements PostDAOInt {
     @Override
     public Post getPostById(int postId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "select * from posts where post_id = ?";
+            String sql = "select * from project2.posts where post_id = ?";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, postId);
@@ -43,7 +43,7 @@ public class PostDAOImp implements PostDAOInt {
                 return new Post(
                         returned.getInt("post_id"),
                         returned.getInt("user_id"),
-                        returned.getString("content"),
+                        returned.getString("post_content"),
                         returned.getString("date")
                 );
             }
@@ -60,7 +60,7 @@ public class PostDAOImp implements PostDAOInt {
     @Override
     public List<Post> getAllPosts() {
         try(Connection connection = ConnectionDB.createConnection()){
-            String sql = "select * from posts";
+            String sql = "select * from project2.posts";
             assert connection != null;
             Statement statement = connection.createStatement();
             ResultSet returned = statement.executeQuery(sql);
@@ -70,7 +70,7 @@ public class PostDAOImp implements PostDAOInt {
                 Post returnedPost = new Post(
                         returned.getInt("post_id"),
                         returned.getInt("user_id"),
-                        returned.getString("content"),
+                        returned.getString("post_content"),
                         returned.getString("date")
                 );
                 postList.add(returnedPost);
@@ -86,7 +86,7 @@ public class PostDAOImp implements PostDAOInt {
     @Override
     public List<Post> getPostsByUserId(int userId) {
         try(Connection connection = ConnectionDB.createConnection()){
-            String sql = "select * from posts where user_id = ?";
+            String sql = "select * from project2.posts where user_id = ?";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1,userId);
@@ -96,7 +96,7 @@ public class PostDAOImp implements PostDAOInt {
                 Post returnedPost = new Post(
                         returned.getInt("post_id"),
                         returned.getInt("user_id"),
-                        returned.getString("content"),
+                        returned.getString("post_content"),
                         returned.getString("date")
                 );
                 postList.add(returnedPost);
@@ -112,7 +112,7 @@ public class PostDAOImp implements PostDAOInt {
     @Override
     public boolean deletePostById(int postId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "delete * from posts where post_id = ?";
+            String sql = "delete from project2.posts where post_id = ? returning post_id";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, postId);

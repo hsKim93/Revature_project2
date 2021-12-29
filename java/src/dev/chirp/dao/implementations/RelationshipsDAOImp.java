@@ -1,6 +1,5 @@
 package dev.chirp.dao.implementations;
 
-import dev.chirp.customexceptions.PostNotFound;
 import dev.chirp.dao.interfaces.RelationshipsDAOInt;
 import dev.chirp.utility.ConnectionDB;
 
@@ -15,7 +14,7 @@ public class RelationshipsDAOImp implements RelationshipsDAOInt {
     @Override
     public int getLikesByPostId(int postId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "select count(*) from posts where post_id = ?";
+            String sql = "select count(*) from project2.posts where post_id = ?";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, postId);
@@ -30,12 +29,36 @@ public class RelationshipsDAOImp implements RelationshipsDAOInt {
 
     @Override
     public boolean likeByIds(int userId, int postId) {
-        return false;
+        try(Connection connection= ConnectionDB.createConnection()){
+            String sql = "insert into post.likes values(default, ?, ?) returning like_id";
+            assert connection != null;
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, userId);
+            statement.setInt(2, postId);
+            ResultSet returned =statement.executeQuery();
+            return returned.next();
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+
+        }
     }
 
     @Override
     public boolean unlikeByIds(int userId, int postId) {
-        return false;
+        try(Connection connection= ConnectionDB.createConnection()){
+            String sql = "delete from likes where user_id = ? , postId = ? returning postId";
+            assert connection != null;
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, userId);
+            statement.setInt(1, postId);
+            ResultSet returned =statement.executeQuery();
+            return returned.next();
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+
+        }
     }
 
     @Override
