@@ -29,28 +29,24 @@
         </dependency>
 
         <dependency>
-<<<<<<< HEAD
-=======
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.9</version>
         </dependency>
 
         <dependency>
->>>>>>> 05e947a51837296044351a9eaf830d3bdab0f71d
             <groupId>io.javalin</groupId>
             <artifactId>javalin</artifactId>
             <version>4.1.1</version>
         </dependency>
 
         <dependency>
-<<<<<<< HEAD
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.9</version>
         </dependency>
 
-=======
+        <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>2.17.0</version>
@@ -67,7 +63,6 @@
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>2.17.0</version>
         </dependency>
->>>>>>> 05e947a51837296044351a9eaf830d3bdab0f71d
     </dependencies>
 
 </project>
