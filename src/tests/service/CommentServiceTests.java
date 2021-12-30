@@ -12,5 +12,7 @@ public class CommentServiceTests {
     static CommentService commentService = new CommentServiceImp(commentDAO);
 
     @Test
-    void 
+    void noneRightNow() {
+        return null;
+    }
 }
