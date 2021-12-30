@@ -1,14 +1,15 @@
 package dev.chirp.dao.implementations;
 
-import dev.chirp.customexceptions.PostNotFound;
 import dev.chirp.dao.interfaces.PostDAOInt;
 import dev.chirp.entities.Post;
 import dev.chirp.utility.ConnectionDB;
+import dev.chirp.customexceptions.PostNotFound;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostDAOImp implements PostDAOInt {
+public class PostDAO implements PostDAOInt {
     @Override
     public  boolean createPost(Post post){
         try(Connection connection= ConnectionDB.createConnection()){
@@ -18,12 +19,8 @@ public class PostDAOImp implements PostDAOInt {
             statement.setInt(1, post.getUserId());
             statement.setString(2,post.getContent());
             ResultSet returned =statement.executeQuery();
-            if (returned.next()){
-                return true;
-            }
-            else {
-                throw new PostNotFound("Post not found");
-            }}catch (SQLException e){
+            return returned.next();
+        }catch (SQLException e){
                 e.printStackTrace();
                 return false;
 

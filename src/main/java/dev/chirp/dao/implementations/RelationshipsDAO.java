@@ -1,7 +1,7 @@
 package dev.chirp.dao.implementations;
 
-import dev.chirp.dao.interfaces.RelationshipsDAOInt;
 import dev.chirp.utility.ConnectionDB;
+import dev.chirp.dao.interfaces.RelationshipsDAOInt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class RelationshipsDAOImp implements RelationshipsDAOInt {
+public class RelationshipsDAO implements RelationshipsDAOInt {
 
     @Override
     public int getLikesByPostId(int postId) {
