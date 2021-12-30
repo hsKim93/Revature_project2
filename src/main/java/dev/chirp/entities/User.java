@@ -6,13 +6,20 @@ public class User {
 
     private int userId;
     private String userName;
+    private String password;
     private String firstName;
     private String lastName;
     private String email;
-    private boolean isAdmin;
+    private Boolean isAdmin;
 
     public User() {
     }
+
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
 
     public User(int userId, String userName, String firstName, String lastName, String email, boolean isAdmin) {
         this.userId = userId;
@@ -21,6 +28,14 @@ public class User {
         this.lastName = lastName;
         this.email = email;
         this.isAdmin = isAdmin;
+    }
+
+    public User(int userId, String userName, String firstName, String lastName, String email) {
+        this.userId = userId;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public int getUserId() {
@@ -37,6 +52,14 @@ public class User {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -76,12 +99,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return userId == user.userId && isAdmin == user.isAdmin && Objects.equals(userName, user.userName) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email);
+        return userId == user.userId && isAdmin == user.isAdmin && Objects.equals(userName, user.userName) && Objects.equals(password, user.password) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, userName, firstName, lastName, email, isAdmin);
+        return Objects.hash(userId, userName, password, firstName, lastName, email, isAdmin);
     }
 
     @Override
@@ -89,6 +112,7 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

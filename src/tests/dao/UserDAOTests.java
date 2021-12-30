@@ -1,5 +1,6 @@
 package dao;
 
+
 import dev.chirp.dao.implementations.UserDAO;
 import dev.chirp.entities.User;
 import org.testng.Assert;
@@ -52,6 +53,7 @@ public class UserDAOTests {
     String email = "test@test.net";
     String existingUserName = "test";
     String existingEmail = "test@test.com";
+
     @Test(priority = 1)
     void testCreateAccountSuccess() {
         User user = userDAO.createAccount(userName, password, firstName, lastName, email);
@@ -109,7 +111,7 @@ public class UserDAOTests {
     void testGetUsersByFirstNameSuccess() {
         ArrayList<User> users = userDAO.getUsersByFirstName(existingFirstName);
         for (User user : users) {
-            if (!user.getFirstName().equals(existingFirstName)) {
+            if (!user.getFirstName().contains(existingFirstName)) {
                 Assert.fail();
             }
         }
@@ -198,6 +200,7 @@ public class UserDAOTests {
      */
 
     int toBeDeletedId = 9002;
+
     @Test(priority = 2)
     void testDeleteUserByIdSuccess() {
         User user = userDAO.deleteUserById(toBeDeletedId);

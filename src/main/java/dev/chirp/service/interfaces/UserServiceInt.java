@@ -1,15 +1,22 @@
 package dev.chirp.service.interfaces;
 
+import dev.chirp.customexceptions.InvalidInputException;
 import dev.chirp.entities.User;
 
 import java.util.ArrayList;
 
 public interface UserServiceInt {
-    User requestLogin(String userName, String password);
-    User createAccount(String userName, String password, String firstName,
-                       String lastName, String email);
-    User getUserById(int id);
-    ArrayList<User> getUsersByFirstName(String firstName);
-    User editUserInformationById(int id, String userName, String password, String firstName, String LastName, String email);
-    User deleteUserById(int id);
+    User serviceRequestLogin(String userName, String password) throws InvalidInputException;
+
+    User serviceCreateAccount(String userName, String password, String firstName,
+                              String lastName, String email) throws InvalidInputException;
+
+    User serviceGetUserById(int id) throws InvalidInputException;
+
+    ArrayList<User> serviceGetUsersByFirstName(String firstName) throws InvalidInputException;
+
+    User serviceEditUserInformationById(int id, String userName, String password, String firstName, String lastName,
+                                        String email) throws InvalidInputException;
+
+    User serviceDeleteUserById(int id) throws InvalidInputException;
 }

@@ -2,8 +2,6 @@ package dev.chirp.app.app;
 
 import dev.chirp.app.controller.AppController;
 import io.javalin.Javalin;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class App {
 
@@ -15,8 +13,12 @@ public class App {
         });
 
         AppController appController = new AppController();
-
-        app.get("/", appController.userController.requestLogin);
+        app.post("/login", appController.userController.requestLogin);
+        app.post("/user", appController.userController.createAccount);
+        app.get("/user/{id}", appController.userController.getUserById);
+        app.get("/search/{firstName}", appController.userController.getUsersByFirstName);
+        app.patch("/user/{id}", appController.userController.editUserInformationById);
+        app.delete("/user/{id}", appController.userController.deleteUserById);
 
         app.start();
 

@@ -44,7 +44,7 @@ public class UserDAO implements UserDAOInt {
     public User createAccount(String userName, String password, String firstName, String lastName, String email) {
         try (Connection connection = ConnectionDB.createConnection()) {
             String sql = "insert into \"project2\".users values(default, ?, ?, ?, ?, ?, default) " +
-                    "returning user_id, user_name, first_name, last_name, email, is_admin";
+                    "returning user_id, user_name, first_name, last_name, email";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, userName);
             preparedStatement.setString(2, password);
@@ -58,8 +58,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("user_name"),
                     resultSet.getString("first_name"),
                     resultSet.getString("last_name"),
-                    resultSet.getString("email"),
-                    resultSet.getBoolean("is_admin")
+                    resultSet.getString("email")
             );
         } catch (SQLException e) {
             return null;
@@ -69,7 +68,7 @@ public class UserDAO implements UserDAOInt {
     @Override
     public User getUserById(int id) {
         try (Connection connection = ConnectionDB.createConnection()) {
-            String sql = "select user_id, user_name, first_name, last_name, email, is_admin from " +
+            String sql = "select user_id, user_name, first_name, last_name, email from" +
                     "\"project2\".users where user_id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
@@ -80,8 +79,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("user_name"),
                     resultSet.getString("first_name"),
                     resultSet.getString("last_name"),
-                    resultSet.getString("email"),
-                    resultSet.getBoolean("is_admin")
+                    resultSet.getString("email")
             );
         } catch (SQLException e) {
             return null;
@@ -91,10 +89,10 @@ public class UserDAO implements UserDAOInt {
     @Override
     public ArrayList<User> getUsersByFirstName(String firstName) {
         try (Connection connection = ConnectionDB.createConnection()) {
-            String sql = "select user_id, user_name, first_name, last_name, email, is_admin from " +
-                    "\"project2\".users where first_name = ? and is_admin = false";
+            String sql = "select user_id, user_name, first_name, last_name, email from " +
+                    "\"project2\".users where first_name like ? and is_admin = false";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, firstName);
+            preparedStatement.setString(1, "%" + firstName + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             ArrayList<User> users = new ArrayList<>();
             while (resultSet.next()) {
@@ -104,19 +102,9 @@ public class UserDAO implements UserDAOInt {
                                 resultSet.getString("user_name"),
                                 resultSet.getString("first_name"),
                                 resultSet.getString("last_name"),
-                                resultSet.getString("email"),
-                                resultSet.getBoolean("is_admin")
+                                resultSet.getString("email")
                         )
                 );
-//                User user = new User(
-//                        resultSet.getInt("user_id"),
-//                        resultSet.getString("user_name"),
-//                        resultSet.getString("first_name"),
-//                        resultSet.getString("last_name"),
-//                        resultSet.getString("email"),
-//                        resultSet.getBoolean("is_admin")
-//                );
-//                users.add(user);
             }
             return !users.isEmpty() ? users : null;
         } catch (SQLException e) {
@@ -130,7 +118,7 @@ public class UserDAO implements UserDAOInt {
         try (Connection connection = ConnectionDB.createConnection()) {
             String sql = "update  \"project2\".users set user_name = ?, password = ?, first_name = ?, " +
                     "last_name = ?, email = ? where user_id = ? " +
-                    "returning user_id, user_name, first_name, last_name, email, is_admin";
+                    "returning user_id, user_name, first_name, last_name, email";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, userName);
             preparedStatement.setString(2, password);
@@ -145,9 +133,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("user_name"),
                     resultSet.getString("first_name"),
                     resultSet.getString("last_name"),
-                    resultSet.getString("email"),
-                    resultSet.getBoolean("is_admin")
-
+                    resultSet.getString("email")
             );
         } catch (SQLException e) {
             return null;
@@ -158,7 +144,7 @@ public class UserDAO implements UserDAOInt {
     public User deleteUserById(int id) {
         try (Connection connection = ConnectionDB.createConnection()) {
             String sql = "delete from  \"project2\".users where user_id = ? " +
-                    "returning user_id, user_name, first_name, last_name, email, is_admin";
+                    "returning user_id, user_name, first_name, last_name, email";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -168,12 +154,9 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("user_name"),
                     resultSet.getString("first_name"),
                     resultSet.getString("last_name"),
-                    resultSet.getString("email"),
-                    resultSet.getBoolean("is_admin")
-
+                    resultSet.getString("email")
             );
         } catch (SQLException e) {
-
             return null;
         }
     }
