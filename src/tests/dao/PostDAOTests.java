@@ -12,7 +12,7 @@ public class PostDAOTests {
     PostDAO postDao = new PostDAO();
     @Test
     void createPost(){
-        Post samplePost = new Post(0,1,"Sample Post", "0");
+        Post samplePost = new Post(0,8000,"Sample Post", "0");
         boolean post = postDao.createPost(samplePost);
         Assert.assertTrue(post);
     }
@@ -26,7 +26,7 @@ public class PostDAOTests {
 
     @Test
     void getPostById(){
-        Post post = postDao.getPostById(2);
+        Post post = postDao.getPostById(8000);
         Assert.assertTrue(post.getPostId() != 0);
     }
     @Test
@@ -47,7 +47,7 @@ public class PostDAOTests {
     }
     @Test
     void getPostsByUserId(){
-        List<Post> postList = postDao.getPostsByUserId(1);
+        List<Post> postList = postDao.getPostsByUserId(8000);
         Assert.assertTrue(postList.size() > 0);
     }
     @Test
@@ -58,7 +58,7 @@ public class PostDAOTests {
     @Test
     void deletePostsByPostId() {
      try{
-        boolean deleted = postDao.deletePostById(0);
+        boolean deleted = postDao.deletePostById(8002);
         Assert.assertTrue(deleted);
     }catch (PostNotFound e){
          Assert.assertSame(e.getMessage(), "Post not found");

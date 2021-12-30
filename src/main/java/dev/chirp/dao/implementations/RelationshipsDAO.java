@@ -15,12 +15,14 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public int getLikesByPostId(int postId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "select count(*) from project2.posts where post_id = ?";
+            String sql = "select count(*) from project2.likes where post_id = ?";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, postId);
             ResultSet returned =statement.executeQuery();
-            return returned.getInt(1);
+            if(returned.next()){
+            return returned.getInt(1);}
+            else{return 0;}
         }catch (SQLException e){
             e.printStackTrace();
             return 0;
@@ -31,7 +33,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public boolean likeByIds(int userId, int postId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "insert into project2.likes values(default, ?, ?) returning post_id";
+            String sql = "insert into project2.likes values(?, ?) returning post_id";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, userId);
@@ -52,7 +54,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, userId);
-            statement.setInt(1, postId);
+            statement.setInt(2, postId);
             ResultSet returned =statement.executeQuery();
             return returned.next();
         }catch (SQLException e){
@@ -65,7 +67,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public List<Integer> getFollowingByUserId(int userId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "select target_id from project2.relationships where post_id = ?";
+            String sql = "select target_id from project2.relationships where user_id = ?";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, userId);
@@ -85,7 +87,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public List<Integer> getFollowersByUserId(int userId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "select post_id from project2.relationships where target_id = ?";
+            String sql = "select user_id from project2.relationships where target_id = ?";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, userId);
@@ -105,7 +107,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public boolean followByIds(int myId, int targetId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "insert into project2.likes values(?, ?) returning post_id";
+            String sql = "insert into project2.relationships values(?, ?) returning target_id";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, myId);
@@ -123,7 +125,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public boolean unfollowByIds(int myId, int targetId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "delete from project2.likes values(?, ?) returning post_id";
+            String sql = "delete from project2.relationships where user_id = ? and target_id = ? returning target_id";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, myId);

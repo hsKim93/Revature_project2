@@ -19,6 +19,14 @@ public class App {
         app.get("/post/delete/{id}", appController.postController.deletePostById);
         app.get("/post/all", appController.postController.getAllPosts);
 
+        app.get("post/likes/{id}", appController.relationshipsController.getLikesByPostById);
+        app.post("post/like",appController.relationshipsController.likeByIds);
+        app.post("post/unlike",appController.relationshipsController.unlikeByIds);
+        app.get("/following/{id}",appController.relationshipsController.getFollowingById);
+        app.get("/followers/{id}",appController.relationshipsController.getFollowersById);
+        app.post("/follow", appController.relationshipsController.followByIds);
+        app.post("/unfollow", appController.relationshipsController.unfollowByIds);
+
         app.start();
 
     }

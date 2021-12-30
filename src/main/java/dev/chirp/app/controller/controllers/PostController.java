@@ -17,13 +17,15 @@ public class PostController {
         try{
         Gson gson = new Gson();
         Post newPost = gson.fromJson(ctx.body(), Post.class);
-//       ASK ERIC WHY THIS IS NOT THROWING AN ERROR
         boolean createdPost = this.postService.serviceCreatePost(newPost);
         String createdPostJson = gson.toJson(createdPost);
         ctx.result(createdPostJson);
         ctx.status(201);
     }catch (IllegalArgumentException e){
             ctx.result(e.getMessage());
+            ctx.status(400);
+        }catch (Exception e){
+            ctx.result("Exception " + e.getMessage());
             ctx.status(400);
         }};
 

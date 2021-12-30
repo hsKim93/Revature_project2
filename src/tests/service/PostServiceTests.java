@@ -13,7 +13,7 @@ public class PostServiceTests {
 
     @Test
     void createPost(){
-        Post samplePost = new Post(0,1,"Sample Post", "0");
+        Post samplePost = new Post(0,8000,"Sample Post", "0");
         boolean post = postService.serviceCreatePost(samplePost);
         Assert.assertTrue(post);
     }
