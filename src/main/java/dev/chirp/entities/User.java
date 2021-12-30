@@ -6,19 +6,36 @@ public class User {
 
     private int userId;
     private String userName;
+    private String password;
     private String firstName;
     private String lastName;
-    private boolean isManager;
+    private String email;
+    private Boolean isAdmin;
 
     public User() {
     }
 
-    public User(int userId, String userName, String firstName, String lastName, boolean isManager) {
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
+
+    public User(int userId, String userName, String firstName, String lastName, String email, boolean isAdmin) {
         this.userId = userId;
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.isManager = isManager;
+        this.email = email;
+        this.isAdmin = isAdmin;
+    }
+
+    public User(int userId, String userName, String firstName, String lastName, String email) {
+        this.userId = userId;
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public int getUserId() {
@@ -37,6 +54,14 @@ public class User {
         this.userName = userName;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -53,23 +78,20 @@ public class User {
         this.lastName = lastName;
     }
 
-    public boolean isManager() {
-        return isManager;
+    public String getEmail() {
+        return email;
     }
 
-    public void setManager(boolean manager) {
-        isManager = manager;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", isManager=" + isManager +
-                '}';
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     @Override
@@ -77,11 +99,24 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return userId == user.userId && isManager == user.isManager && Objects.equals(userName, user.userName) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName);
+        return userId == user.userId && isAdmin == user.isAdmin && Objects.equals(userName, user.userName) && Objects.equals(password, user.password) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(email, user.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, userName, firstName, lastName, isManager);
+        return Objects.hash(userId, userName, password, firstName, lastName, email, isAdmin);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }
