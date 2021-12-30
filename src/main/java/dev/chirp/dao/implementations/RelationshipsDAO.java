@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RelationshipsDAO implements RelationshipsDAOInt {
@@ -30,7 +31,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public boolean likeByIds(int userId, int postId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "insert into post.likes values(default, ?, ?) returning like_id";
+            String sql = "insert into project2.likes values(default, ?, ?) returning post_id";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, userId);
@@ -47,7 +48,7 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
     @Override
     public boolean unlikeByIds(int userId, int postId) {
         try(Connection connection= ConnectionDB.createConnection()){
-            String sql = "delete from likes where user_id = ? , postId = ? returning postId";
+            String sql = "delete from project2.likes where user_id = ? and post_id = ? returning post_id";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, userId);
@@ -63,21 +64,76 @@ public class RelationshipsDAO implements RelationshipsDAOInt {
 
     @Override
     public List<Integer> getFollowingByUserId(int userId) {
-        return null;
+        try(Connection connection= ConnectionDB.createConnection()){
+            String sql = "select target_id from project2.relationships where post_id = ?";
+            assert connection != null;
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, userId);
+            ResultSet returned =statement.executeQuery();
+            List<Integer> returnList = new ArrayList<>();
+            while(returned.next()){
+                returnList.add(returned.getInt(1));
+            }
+            return returnList;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+
+        }
     }
 
     @Override
     public List<Integer> getFollowersByUserId(int userId) {
-        return null;
+        try(Connection connection= ConnectionDB.createConnection()){
+            String sql = "select post_id from project2.relationships where target_id = ?";
+            assert connection != null;
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, userId);
+            ResultSet returned =statement.executeQuery();
+            List<Integer> returnList = new ArrayList<>();
+            while(returned.next()){
+                returnList.add(returned.getInt(1));
+            }
+            return returnList;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+
+        }
     }
 
     @Override
     public boolean followByIds(int myId, int targetId) {
-        return false;
+        try(Connection connection= ConnectionDB.createConnection()){
+            String sql = "insert into project2.likes values(?, ?) returning post_id";
+            assert connection != null;
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, myId);
+            statement.setInt(2, targetId);
+            ResultSet returned =statement.executeQuery();
+            return returned.next();
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+
+        }
+
     }
 
     @Override
     public boolean unfollowByIds(int myId, int targetId) {
-        return false;
+        try(Connection connection= ConnectionDB.createConnection()){
+            String sql = "delete from project2.likes values(?, ?) returning post_id";
+            assert connection != null;
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, myId);
+            statement.setInt(2, targetId);
+            ResultSet returned =statement.executeQuery();
+            return returned.next();
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
+
+        }
     }
 }
