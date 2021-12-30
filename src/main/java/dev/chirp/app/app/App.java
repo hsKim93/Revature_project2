@@ -13,6 +13,7 @@ public class App {
 
         AppController appController = new AppController();
 
+//  Irfan
         app.post("/post/create", appController.postController.createPost);
         app.get("/post/byPostId/{id}", appController.postController.getPostById);
         app.get("/post/byUserId/{id}", appController.postController.getPostsByUserId);
@@ -26,8 +27,16 @@ public class App {
         app.get("/followers/{id}",appController.relationshipsController.getFollowersById);
         app.post("/follow", appController.relationshipsController.followByIds);
         app.post("/unfollow", appController.relationshipsController.unfollowByIds);
+        
+//  Hyungsuk
+        app.post("/login", appController.userController.requestLogin);
+        app.post("/user", appController.userController.createAccount);
+        app.get("/user/{id}", appController.userController.getUserById);
+        app.get("/search/{firstName}", appController.userController.getUsersByFirstName);
+        app.patch("/user/{id}", appController.userController.editUserInformationById);
+        app.delete("/user/{id}", appController.userController.deleteUserById);
 
         app.start();
-
     }
 }
+
