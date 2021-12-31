@@ -15,12 +15,10 @@ public class AppController {
     //   Irfan
     public PostService postService = new PostService();
     public RelationshipsService relationshipsService = new RelationshipsService();
-
     public RelationshipsController relationshipsController = new RelationshipsController(relationshipsService);
     public PostController postController = new PostController(postService);
     //   Hyungsuk
     public UserController userController = new UserController();
-
     // Loc
     public CommentDAO commentDAO = new CommentDAOImp();
     public CommentService commentService = new CommentServiceImp(commentDAO);

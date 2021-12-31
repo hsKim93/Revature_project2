@@ -1,6 +1,5 @@
 package dev.chirp.dao.implementations;
 
-
 import dev.chirp.customexceptions.CommentNotFound;
 import dev.chirp.dao.interfaces.CommentDAO;
 import dev.chirp.entities.Comment;
@@ -30,6 +29,7 @@ public class CommentDAOImp implements CommentDAO {
             e.printStackTrace();
             return null;
         }
+        return false;
     }
 
     @Override
