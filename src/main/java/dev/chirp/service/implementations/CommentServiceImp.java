@@ -1,8 +1,8 @@
-package chirp.service.implementations;
+package dev.chirp.service.implementations;
 
-import chirp.dao.interfaces.CommentDAO;
-import chirp.entities.Comment;
-import chirp.service.interfaces.CommentService;
+import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.entities.Comment;
+import dev.chirp.service.interfaces.CommentService;
 
 import java.util.EmptyStackException;
 import java.util.List;

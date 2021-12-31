@@ -1,6 +1,6 @@
-package chirp.dao.interfaces;
+package dev.chirp.dao.interfaces;
 
-import chirp.entities.Comment;
+import dev.chirp.entities.Comment;
 
 import java.util.List;
 

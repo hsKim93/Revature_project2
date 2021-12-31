@@ -1,11 +1,11 @@
-package chirp.dao.implementations;
+package dev.chirp.dao.implementations;
 
 
-import chirp.customexceptions.CommentNotFound;
-import chirp.dao.interfaces.CommentDAO;
+import dev.chirp.customexceptions.CommentNotFound;
+import dev.chirp.dao.interfaces.CommentDAO;
 
-import chirp.entities.Comment;
-import chirp.utility.ConnectionDB;
+import dev.chirp.entities.Comment;
+import dev.chirp.utility.ConnectionDB;
 
 import java.sql.*;
 import java.util.ArrayList;

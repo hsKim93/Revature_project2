@@ -1,8 +1,8 @@
 package dao;
 
-import chirp.customexceptions.CommentNotFound;
-import chirp.dao.implementations.CommentDAOImp;
-import chirp.entities.Comment;
+import dev.chirp.customexceptions.CommentNotFound;
+import dev.chirp.dao.implementations.CommentDAOImp;
+import dev.chirp.entities.Comment;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

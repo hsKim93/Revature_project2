@@ -1,11 +1,11 @@
-package chirp.app.controller;
+package dev.chirp.app.controller;
 
 
-import chirp.app.controller.controllers.CommentController;
-import chirp.dao.implementations.CommentDAOImp;
-import chirp.dao.interfaces.CommentDAO;
-import chirp.service.implementations.CommentServiceImp;
-import chirp.service.interfaces.CommentService;
+import dev.chirp.app.controller.controllers.CommentController;
+import dev.chirp.dao.implementations.CommentDAOImp;
+import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.service.implementations.CommentServiceImp;
+import dev.chirp.service.interfaces.CommentService;
 
 public class AppController {
     public CommentDAO commentDAO = new CommentDAOImp();

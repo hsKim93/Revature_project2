@@ -1,10 +1,10 @@
 package service;
 
-import chirp.dao.implementations.CommentDAOImp;
-import chirp.dao.interfaces.CommentDAO;
-import chirp.entities.Comment;
-import chirp.service.implementations.CommentServiceImp;
-import chirp.service.interfaces.CommentService;
+import dev.chirp.dao.implementations.CommentDAOImp;
+import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.entities.Comment;
+import dev.chirp.service.implementations.CommentServiceImp;
+import dev.chirp.service.interfaces.CommentService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

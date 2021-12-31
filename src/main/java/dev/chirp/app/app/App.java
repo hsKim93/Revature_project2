@@ -1,6 +1,6 @@
-package chirp.app.app;
+package dev.chirp.app.app;
 
-import chirp.app.controller.AppController;
+import dev.chirp.app.controller.AppController;
 import io.javalin.Javalin;
 
 public class App {
