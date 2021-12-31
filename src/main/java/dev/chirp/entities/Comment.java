@@ -5,16 +5,14 @@ import java.util.Objects;
 public class Comment {
     private int commentId;
     private int postId;
-    private int userId;
     private String commentContent;
     private String date;
 
     public Comment(){}
 
-    public Comment(int commentId, int postId, int userId, String commentContent, String date) {
+    public Comment(int postId, int commentId, String commentContent, String date) {
         this.commentId = commentId;
         this.postId = postId;
-        this.userId = userId;
         this.commentContent = commentContent;
         this.date = date;
     }
@@ -24,7 +22,6 @@ public class Comment {
         return "Comment{" +
                 ", commentId=" + commentId +
                 ", postId=" + postId +
-                ", userId=" + userId +
                 ", commentContent='" + commentContent + '\'' +
                 ", date='" + date + '\'' +
                 '}';
@@ -35,12 +32,12 @@ public class Comment {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Comment comment = (Comment) o;
-        return commentId == comment.commentId && postId == comment.postId && userId == comment.userId && Objects.equals(commentContent, comment.commentContent) && Objects.equals(date, comment.date);
+        return commentId == comment.commentId && postId == comment.postId && Objects.equals(commentContent, comment.commentContent) && Objects.equals(date, comment.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(commentId, postId, userId, commentContent, date);
+        return Objects.hash(commentId, postId, commentContent, date);
     }
 
     public int getCommentId() {
@@ -57,14 +54,6 @@ public class Comment {
 
     public void setPostId(int postId) {
         this.postId = postId;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getCommentContent() {

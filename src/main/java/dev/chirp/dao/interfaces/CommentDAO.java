@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CommentDAO {
 
-    Comment createComment(Comment comment);
+    boolean createComment(Comment comment);
 
     Comment getCommentById(int commentId);
 
