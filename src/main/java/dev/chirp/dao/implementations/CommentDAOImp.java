@@ -29,7 +29,6 @@ public class CommentDAOImp implements CommentDAO {
             e.printStackTrace();
             return null;
         }
-        return false;
     }
 
     @Override
