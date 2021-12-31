@@ -1,9 +1,9 @@
-package dev.chirp.app.controller;
+package chirp.app.controller.controllers;
 
 import com.google.gson.Gson;
-import dev.chirp.customexceptions.CommentNotFound;
-import dev.chirp.entities.Comment;
-import dev.chirp.service.interfaces.CommentService;
+import chirp.customexceptions.CommentNotFound;
+import chirp.entities.Comment;
+import chirp.service.interfaces.CommentService;
 import io.javalin.http.Handler;
 
 import java.util.List;

@@ -1,8 +1,8 @@
 package dao;
 
-import dev.chirp.customexceptions.CommentNotFound;
-import dev.chirp.dao.implementations.CommentDAOImp;
-import dev.chirp.entities.Comment;
+import chirp.customexceptions.CommentNotFound;
+import chirp.dao.implementations.CommentDAOImp;
+import chirp.entities.Comment;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,7 +14,7 @@ public class CommentDAOTests {
 
     @Test
     void createComment() {
-        Comment newComment = new Comment(0, 2, 3, "Test Comment", "0");
+        Comment newComment = new Comment(0, 3, 8000, "Test Comment", "0");
         Comment returnedComment = commentDAO.createComment(newComment);
         Assert.assertTrue(returnedComment.getCommentId() != 0);
     }
@@ -32,7 +32,7 @@ public class CommentDAOTests {
 
     @Test
     void getCommentsByPostId() {
-        List<Comment> comments = commentDAO.getCommentsByPostId(2);
+        List<Comment> comments = commentDAO.getCommentsByPostId(3);
         Assert.assertTrue(comments.size() > 0);
     }
 
@@ -44,7 +44,7 @@ public class CommentDAOTests {
 
     @Test
     void deleteCommentById() {
-        boolean deletedComment = commentDAO.deleteCommentById(2);
+        boolean deletedComment = commentDAO.deleteCommentById(5);
         Assert.assertTrue(deletedComment);
     }
 

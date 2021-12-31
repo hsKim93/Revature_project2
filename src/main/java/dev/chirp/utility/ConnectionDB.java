@@ -1,4 +1,4 @@
-package dev.chirp.utility;
+package chirp.utility;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

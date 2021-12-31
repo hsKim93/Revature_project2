@@ -1,6 +1,7 @@
-package dev.chirp.service.interfaces;
+package chirp.service.interfaces;
 
-import dev.chirp.entities.Comment;
+
+import chirp.entities.Comment;
 
 import java.util.List;
 

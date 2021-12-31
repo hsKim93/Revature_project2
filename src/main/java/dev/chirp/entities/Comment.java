@@ -1,4 +1,4 @@
-package dev.chirp.entities;
+package chirp.entities;
 
 import java.util.Objects;
 
