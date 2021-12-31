@@ -21,13 +21,13 @@ public class App {
         app.get("/post/all", appController.postController.getAllPosts);
 
         app.get("post/likes/{id}", appController.relationshipsController.getLikesByPostById);
-        app.post("post/like",appController.relationshipsController.likeByIds);
-        app.post("post/unlike",appController.relationshipsController.unlikeByIds);
-        app.get("/following/{id}",appController.relationshipsController.getFollowingById);
-        app.get("/followers/{id}",appController.relationshipsController.getFollowersById);
+        app.post("post/like", appController.relationshipsController.likeByIds);
+        app.post("post/unlike", appController.relationshipsController.unlikeByIds);
+        app.get("/following/{id}", appController.relationshipsController.getFollowingById);
+        app.get("/followers/{id}", appController.relationshipsController.getFollowersById);
         app.post("/follow", appController.relationshipsController.followByIds);
         app.post("/unfollow", appController.relationshipsController.unfollowByIds);
-        
+
 //  Hyungsuk
         app.post("/login", appController.userController.requestLogin);
         app.post("/user", appController.userController.createAccount);
@@ -35,6 +35,13 @@ public class App {
         app.get("/search/{firstName}", appController.userController.getUsersByFirstName);
         app.patch("/user/{id}", appController.userController.editUserInformationById);
         app.delete("/user/{id}", appController.userController.deleteUserById);
+
+// Loc
+        app.post("/comment/create", appController.commentController.createComment);
+        app.get("/comment/commentId/{id}", appController.commentController.getCommentById);
+        app.get("/comment/postId/{id}", appController.commentController.getCommentByPostId);
+        app.get("/comments", appController.commentController.getAllComments);
+        app.delete("/comment/commentId/{id}", appController.commentController.deleteComment);
 
         app.start();
     }
