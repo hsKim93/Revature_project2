@@ -4,6 +4,7 @@ import dev.chirp.dao.interfaces.CommentDAO;
 import dev.chirp.entities.Comment;
 import dev.chirp.service.interfaces.CommentService;
 
+import java.util.EmptyStackException;
 import java.util.List;
 
 public class CommentServiceImp implements CommentService {
@@ -16,7 +17,12 @@ public class CommentServiceImp implements CommentService {
 
     @Override
     public Comment serviceCreateComment(Comment comment) {
-        return this.commentDAO.createComment(comment);
+
+        if (comment.getCommentContent().equals("")) {
+            throw new EmptyStackException();
+        } else {
+            return this.commentDAO.createComment(comment);
+        }
     }
 
     @Override
