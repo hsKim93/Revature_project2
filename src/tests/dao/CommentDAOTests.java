@@ -14,15 +14,15 @@ public class CommentDAOTests {
 
     @Test
     void createComment() {
-        Comment newComment = new Comment(0, 3, 8000, "Test Comment", "0");
+        Comment newComment = new Comment(904, 900, 900, "Test Comment Create", "0");
         Comment returnedComment = commentDAO.createComment(newComment);
         Assert.assertTrue(returnedComment.getCommentId() != 0);
     }
 
     @Test
     void selectCommentById() {
-        Comment comment = commentDAO.getCommentById(1);
-        Assert.assertEquals(comment.getCommentId(), 1);
+        Comment comment = commentDAO.getCommentById(901);
+        Assert.assertEquals(comment.getCommentId(), 901);
     }
 
     @Test(expectedExceptions = CommentNotFound.class, expectedExceptionsMessageRegExp = "Comment not found")
@@ -32,7 +32,7 @@ public class CommentDAOTests {
 
     @Test
     void getCommentsByPostId() {
-        List<Comment> comments = commentDAO.getCommentsByPostId(3);
+        List<Comment> comments = commentDAO.getCommentsByPostId(900);
         Assert.assertTrue(comments.size() > 0);
     }
 
@@ -44,7 +44,7 @@ public class CommentDAOTests {
 
     @Test
     void deleteCommentById() {
-        boolean deletedComment = commentDAO.deleteCommentById(5);
+        boolean deletedComment = commentDAO.deleteCommentById(902);
         Assert.assertTrue(deletedComment);
     }
 
