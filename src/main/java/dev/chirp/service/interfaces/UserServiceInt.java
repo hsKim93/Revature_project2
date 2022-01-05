@@ -13,6 +13,8 @@ public interface UserServiceInt {
 
     User serviceGetUserById(int id) throws InvalidInputException;
 
+    ArrayList<User> serviceGetUsers();
+
     ArrayList<User> serviceGetUsersByFirstName(String firstName) throws InvalidInputException;
 
     User serviceEditUserInformationById(int id, String userName, String password, String firstName, String lastName,

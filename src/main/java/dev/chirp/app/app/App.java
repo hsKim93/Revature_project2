@@ -32,6 +32,7 @@ public class App {
         app.post("/login", appController.userController.requestLogin);
         app.post("/user", appController.userController.createAccount);
         app.get("/user/{id}", appController.userController.getUserById);
+        app.get("/users", appController.userController.getUsers);
         app.get("/search/{firstName}", appController.userController.getUsersByFirstName);
         app.patch("/user/{id}", appController.userController.editUserInformationById);
         app.delete("/user/{id}", appController.userController.deleteUserById);

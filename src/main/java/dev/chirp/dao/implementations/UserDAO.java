@@ -6,10 +6,7 @@ import dev.chirp.utility.ConnectionDB;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class UserDAO implements UserDAOInt {
@@ -60,6 +57,29 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("last_name"),
                     resultSet.getString("email")
             );
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public ArrayList<User> getUsers() {
+        try (Connection connection = ConnectionDB.createConnection()) {
+            String sql = "select user_id, user_name, first_name, last_name, email from" +
+                    "\"project2\".users where is_admin = false";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            ArrayList<User> users = new ArrayList<>();
+            while (resultSet.next()) {
+                users.add(new User(
+                        resultSet.getInt("user_id"),
+                        resultSet.getString("user_name"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("last_name"),
+                        resultSet.getString("email")
+                ));
+            }
+            return users;
         } catch (SQLException e) {
             return null;
         }

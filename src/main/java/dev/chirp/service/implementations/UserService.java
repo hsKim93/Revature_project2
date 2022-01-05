@@ -38,6 +38,11 @@ public class UserService implements UserServiceInt {
     }
 
     @Override
+    public ArrayList<User> serviceGetUsers() {
+        return userDAO.getUsers();
+    }
+
+    @Override
     public User serviceGetUserById(int id) throws InvalidInputException {
         if (id < 0) {
             throw new InvalidInputException();

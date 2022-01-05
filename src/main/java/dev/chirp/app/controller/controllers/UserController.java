@@ -2,7 +2,6 @@ package dev.chirp.app.controller.controllers;
 
 import com.google.gson.Gson;
 import dev.chirp.customexceptions.InvalidInputException;
-import dev.chirp.dao.implementations.UserDAO;
 import dev.chirp.entities.User;
 import dev.chirp.service.implementations.UserService;
 import io.javalin.http.Handler;
@@ -81,6 +80,18 @@ public class UserController {
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
             ctx.status(404);
+        }
+    };
+
+    public Handler getUsers = ctx -> {
+        ArrayList<User> users = userService.serviceGetUsers();
+        if (users == null) {
+            ctx.result("No Users found");
+            ctx.status(404);
+        } else {
+            Gson gson = new Gson();
+            ctx.result(gson.toJson(users));
+            ctx.status(200);
         }
     };
 
