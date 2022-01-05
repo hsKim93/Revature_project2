@@ -1,0 +1,86 @@
+.navbar {
+  overflow: hidden;
+  width: 100%;
+  text-transform: uppercase;
+  justify-content: space-around;
+}
+
+.navbar a:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 55px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+img {
+  float: left;
+  margin-left: -100%;
+}
+
+.h2 {
+  float: left;
+  margin-left: -8%;
+}
+
+#search1 {
+  width: 400px;
+  float: right;
+  margin-right: -20%;
+}
+
+.container {
+  width: 1000px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border-style: hidden;
+  background: rgb(29, 29, 29);
+}
+
+.profile {
+  border: 1px solid white;
+}
+
+.profile-pic-div {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  float: left;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid grey;
+}
+
+#photo {
+  height: 100%;
+  width: 100%;
+}
+
+#pictureFile {
+  display: none;
+}
+
+#uploadPicBtn {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.profile-edit {
+  float: right;
+}
