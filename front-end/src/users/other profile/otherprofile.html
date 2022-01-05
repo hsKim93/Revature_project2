@@ -11,34 +11,60 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/src/users/my profile/myprofile.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/src/users/my profile/myprofile.css"
+    />
   </head>
-  <body><div class="content min-vh-100 bg-dark text-white">
-    <div class="d-flex flex-column justify-content-start min-vh-100">
-      <div class="navbar" style="background-color: rgb(29, 29, 29)">
-        <div class="logo">
-          <img src="/src/resources/logo.png" width="30" height="40" />
-        </div>
-        <span class="h2" style="color: orange; font-weight: bold">
-          CHIRP</span
-        >
-        <div class="topnav">
-          <a href="#home">Home</a>
-          <a href="#profile" onclick="Profile()" id="myProfile">My Profile</a>
-          <a href="#logout" onclick="Logout()" id="logout">Logout</a>
-        </div>
-        <span class="search-outline">
-          <input type="search" id="search1" class="form-control" />
-        </span>
+  <body>
+    <div class="content min-vh-100 bg-dark text-white">
+      <div class="d-flex flex-column justify-content-start min-vh-100">
+        <div class="navbar" style="background-color: rgb(29, 29, 29)">
+          <div class="logo">
+            <img src="/src/resources/logo.png" width="30" height="40" />
+          </div>
+          <span class="h2" style="color: orange; font-weight: bold">
+            CHIRP</span
+          >
+          <div class="topnav">
+            <a href="#home">Home</a>
+            <a href="#profile" onclick="Profile()" id="myProfile">My Profile</a>
+            <a href="#logout" onclick="Logout()" id="logout">Logout</a>
+          </div>
+          <span class="search-outline">
+            <input type="search" id="search1" class="form-control" />
+          </span>
 
-        <button
-          type="submit"
-          class="btn btn-search-users text-white bg-gradient"
-        >
-          Search
-        </button>
+          <button
+            type="submit"
+            class="btn btn-search-users text-white bg-gradient"
+          >
+            Search
+          </button>
+        </div>
+        <div class="container">
+          <div class="profile">
+            <div class="profile-pic-div">
+              <img
+                src="/src/resources/blank-profile-picture-973460_1280.png"
+                id="photo"
+              />
+              <input type="file" id="pictureFile" />
+              <label for="pictureFile" id="uploadPicBtn">Choose photo</label>
+            </div>
+
+            <div class="profile-name">
+              <p>First and Last Name</p>
+              <p>Username</p>
+              <p>Email</p>
+            </div>
+            <div class="relationship"></div>
+            <div class="follow"></div>
+            <div class="profile-edit"></div>
+          </div>
+        </div>
       </div>
     </div>
-</div>
-</div></body>
+  </body>
 </html>
