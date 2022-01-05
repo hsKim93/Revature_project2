@@ -5,10 +5,12 @@ import dev.chirp.app.controller.controllers.PostController;
 import dev.chirp.app.controller.controllers.RelationshipsController;
 import dev.chirp.app.controller.controllers.UserController;
 import dev.chirp.dao.implementations.CommentDAOImp;
+import dev.chirp.dao.implementations.UserDAO;
 import dev.chirp.dao.interfaces.CommentDAO;
 import dev.chirp.service.implementations.CommentServiceImp;
 import dev.chirp.service.implementations.PostService;
 import dev.chirp.service.implementations.RelationshipsService;
+import dev.chirp.service.implementations.UserService;
 import dev.chirp.service.interfaces.CommentService;
 
 public class AppController {
@@ -18,7 +20,7 @@ public class AppController {
     public RelationshipsController relationshipsController = new RelationshipsController(relationshipsService);
     public PostController postController = new PostController(postService);
     //   Hyungsuk
-    public UserController userController = new UserController();
+    public UserController userController = new UserController(new UserService(new UserDAO()));
     // Loc
     public CommentDAO commentDAO = new CommentDAOImp();
     public CommentService commentService = new CommentServiceImp(commentDAO);

@@ -9,7 +9,12 @@ import java.util.ArrayList;
 
 public class UserService implements UserServiceInt {
 
-    UserDAO userDAO = new UserDAO();
+
+    private UserDAO userDAO;
+
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     @Override
     public User serviceRequestLogin(String userName, String password) throws InvalidInputException {

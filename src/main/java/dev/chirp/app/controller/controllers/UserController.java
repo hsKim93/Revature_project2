@@ -2,6 +2,7 @@ package dev.chirp.app.controller.controllers;
 
 import com.google.gson.Gson;
 import dev.chirp.customexceptions.InvalidInputException;
+import dev.chirp.dao.implementations.UserDAO;
 import dev.chirp.entities.User;
 import dev.chirp.service.implementations.UserService;
 import io.javalin.http.Handler;
@@ -10,7 +11,11 @@ import java.util.ArrayList;
 
 public class UserController {
 
-    UserService userService = new UserService();
+    private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     public Handler requestLogin = ctx -> {
         try {

@@ -1,13 +1,13 @@
 package service;
 
 import dev.chirp.customexceptions.InvalidInputException;
+import dev.chirp.dao.implementations.UserDAO;
 import dev.chirp.service.implementations.UserService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class UserServiceTests {
-
-    UserService userService = new UserService();
+    UserService userService = new UserService(new UserDAO());
 
     String longStr = "abcdefghijklmnopqrstuvwxyz";
     String validStr = "abc";

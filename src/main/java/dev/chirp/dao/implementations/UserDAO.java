@@ -90,7 +90,7 @@ public class UserDAO implements UserDAOInt {
     public ArrayList<User> getUsersByFirstName(String firstName) {
         try (Connection connection = ConnectionDB.createConnection()) {
             String sql = "select user_id, user_name, first_name, last_name, email from " +
-                    "\"project2\".users where first_name like ? and is_admin = false";
+                    "\"project2\".users where first_name ilike ? and is_admin = false";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, "%" + firstName + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
