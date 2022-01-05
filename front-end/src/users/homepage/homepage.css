@@ -1,0 +1,60 @@
+.navbar {
+  overflow: hidden;
+  width: 100%;
+  text-transform: uppercase;
+  justify-content: space-around;
+}
+
+.navbar a:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px 55px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+img {
+  float: left;
+  margin-left: -100%;
+}
+
+.h2 {
+  float: left;
+  margin-left: -8%;
+}
+
+#search1 {
+  width: 400px;
+  float: right;
+  margin-right: -20%;
+}
+
+.container {
+  width: 1000px;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border-style: hidden;
+  background: rgb(29, 29, 29);
+}
+
+.post-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.btn-submit-post {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
