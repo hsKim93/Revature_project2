@@ -17,6 +17,9 @@ We are using Java, postgreSQL for Back-end, and HTML, CSS, JavsScript for Front-
   - Java
     - Javalin
     - JDBC
+    - TestNG
+    - Cucumber
+    - Selenium
   - postgreSQL
   - HTML
   - CSS
