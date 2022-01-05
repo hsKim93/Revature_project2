@@ -9,7 +9,12 @@ import java.util.ArrayList;
 
 public class UserService implements UserServiceInt {
 
-    UserDAO userDAO = new UserDAO();
+
+    private UserDAO userDAO;
+
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     @Override
     public User serviceRequestLogin(String userName, String password) throws InvalidInputException {
@@ -30,6 +35,11 @@ public class UserService implements UserServiceInt {
             throw new InvalidInputException();
         }
         return userDAO.createAccount(userName, password, firstName, lastName, email);
+    }
+
+    @Override
+    public ArrayList<User> serviceGetUsers() {
+        return userDAO.getUsers();
     }
 
     @Override

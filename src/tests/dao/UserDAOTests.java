@@ -104,6 +104,20 @@ public class UserDAOTests {
     }
 
     /**
+     * getUsers
+     */
+
+    @Test
+    void testGetUsers() {
+        ArrayList<User> users = userDAO.getUsers();
+        if (users != null) {
+            Assert.assertTrue(true);
+        } else {
+            Assert.fail();
+        }
+    }
+
+    /**
      * getUserByFirstName
      */
 

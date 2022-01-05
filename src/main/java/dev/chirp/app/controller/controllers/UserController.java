@@ -10,7 +10,11 @@ import java.util.ArrayList;
 
 public class UserController {
 
-    UserService userService = new UserService();
+    private UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     public Handler requestLogin = ctx -> {
         try {
@@ -76,6 +80,18 @@ public class UserController {
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
             ctx.status(404);
+        }
+    };
+
+    public Handler getUsers = ctx -> {
+        ArrayList<User> users = userService.serviceGetUsers();
+        if (users == null) {
+            ctx.result("No Users found");
+            ctx.status(404);
+        } else {
+            Gson gson = new Gson();
+            ctx.result(gson.toJson(users));
+            ctx.status(200);
         }
     };
 

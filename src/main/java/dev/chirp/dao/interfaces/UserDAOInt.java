@@ -13,6 +13,8 @@ public interface UserDAOInt {
 
     User getUserById(int id);
 
+    ArrayList<User> getUsers();
+
     ArrayList<User> getUsersByFirstName(String firstName);
 
     User editUserInformationById(int id, String userName, String password,
