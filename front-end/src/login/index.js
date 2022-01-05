@@ -44,12 +44,13 @@ const login = async () => {
         sessionStorage.setItem("lastName", body.lastName);
         sessionStorage.setItem("email", body.email);
         sessionStorage.setItem("isAdmin", body.isAdmin);
-
-        /**
-         * @Todo
-         * redirect 
-         */
-
+        const isAdmin = sessionStorage.getItem("isAdmin");
+        console.log(isAdmin);
+        if (isAdmin == "true") {
+            location.href = "../admin/adminhomepage.html";
+        } else {
+            location.href = "../users/homepage/homepage.html";
+        }
     } else {
         userName.value = "";
         password.value = "";
@@ -83,12 +84,20 @@ const signup = async () => {
         }
     });
 
-    if (response.status === 200) {
-        
+    if (response.status === 201) {
+        const body = await response.json();
+        sessionStorage.setItem("userId", body.userId);
+        sessionStorage.setItem("userName", body.userName);
+        sessionStorage.setItem("firstName", body.firstName);
+        sessionStorage.setItem("lastName", body.lastName);
+        sessionStorage.setItem("email", body.email);
+        sessionStorage.setItem("isAdmin", body.isAdmin);
+        location.href = "../users/homepage/homepage.html";
     } else {
         /**
          * @Todo
          * fix API so that front end knows if email or userName is duplicate
+         * or not
          */
         firstName.value = "";
         lastName.value = "";
