@@ -1,6 +1,7 @@
 package dev.chirp.app.controller.controllers;
 
 import com.google.gson.Gson;
+import dev.chirp.customexceptions.DuplicateException;
 import dev.chirp.customexceptions.InvalidInputException;
 import dev.chirp.entities.User;
 import dev.chirp.service.implementations.UserService;
@@ -55,6 +56,9 @@ public class UserController {
             ctx.status(404);
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
+            ctx.status(404);
+        } catch (DuplicateException e) {
+            ctx.result(e.getMessage());
             ctx.status(404);
         }
     };
@@ -138,6 +142,9 @@ public class UserController {
             ctx.status(404);
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
+            ctx.status(404);
+        } catch (DuplicateException e) {
+            ctx.result(e.getMessage());
             ctx.status(404);
         }
     };

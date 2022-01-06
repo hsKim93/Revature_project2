@@ -1,17 +1,14 @@
 package dev.chirp.dao.implementations;
 
+import dev.chirp.customexceptions.DuplicateException;
 import dev.chirp.dao.interfaces.UserDAOInt;
 import dev.chirp.entities.User;
 import dev.chirp.utility.ConnectionDB;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
 
 public class UserDAO implements UserDAOInt {
-
-    static Logger logger = LoggerFactory.getLogger(UserDAO.class);
 
     @Override
     public User requestLogin(String userName, String password) {
@@ -32,7 +29,6 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getBoolean("is_admin")
             );
         } catch (SQLException e) {
-            logger.error("SQLException in UserDAO.requestLogin");
             return null;
         }
     }
@@ -58,7 +54,13 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
-            return null;
+            if (e.getMessage().contains("user_name")) {
+                throw new DuplicateException("duplicate user name");
+            } else if (e.getMessage().contains("email")) {
+                throw new DuplicateException("duplicate email");
+            } else {
+                return null;
+            }
         }
     }
 
@@ -156,7 +158,13 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
-            return null;
+            if (e.getMessage().contains("user_name")) {
+                throw new DuplicateException("duplicate user name");
+            } else if (e.getMessage().contains("email")) {
+                throw new DuplicateException("duplicate email");
+            } else {
+                return null;
+            }
         }
     }
 
