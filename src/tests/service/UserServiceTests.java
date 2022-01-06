@@ -221,13 +221,6 @@ public class UserServiceTests {
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
-    void testServiceEditUserInformationByIdEmptyPassword() {
-        Mockito.when(userDAO.editUserInformationById(validId, validStr, emptyStr, validStr, validStr, validStr))
-                .thenThrow(InvalidInputException.class);
-        userService.serviceEditUserInformationById(validId, validStr, emptyStr, validStr, validStr, validStr);
-    }
-
-    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdEmptyFirstName() {
         Mockito.when(userDAO.editUserInformationById(validId, validStr, validStr, emptyStr, validStr, validStr))
                 .thenThrow(InvalidInputException.class);
