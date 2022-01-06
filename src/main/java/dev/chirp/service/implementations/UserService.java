@@ -63,7 +63,7 @@ public class UserService implements UserServiceInt {
                                                String email) {
         if (id < 0 || userName.length() > 20 || password.length() > 20 || firstName.length() > 20 ||
                 lastName.length() > 20 || email.length() > 40 ||
-                userName.isEmpty() || password.isEmpty() || firstName.isEmpty() ||
+                userName.isEmpty() || firstName.isEmpty() ||
                 lastName.isEmpty() || email.isEmpty()) {
             throw new InvalidInputException();
         }

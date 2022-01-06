@@ -29,6 +29,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getBoolean("is_admin")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -54,6 +55,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             if (e.getMessage().contains("user_name")) {
                 throw new DuplicateException("duplicate user name");
             } else if (e.getMessage().contains("email")) {
@@ -83,6 +85,7 @@ public class UserDAO implements UserDAOInt {
             }
             return users;
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -104,6 +107,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -130,6 +134,7 @@ public class UserDAO implements UserDAOInt {
             }
             return !users.isEmpty() ? users : null;
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -138,16 +143,30 @@ public class UserDAO implements UserDAOInt {
     public User editUserInformationById(int id, String userName, String password,
                                         String firstName, String LastName, String email) {
         try (Connection connection = ConnectionDB.createConnection()) {
-            String sql = "update  \"project2\".users set user_name = ?, password = ?, first_name = ?, " +
-                    "last_name = ?, email = ? where user_id = ? " +
-                    "returning user_id, user_name, first_name, last_name, email";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, userName);
-            preparedStatement.setString(2, password);
-            preparedStatement.setString(3, firstName);
-            preparedStatement.setString(4, LastName);
-            preparedStatement.setString(5, email);
-            preparedStatement.setInt(6, id);
+            String sql;
+            PreparedStatement preparedStatement;
+            if (password.isEmpty()) {
+                sql = "update  \"project2\".users set user_name = ?, first_name = ?, " +
+                        "last_name = ?, email = ? where user_id = ? " +
+                        "returning user_id, user_name, first_name, last_name, email";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, userName);
+                preparedStatement.setString(2, firstName);
+                preparedStatement.setString(3, LastName);
+                preparedStatement.setString(4, email);
+                preparedStatement.setInt(5, id);
+            } else {
+                sql = "update  \"project2\".users set user_name = ?, password = ?, first_name = ?, " +
+                        "last_name = ?, email = ? where user_id = ? " +
+                        "returning user_id, user_name, first_name, last_name, email";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, userName);
+                preparedStatement.setString(2, password);
+                preparedStatement.setString(3, firstName);
+                preparedStatement.setString(4, LastName);
+                preparedStatement.setString(5, email);
+                preparedStatement.setInt(6, id);
+            }
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             return new User(
@@ -158,6 +177,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             if (e.getMessage().contains("user_name")) {
                 throw new DuplicateException("duplicate user name");
             } else if (e.getMessage().contains("email")) {
@@ -185,6 +205,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }

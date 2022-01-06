@@ -117,7 +117,17 @@ const signup = async () => {
     }
 }
 
+document.getElementById("inputUserName").onkeydown = (e) => {
+    if (e.keyCode === 13) {
+        login();
+    }
+}
 
+document.getElementById("inputPassword").onkeydown = (e) => {
+    if (e.keyCode === 13) {
+        login();
+    }
+}
 
 loginBtn.addEventListener("click", login);
 signupBtn.addEventListener("click", signup);

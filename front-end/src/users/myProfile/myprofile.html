@@ -1,213 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Profile</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
 
-    <link
-      rel="stylesheet"
-      href="/front-end/src/users/myprofile/myprofile.css"
-    />
-  </head>
-  <body onload="loadPostModule()">
-    <div class="content min-vh-100 bg-black text-white">
-      <div class="d-flex flex-column justify-content-start min-vh-100">
-        <div
-          class="navbar border-bottom"
-          style="background-color: rgb(31, 31, 31)"
-        >
-          <div class="logo align-self-start container">
-            <div>
-              <img
-                src="../../resources/logo.png"
-                width="40"
-                height="52"
-                alt=""
-              /><span class="h3" style="color: orange; font-weight: bold">
-                CHIRP</span
-              >
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+  <!-- <script src="../helperScripts/isUser/isUser.js"></script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
-            <a class="btn btn-outline-warning text-white bold" href="#home"
-              >Home</a
-            >
-            <a
-              class="btn btn-outline-warning text-white bold"
-              href="#profile"
-              id="myProfile"
-              >My Profile</a
-            >
+  <link rel="stylesheet" href="/front-end/src/users/myprofile/myprofile.css" />
+</head>
 
-            <div class="d-flex flex">
-              <input type="search" id="search1" class="form-control" />
-              <button
-                type="button"
-                id="searchButton"
-                class="btn btn-outline-info align-self-center"
-              >
-                Search
-              </button>
-            </div>
-            <a
-              class="btn btn-outline-danger text-white bold"
-              href="#logout"
-              id="logout"
-              >Logout</a
-            >
+<body>
+  <div class="content min-vh-100 bg-black text-white">
+    <div class="d-flex flex-column justify-content-start min-vh-100">
+      <div class="navbar border-bottom" style="background-color: rgb(31, 31, 31)">
+        <div class="logo align-self-start container">
+          <div>
+            <img src="../../resources/logo.png" width="40" height="52" alt="" /><span class="h3"
+              style="color: orange; font-weight: bold">
+              CHIRP</span>
           </div>
+
+          <a class="btn btn-outline-warning text-white bold" id=home>Home</a>
+          <a class="btn btn-outline-warning text-white bold" href="#profile" id="myProfile">My Profile</a>
+
+          <div class="d-flex flex">
+            <input type="search" id="search1" class="form-control" />
+            <button type="button" id="searchButton" class="btn btn-outline-info align-self-center">
+              Search
+            </button>
+          </div>
+          <a class="btn btn-outline-danger text-white bold" href="#logout" id="logout">Logout</a>
         </div>
+      </div>
 
-        <div class="container mt-2 justify-content-end align-items-center">
-          <div class="profile border-bottom">
-            <div class="profile-pic-div">
-              <img
-                src="/front-end/src/resources/profile_pic.png"
-                class="img-thumbnail rounded-circle overflow-hidden"
-                width="200"
-                height="200"
-                alt=""
-              />
-            </div>
+      <div class="container mt-2 justify-content-end align-items-center">
+        <div class="profile border-bottom">
+          <div class="profile-pic-div">
+            <img src="/front-end/src/resources/profile_pic.png" class="img-thumbnail rounded-circle overflow-hidden"
+              width="200" height="200" alt="" />
+          </div>
 
-            <div class="profile-name">
-              <p>First and Last Name</p>
-              <p>@Username</p>
-              <p>Email</p>
-            </div>
+          <div class="profile-name">
+            <p>First and Last Name</p>
+            <p>@Username</p>
+            <p>Email</p>
+          </div>
 
-            <div
-              class="modal fade text-black"
-              id="exampleModalToggle"
-              aria-hidden="true"
-              aria-labelledby="exampleModalToggleLabel"
-              tabindex="-1"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h2 class="modal-title" id="exampleModalToggleLabel">
-                      Edit Profile
-                    </h2>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
+          <div class="modal fade text-black" id="exampleModalToggle" aria-hidden="true"
+            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalToggleLabel">
+                    Edit Profile
+                  </h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <input type="text" class="col-form-label" name="name" id="editUsername" placeholder="Username" />
+                    <input type="text" class="col-form-label" name="name" id="editPassword" placeholder="Password" />
+                    <input type="text" class="col-form-label" name="name" id="editFirstName" placeholder="First Name" />
+                    <input type="text" class="col-form-label" name="name" id="editLastName" placeholder="Last Name" />
+                    <input type="text" class="col-form-label" name="name" id="editEmail" placeholder="Email" />
                   </div>
-                  <div class="modal-body">
-                    <div>
-                      <input
-                        type="text"
-                        class="col-form-label"
-                        name="name"
-                        id="editUsername"
-                        placeholder="Username"
-                      />
-                      <input
-                        type="text"
-                        class="col-form-label"
-                        name="name"
-                        id="editPassword"
-                        placeholder="Password"
-                      />
-                      <input
-                        type="text"
-                        class="col-form-label"
-                        name="name"
-                        id="editFirstName"
-                        placeholder="First Name"
-                      />
-                      <input
-                        type="text"
-                        class="col-form-label"
-                        name="name"
-                        id="editLastName"
-                        placeholder="Last Name"
-                      />
-                      <input
-                        type="text"
-                        class="col-form-label"
-                        name="name"
-                        id="editEmail"
-                        placeholder="Email"
-                      />
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-bs-target="#exampleModalToggle2"
-                      data-bs-toggle="modal"
-                    >
-                      Update
-                    </button>
-                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button id="editProfileButton" class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                    Update
+                  </button>
                 </div>
               </div>
             </div>
-            <div
-              class="modal fade text-black"
-              id="exampleModalToggle2"
-              aria-hidden="true"
-              aria-labelledby="exampleModalToggleLabel2"
-              tabindex="-1"
-            >
+          </div>
+          <div id=modal2>
+            <!-- <div class="modal fade text-black" id="exampleModalToggle2" aria-hidden="true"
+              aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel2">
                       Modal 2
                     </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">Update Successful!</div>
                   <div class="modal-footer">
-                    <button
-                      class="btn btn-primary"
-                      data-bs-target="#profile"
-                      data-bs-toggle="modal"
-                    >
+                    <button class="btn btn-primary" data-bs-target="#profile" data-bs-toggle="modal">
                       Back to page
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
-            <a
-              class="btn btn-primary float-end"
-              data-bs-toggle="modal"
-              href="#exampleModalToggle"
-              role="button"
-              >Edit Profile</a
-            >
+            </div> -->
+          </div>
+          <a class="btn btn-primary float-end" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Edit
+            Profile</a>
 
-            <div class="follow">
-              <p>Following</p>
-              <p>Followers</p>
-            </div>
+          <div class="follow">
+            <p>Following</p>
+            <p>Followers</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <script src="../helperScripts/navBar/navBar.js"></script>
+    <script src="myProfile.js"></script>
   </body>
+  
 </html>
