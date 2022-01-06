@@ -84,6 +84,7 @@ const signup = async () => {
         }
     });
 
+
     if (response.status === 201) {
         const body = await response.json();
         sessionStorage.setItem("userId", body.userId);
@@ -94,19 +95,25 @@ const signup = async () => {
         sessionStorage.setItem("isAdmin", body.isAdmin);
         location.href = "../users/homepage/homepage.html";
     } else {
-        /**
-         * @Todo
-         * fix API so that front end knows if email or userName is duplicate
-         * or not
-         */
+        const message = await response.text();
+        if (message === "duplicate user name") {
+            if (!signupStatus) {
+                displayMessage("User name already exists!", "signUpContainter", "registerFailed", signupStatus);
+            }
+        } else if (message === "duplicate email") {
+            if (!signupStatus) {
+                displayMessage("Email already exists!", "signUpContainter", "registerFailed", signupStatus);
+            }
+        } else {
+            if (!signupStatus) {
+                displayMessage("Incorrect input", "signUpContainter", "registerFailed", signupStatus);
+            }
+        }
         firstName.value = "";
         lastName.value = "";
         email.value = "";
         userName.value = "";
         password.value = "";
-        if (!signupStatus) {
-            displayMessage("Incorrect input", "signUpContainter", "registerFailed", signupStatus);
-        }
     }
 }
 

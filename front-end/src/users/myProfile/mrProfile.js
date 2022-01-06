@@ -32,6 +32,14 @@ const editMyProfile = async () => {
         }
     });
 
+    if (response.status === 200) {
+        loadMyProfile();
+    } else {
+        /**
+         * @todo
+         * show error message (unable to edit) 
+         */
+    }
     
 }
 
