@@ -1,6 +1,6 @@
 package dev.chirp.service.implementations;
 
-import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.dao.interfaces.CommentDAOInt;
 import dev.chirp.entities.Comment;
 import dev.chirp.service.interfaces.CommentService;
 
@@ -9,9 +9,9 @@ import java.util.List;
 
 public class CommentServiceImp implements CommentService {
 
-    CommentDAO commentDAO;
+    CommentDAOInt commentDAO;
 
-    public CommentServiceImp(CommentDAO commentDAO){
+    public CommentServiceImp(CommentDAOInt commentDAO){
         this.commentDAO = commentDAO;
     }
 
