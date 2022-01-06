@@ -59,7 +59,9 @@ public class CommentDAOImp implements CommentDAO {
     @Override
     public List<Comment> getCommentsByPostId(int postId) {
         try (Connection connection = ConnectionDB.createConnection()){
-            String sql = "select * from project2.comments where post_id = ?";
+            String sql = "select comment_id, comment_content, \"date\",post_id,users.user_id, user_name from project2.\"comments\"\n" +
+                    "inner join project2.users on users.user_id = comments.user_id\n" +
+                    "where post_id = ?";
             assert connection != null;
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, postId);
@@ -71,7 +73,9 @@ public class CommentDAOImp implements CommentDAO {
                         resultSet.getInt("post_id"),
                         resultSet.getInt("user_id"),
                         resultSet.getString("comment_content"),
-                        resultSet.getString("date")
+                        resultSet.getString("date"),
+                        resultSet.getString("user_name")
+
                 );
                 comments.add(comment);
             }

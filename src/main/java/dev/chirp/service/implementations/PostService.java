@@ -24,7 +24,10 @@ public class PostService implements PostServiceInt {
     public Post serviceGetPostById(int postId) {
         return this.postDao.getPostById(postId);
     }
-
+    @Override
+    public List<Post> serviceGetPostModuleByPostId(int userId) {
+        return this.postDao.getPostModule(userId);
+    }
     @Override
     public List<Post> serviceGetAllPosts() {
         return this.postDao.getAllPosts();

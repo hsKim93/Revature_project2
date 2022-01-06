@@ -10,6 +10,8 @@ public interface PostDAOInt {
 
     Post getPostById(int postId);
 
+    List<Post> getPostModule(int postId);
+
     List<Post> getAllPosts();
 
     List<Post> getPostsByUserId(int userId);
