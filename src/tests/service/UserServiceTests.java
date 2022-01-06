@@ -3,11 +3,20 @@ package service;
 import dev.chirp.customexceptions.InvalidInputException;
 import dev.chirp.dao.implementations.UserDAO;
 import dev.chirp.service.implementations.UserService;
-import org.testng.Assert;
+import org.mockito.Mockito;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class UserServiceTests {
-    UserService userService = new UserService(new UserDAO());
+
+    public UserDAO userDAO;
+    public UserService userService;
+
+    @BeforeClass
+    public void setup() {
+        userDAO = Mockito.mock(UserDAO.class);
+        userService = new UserService(userDAO);
+    }
 
     String longStr = "abcdefghijklmnopqrstuvwxyz";
     String validStr = "abc";
@@ -20,334 +29,233 @@ public class UserServiceTests {
      * serviceRequestLogin
      */
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceRequestLoginLongUserName() {
-        try {
-            userService.serviceRequestLogin(longStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.requestLogin(longStr, validStr)).thenThrow(InvalidInputException.class);
+        userService.serviceRequestLogin(longStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceRequestLoginLongPassword() {
-        try {
-            userService.serviceRequestLogin(validStr, longStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.requestLogin(validStr, longStr)).thenThrow(InvalidInputException.class);
+        userService.serviceRequestLogin(validStr, longStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceRequestLoginLongUserNameAndPassword() {
-        try {
-            userService.serviceRequestLogin(longStr, longStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.requestLogin(longStr, longStr)).thenThrow(InvalidInputException.class);
+        userService.serviceRequestLogin(longStr, longStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceRequestLoginEmptyUserName() {
-        try {
-            userService.serviceRequestLogin(emptyStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.requestLogin(emptyStr, validStr)).thenThrow(InvalidInputException.class);
+        userService.serviceRequestLogin(emptyStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceRequestLoginEmptyPassword() {
-        try {
-            userService.serviceRequestLogin(validStr, emptyStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.requestLogin(validStr, emptyStr)).thenThrow(InvalidInputException.class);
+        userService.serviceRequestLogin(validStr, emptyStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceRequestLoginEmptyUserNameAndPassword() {
-        try {
-            userService.serviceRequestLogin(emptyStr, emptyStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.requestLogin(emptyStr, emptyStr)).thenThrow(InvalidInputException.class);
+        userService.serviceRequestLogin(emptyStr, emptyStr);
+
     }
 
     /**
      * serviceCreateAccount
      */
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountLongUserName() {
-        try {
-            userService.serviceCreateAccount(longStr, validStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(longStr, validStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(longStr, validStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountLongPassword() {
-        try {
-            userService.serviceCreateAccount(validStr, longStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, longStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, longStr, validStr, validStr, validStr);
+
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountLongFirstName() {
-        try {
-            userService.serviceCreateAccount(validStr, validStr, longStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, validStr, longStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, validStr, longStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountLongLastName() {
-        try {
-            userService.serviceCreateAccount(validStr, validStr, validStr, longStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, validStr, validStr, longStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, validStr, validStr, longStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountLongEmail() {
-        try {
-            userService.serviceCreateAccount(validStr, validStr, validStr, validStr, longEmail);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, validStr, validStr, validStr, longEmail))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, validStr, validStr, validStr, longEmail);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountEmptyUserName() {
-        try {
-            userService.serviceCreateAccount(emptyStr, validStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(emptyStr, validStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(emptyStr, validStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountEmptyPassword() {
-        try {
-            userService.serviceCreateAccount(validStr, emptyStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, emptyStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, emptyStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountEmptyFirstName() {
-        try {
-            userService.serviceCreateAccount(validStr, validStr, emptyStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, validStr, emptyStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, validStr, emptyStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountEmptyLastName() {
-        try {
-            userService.serviceCreateAccount(validStr, validStr, validStr, emptyStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, validStr, validStr, emptyStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, validStr, validStr, emptyStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceCreateAccountEmptyEmail() {
-        try {
-            userService.serviceCreateAccount(validStr, validStr, validStr, validStr, emptyStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.createAccount(validStr, validStr, validStr, validStr, emptyStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceCreateAccount(validStr, validStr, validStr, validStr, emptyStr);
     }
 
     /**
      * serviceGetUserById
      */
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceGetUserByIdNegativeId() {
-        try {
-            userService.serviceGetUserById(invalidId);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.getUserById(invalidId)).thenThrow(InvalidInputException.class);
+        userService.serviceGetUserById(invalidId);
     }
 
     /**
      * serviceGetUsersByFirstName
      */
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceGetUserByFirstNameLongFirstName() {
-        try {
-            userService.serviceGetUsersByFirstName(longStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.getUsersByFirstName(longStr)).thenThrow(InvalidInputException.class);
+        userService.serviceGetUsersByFirstName(longStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceGetUserByFirstNameEmptyFirstName() {
-        try {
-            userService.serviceGetUsersByFirstName(emptyStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.getUsersByFirstName(emptyStr)).thenThrow(InvalidInputException.class);
+        userService.serviceGetUsersByFirstName(emptyStr);
     }
 
     /**
      * serviceEditUserInformationById
      */
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdNegativeId() {
-        try {
-            userService.serviceEditUserInformationById(invalidId, validStr, validStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(invalidId, validStr, validStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(invalidId, validStr, validStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdLongUserName() {
-        try {
-            userService.serviceEditUserInformationById(validId, longStr, validStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, longStr, validStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, longStr, validStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdLongPassword() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, longStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, longStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, longStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdLongFirstName() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, validStr, longStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, validStr, longStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, validStr, longStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdLongLastName() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, longStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, validStr, validStr, longStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, longStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdLongEmail() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, validStr, longEmail);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, validStr, validStr, validStr, longEmail))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, validStr, longEmail);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdEmptyUserName() {
-        try {
-            userService.serviceEditUserInformationById(validId, emptyStr, validStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, emptyStr, validStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, emptyStr, validStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdEmptyPassword() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, emptyStr, validStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, emptyStr, validStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, emptyStr, validStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdEmptyFirstName() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, validStr, emptyStr, validStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, validStr, emptyStr, validStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, validStr, emptyStr, validStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdEmptyLastName() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, emptyStr, validStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, validStr, validStr, emptyStr, validStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, emptyStr, validStr);
     }
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceEditUserInformationByIdEmptyEmail() {
-        try {
-            userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, validStr, emptyStr);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.editUserInformationById(validId, validStr, validStr, validStr, validStr, emptyStr))
+                .thenThrow(InvalidInputException.class);
+        userService.serviceEditUserInformationById(validId, validStr, validStr, validStr, validStr, emptyStr);
     }
 
     /**
      * serviceDeleteUserById
      */
 
-    @Test
+    @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void testServiceDeleteUserByIdNegativeId() {
-        try {
-            userService.serviceDeleteUserById(invalidId);
-            Assert.fail();
-        } catch (InvalidInputException e) {
-            Assert.assertTrue(true);
-        }
+        Mockito.when(userDAO.deleteUserById(invalidId)).thenThrow(InvalidInputException.class);
+        userService.serviceDeleteUserById(invalidId);
     }
 }
 
