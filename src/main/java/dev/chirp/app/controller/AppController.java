@@ -1,12 +1,9 @@
 package dev.chirp.app.controller;
 
-import dev.chirp.app.controller.controllers.CommentController;
-import dev.chirp.app.controller.controllers.PostController;
-import dev.chirp.app.controller.controllers.RelationshipsController;
-import dev.chirp.app.controller.controllers.UserController;
-import dev.chirp.dao.implementations.CommentDAOImp;
+import dev.chirp.app.controller.controllers.*;
+import dev.chirp.dao.implementations.CommentDAO;
 import dev.chirp.dao.implementations.UserDAO;
-import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.dao.interfaces.CommentDAOInt;
 import dev.chirp.service.implementations.CommentServiceImp;
 import dev.chirp.service.implementations.PostService;
 import dev.chirp.service.implementations.RelationshipsService;
@@ -22,7 +19,9 @@ public class AppController {
     //   Hyungsuk
     public UserController userController = new UserController(new UserService(new UserDAO()));
     // Loc
-    public CommentDAO commentDAO = new CommentDAOImp();
+    public CommentDAOInt commentDAO = new CommentDAO();
     public CommentService commentService = new CommentServiceImp(commentDAO);
     public CommentController commentController = new CommentController(commentService);
+
+    public MixedController mixedController = new MixedController(postService,new UserService(new UserDAO()),commentService,relationshipsService);
 }

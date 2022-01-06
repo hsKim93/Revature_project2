@@ -28,6 +28,39 @@ public class PostDAO implements PostDAOInt {
 
 
     }
+
+    @Override
+    public  List<Post> getPostModule(int userId){
+        try(Connection connection= ConnectionDB.createConnection()){
+            String sql = "select users.user_id, user_name,first_name,last_name,post_content,post_id,\"date\" \n" +
+                    "from project2.users inner join project2.posts on users.user_id = posts.user_id where posts.user_id = ?";
+            assert connection != null;
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, userId);
+            ResultSet returned =statement.executeQuery();
+            List<Post> postList = new ArrayList<>();
+
+            while(returned.next()){
+                Post returnedPost = new Post(
+                        returned.getInt("post_id"),
+                        returned.getInt("user_id"),
+                        returned.getString("post_content"),
+                        returned.getString("date"),
+                        returned.getString("user_name"),
+                        returned.getString("first_name"),
+                        returned.getString("last_name")
+                );
+                postList.add(returnedPost);
+            }
+            return postList;
+        }catch (SQLException e){
+            e.printStackTrace();
+            return null;
+
+        }
+
+
+    }
     @Override
     public Post getPostById(int postId) {
         try(Connection connection= ConnectionDB.createConnection()){

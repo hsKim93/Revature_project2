@@ -19,7 +19,7 @@ public class App {
         app.get("/post/byUserId/{id}", appController.postController.getPostsByUserId);
         app.get("/post/delete/{id}", appController.postController.deletePostById);
         app.get("/post/all", appController.postController.getAllPosts);
-
+        app.get("post/module/{id}", appController.mixedController.getPostsModuleByUserId);
         app.get("post/likes/{id}", appController.relationshipsController.getLikesByPostById);
         app.post("post/like", appController.relationshipsController.likeByIds);
         app.post("post/unlike", appController.relationshipsController.unlikeByIds);
