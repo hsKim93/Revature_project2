@@ -1,11 +1,11 @@
 const searchField = document.getElementById("search1");
 const searchButton = document.getElementById("searchButton");
-const url = "http://localhost:8080";
+const url = "http://localhost:8080/";
 
 const searchUserByFirstName = async () => {
     const firstName = searchField.value;
 
-    const response =  await fetch(url + "/search/" + firstName, {
+    const response =  await fetch(url + "search/" + firstName, {
         method: "GET",
         mode: "cors"
     });
