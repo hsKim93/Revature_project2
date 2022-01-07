@@ -38,10 +38,10 @@
           <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
             <h3>Home</h3>
             <textarea placeholder="What's happening?" class="form-control form-control-sm bg-black text-white"
-              style="display:inline-block;" id="exampleFormControlTextarea1" maxlength="500" rows="3"></textarea>
-            <button type="button" style="display:inline-block;"
+              style="display:inline-block;" id="postInput" maxlength="500" rows="3"></textarea>
+            <button type="button" style="display:inline-block;" id="sendPostButton"
               class="btn btn-outline-info align-self-center mb-1">Chirp</button>
-
+              <p id="postInfo"></p>
             <div class="postModule accordion border" id="accordionHome"></div>
           </div>
 
@@ -64,6 +64,12 @@
     </div>
   </div>
   <script type="module" src="../helperScripts/navBar/navBar.js"></script>
+  <script type="module" src="homepage.js"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>
   </body>
 
 </html>
