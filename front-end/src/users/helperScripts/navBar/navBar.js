@@ -5,6 +5,11 @@ const searchField = document.getElementById("search1");
  * search
  */
 
+function referToProfile(targetId){
+    sessionStorage.setItem("targetId",targetId);
+    location.href= "../../users/otherProfile/otherprofile.html";
+}
+
 const searchUserByFirstName = async () => {
     const firstName = searchField.value;
 
@@ -12,23 +17,20 @@ const searchUserByFirstName = async () => {
         method: "GET",
         mode: "cors"
     });
+    document.getElementById("searchList").innerHTML ="";
 
     if (response.status === 200) {
         const body = await response.json();
-        userList = [];
-        for (user of body) {
-            userList.push(user)
-        }
-        console.log(userList);
-        /**
-         * @todo
-         * create a dropdown with results
-         */
+        for(a of body){
+            console.log(a.userId != Number(sessionStorage.getItem("userId")));
+            if(a.userId != Number(sessionStorage.getItem("userId"))){
+            document.getElementById("searchList").innerHTML += ` <li><a class="list-group-item list-group-item-sm list-group-item-action dropdown-item" onclick="referToProfile(`+a.userId+`)">
+            <img src="../../resources/commentIcon.png" style="display:inline;height:1.5em;width:1.5em;">
+            <span style="color:rgb(69, 155, 212);font-size: 0.9em;font-weight:bold;">@`+a.userName+`<p style="color:rgb(0, 0, 0);">  `+a.firstName+` `+a.lastName+`</p></span></a></li>`
+        }}
     } else {
-        /**
-         * @todo
-         * create a dropdowon with "no result" text
-         */
+        document.getElementById("searchList").innerHTML = `<li>No results</li>`
+
     }
 }
 
@@ -59,7 +61,6 @@ document.getElementById("logout").addEventListener("click", logout);
 const toHome = () => {
     location.href = "../homepage/homepage.html";
 }
-
 document.getElementById("home").addEventListener("click", toHome);
 
 /**

@@ -18,92 +18,87 @@
       href="/src/users/my profile/myprofile.css"
     />
   </head>
-  <body>
+  <body onload="loadPostModule()">
     <div class="content min-vh-100 bg-black text-white">
       <div class="d-flex flex-column justify-content-start min-vh-100">
-        <div
-          class="navbar border-bottom"
-          style="background-color: rgb(31, 31, 31)"
-        >
+        <div class="navbar border-bottom" style="background-color: rgb(31, 31, 31);">
           <div class="logo align-self-start container">
             <div>
-              <img
-                src="../../resources/logo.png"
-                width="40"
-                height="52"
-                alt=""
-              /><span class="h3" style="color: orange; font-weight: bold">
-                CHIRP</span
-              >
+              <img src="../../resources/logo.png" width="40" height="52" alt="" /><span class="h3"
+                style="color:orange; font-weight:bold"> CHIRP</span>
             </div>
-
-            <a class="btn btn-outline-warning text-white bold" href="#home"
-              >Home</a
-            >
-            <a
-              class="btn btn-outline-warning text-white bold"
-              href="#profile"
-              id="myProfile"
-              >My Profile</a
-            >
-
-            <div class="d-flex flex">
-              <input type="search" id="search1" class="form-control" />
-              <button
-                type="button"
-                id="searchButton"
-                class="btn btn-outline-info align-self-center"
-              >
-                Search
-              </button>
+  
+            <a class="btn btn-outline-warning text-white bold" id="home">Home</a>
+            <a class="btn btn-outline-warning text-white bold" id="myProfile">My Profile</a>
+  
+       
+              <div class="dropdown d-flex flex">
+                <input type="search" id="search1" class="form-control" />
+                <button class="btn btn-outline-info align-self-center dropdown-toggle" type="button" id="searchButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Search
+                </button>
+                <ul id="searchList" class="dropdown-menu w-100" aria-labelledby="searchButton">
+                </ul>
             </div>
-            <a
-              class="btn btn-outline-danger text-white bold"
-              href="#logout"
-              id="logout"
-              >Logout</a
-            >
+            <a class="btn btn-outline-danger text-white bold " id="logout">Logout</a>
           </div>
         </div>
-        <div class="container mt-2 justify-content-end align-items-center">
-          <div class="profile border-bottom">
-            <div class="profile-pic-div">
-              <img
-                src="/front-end/src/resources/profile_pic.png"
-                class="img-thumbnail rounded-circle overflow-hidden"
-                width="200"
-                height="200"
-                alt=""
-              />
-            </div>
 
-            <div class="profile-name">
-              <p>First and Last Name</p>
-              <p>@Username</p>
-              <p>Email</p>
-            </div>
+      <div class="container mt-2 justify-content-end align-items-center">
+        <div class="profile border-bottom">
+          <div class="profile-pic-div">
+            <img src="/front-end/src/resources/profile_pic.png" class="img-thumbnail rounded-circle overflow-hidden"
+              width="200" height="200" alt="" />
+          </div>
 
-            <button
-              type="button"
-              id="followButton"
-              class="btn btn-primary btn-md float-end"
-            >
-              Follow
-            </button>
+          <div class="profile-name">
+            <p>Name <span id="name"></span></p>
+            <p>@Username <span id="userName"></span></p>
+            <p>Email <span id="email"></span></p>
+          </div>
 
-            <div class="follow">
-              <p>Following</p>
-              <p>Followers</p>
-            </div>
+          <button type="button" id="followButton" class="btn btn-primary btn-md float-end">
+            Follow
+          </button>
+
+          <div class="follow">
+            <p>Following <span id="following"></span></p>
+            <p>Followers <span id="followers"></span></p>
           </div>
           <div class="relationship"></div>
           <div class="follow"></div>
           <div class="profile-edit"></div>
+
+          <div class="row justify-content-evenly">
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
+                <p id="postInfo"></p>
+              <div class="postModule accordion border" id="accordionHome"><div class="spinner-border text-danger" role="status">
+                <span class="sr-only"></span>
+              </div></div>
+            </div>
+  
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+              <div class="border p-2 mb-3" style="background-color: rgb(38, 41, 46);border-radius: 1em;">
+                <h4>About Me</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aut saepe iusto, perspiciatis quaerat
+                  cupiditate iste quas necessitatibus consequatur beatae, placeat aliquid quibusdam adipisci dolor
+                  distinctio repudiandae autem laborum inventore.</p>
+              </div>
+        
+  
+            </div>
+          </div>
         </div>
+        <div class="relationship"></div>
+        <div class="follow"></div>
+        <div class="profile-edit"></div>
       </div>
     </div>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
   <script src="../helperScripts/navBar/navBar.js"></script>
+  <script src="otherProfile.js"></script>
 </body>
 
 </html>
