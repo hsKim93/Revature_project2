@@ -18,9 +18,11 @@ const searchUserByFirstName = async () => {
         mode: "cors"
     });
     document.getElementById("searchList").innerHTML ="";
+
     if (response.status === 200) {
         const body = await response.json();
         for(a of body){
+            console.log(a.userId != Number(sessionStorage.getItem("userId")));
             if(a.userId != Number(sessionStorage.getItem("userId"))){
             document.getElementById("searchList").innerHTML += ` <li><a class="list-group-item list-group-item-sm list-group-item-action dropdown-item" onclick="referToProfile(`+a.userId+`)">
             <img src="../../resources/commentIcon.png" style="display:inline;height:1.5em;width:1.5em;">
