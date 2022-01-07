@@ -1,4 +1,4 @@
-const profileId = sessionStorage.getItem("profileId");
+const targetId = sessionStorage.getItem("targetId");
 const userId = sessionStorage.getItem("userId");
 const followButton = document.getElementById("followButton");
 
@@ -9,8 +9,8 @@ const follow = async () => {
     console.log("follow called");
 
     const body = {
-        userId: userId,
-        targetId: profileId
+        userId: parseInt(userId),
+        targetId: parseInt(targetId)
     };
 
     const response = await fetch(url + "/follow", {
@@ -37,8 +37,8 @@ const unfollow = async () => {
     console.log("unfollow called");
 
     const body = {
-        userId: userId,
-        targetId: profileId
+        userId: parseInt(userId),
+        targetId: parseInt(targetId)
     };
 
     const response = await fetch(url + "/unfollow", {
@@ -61,7 +61,6 @@ const unfollow = async () => {
 }
 
 const followButtonPressed = async () => {
-    console.log(followed);
     if (followed) {
         unfollow();
     } else {
@@ -71,7 +70,7 @@ const followButtonPressed = async () => {
 
 
 const loadProfile = async () => {
-    const response = await fetch(url + "/user/" + profileId, {
+    const response = await fetch(url + "/user/" + targetId, {
         method: "GET",
         mode: "cors"
     });
@@ -87,7 +86,7 @@ const loadProfile = async () => {
 }
 
 const getFollowing = async () => {
-    const response = await fetch(url + "/following/" + profileId, {
+    const response = await fetch(url + "/following/" + targetId, {
         method: "GET",
         mode: "cors"
     });
@@ -100,14 +99,14 @@ const getFollowing = async () => {
 }
 
 const getFollower = async () => {
-    const response = await fetch(url + "/followers/" + profileId, {
+    const response = await fetch(url + "/followers/" + targetId, {
         method: "GET",
         mode: "cors"
     });
     
     if (response.status === 201) {
         const body = await response.json();
-        for (userId of body) {
+        for (let userId of body) {
             if (userId === sessionStorage.getItem("userId")) {
                 followed = true;
                 break;
