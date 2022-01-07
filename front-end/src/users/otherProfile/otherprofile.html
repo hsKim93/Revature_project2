@@ -1,51 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Other Profiles</title>
+    <!-- <script src="../helperScripts/isUser/isUser.js"></script> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/src/users/my profile/myprofile.css"
+    />
+  </head>
+  <body>
+    <div class="content min-vh-100 bg-black text-white">
+      <div class="d-flex flex-column justify-content-start min-vh-100">
+        <div
+          class="navbar border-bottom"
+          style="background-color: rgb(31, 31, 31)"
+        >
+          <div class="logo align-self-start container">
+            <div>
+              <img
+                src="../../resources/logo.png"
+                width="40"
+                height="52"
+                alt=""
+              /><span class="h3" style="color: orange; font-weight: bold">
+                CHIRP</span
+              >
+            </div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Other Profiles</title>
-  <!-- <script src="../helperScripts/isUser/isUser.js"></script> -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="/src/users/my profile/myprofile.css" />
-</head>
+            <a class="btn btn-outline-warning text-white bold" href="#home"
+              >Home</a
+            >
+            <a
+              class="btn btn-outline-warning text-white bold"
+              href="#profile"
+              id="myProfile"
+              >My Profile</a
+            >
 
-<body>
-  <div class="content min-vh-100 bg-dark text-white">
-    <div class="d-flex flex-column justify-content-start min-vh-100">
-      <div class="navbar" style="background-color: rgb(29, 29, 29)">
-        <div class="logo">
-          <img src="/src/resources/logo.png" width="30" height="40" />
-        </div>
-        <span class="h2" style="color: orange; font-weight: bold">
-          CHIRP</span>
-        <div class="topnav">
-          <a class="btn btn-outline-warning text-white bold" id=home>Home</a>
-          <a href="#profile" id="myProfile">My Profile</a>
-          <a href="#logout" id="logout">Logout</a>
-        </div>
-        <span class="search-outline">
-          <input type="search" id="search1" class="form-control" />
-        </span>
-
-        <button type="submit" class="btn btn-search-users text-white bg-gradient">
-          Search
-        </button>
-      </div>
-      <div class="container">
-        <div class="profile">
-          <div class="profile-pic-div">
-            <img src="/src/resources/blank-profile-picture-973460_1280.png" id="photo" />
-            <input type="file" id="pictureFile" />
-            <label for="pictureFile" id="uploadPicBtn">Choose photo</label>
+            <div class="d-flex flex">
+              <input type="search" id="search1" class="form-control" />
+              <button
+                type="button"
+                id="searchButton"
+                class="btn btn-outline-info align-self-center"
+              >
+                Search
+              </button>
+            </div>
+            <a
+              class="btn btn-outline-danger text-white bold"
+              href="#logout"
+              id="logout"
+              >Logout</a
+            >
           </div>
+        </div>
+        <div class="container mt-2 justify-content-end align-items-center">
+          <div class="profile border-bottom">
+            <div class="profile-pic-div">
+              <img
+                src="/front-end/src/resources/profile_pic.png"
+                class="img-thumbnail rounded-circle overflow-hidden"
+                width="200"
+                height="200"
+                alt=""
+              />
+            </div>
 
-          <div class="profile-name">
-            <p>First and Last Name</p>
-            <p>Username</p>
-            <p>Email</p>
+            <div class="profile-name">
+              <p>First and Last Name</p>
+              <p>@Username</p>
+              <p>Email</p>
+            </div>
+
+            <button
+              type="button"
+              id="followButton"
+              class="btn btn-primary btn-md float-end"
+            >
+              Follow
+            </button>
+
+            <div class="follow">
+              <p>Following</p>
+              <p>Followers</p>
+            </div>
           </div>
           <div class="relationship"></div>
           <div class="follow"></div>
