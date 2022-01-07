@@ -24,17 +24,17 @@ public class UserController {
             User returnUser = userService.serviceRequestLogin(user.getUserName(), user.getPassword());
             if (returnUser == null) {
                 ctx.result("Invalid credentials");
-                ctx.status(404);
+                ctx.status(400);
             } else {
                 ctx.result(gson.toJson(returnUser));
                 ctx.status(200);
             }
         } catch (InvalidInputException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 
@@ -46,20 +46,20 @@ public class UserController {
                     user.getFirstName(), user.getLastName(), user.getEmail());
             if (returnUser == null) {
                 ctx.result("Error creating account");
-                ctx.status(404);
+                ctx.status(400);
             } else {
                 ctx.result(gson.toJson(returnUser));
                 ctx.status(201);
             }
         } catch (InvalidInputException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
-            ctx.status(404);
+            ctx.status(400);
         } catch (DuplicateException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 
@@ -69,7 +69,7 @@ public class UserController {
             User returnUser = userService.serviceGetUserById(id);
             if (returnUser == null) {
                 ctx.result("User not found");
-                ctx.status(404);
+                ctx.status(400);
             } else {
                 Gson gson = new Gson();
                 ctx.result(gson.toJson(returnUser));
@@ -77,13 +77,13 @@ public class UserController {
             }
         } catch (NumberFormatException e) {
             ctx.result("Invalid input");
-            ctx.status(404);
+            ctx.status(400);
         } catch (InvalidInputException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 
@@ -91,7 +91,7 @@ public class UserController {
         ArrayList<User> users = userService.serviceGetUsers();
         if (users == null) {
             ctx.result("No Users found");
-            ctx.status(404);
+            ctx.status(400);
         } else {
             Gson gson = new Gson();
             ctx.result(gson.toJson(users));
@@ -105,7 +105,7 @@ public class UserController {
             ArrayList<User> users = userService.serviceGetUsersByFirstName(firstName);
             if (users == null) {
                 ctx.result("No match found");
-                ctx.status(404);
+                ctx.status(400);
             } else {
                 Gson gson = new Gson();
                 ctx.result(gson.toJson(users));
@@ -113,10 +113,10 @@ public class UserController {
             }
         } catch (InvalidInputException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 
@@ -129,23 +129,23 @@ public class UserController {
                     user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail());
             if (returnUser == null) {
                 ctx.result("Username or email already exists");
-                ctx.status(404);
+                ctx.status(400);
             } else {
                 ctx.result(gson.toJson(returnUser));
                 ctx.status(200);
             }
         } catch (NumberFormatException e) {
             ctx.result("Invalid input");
-            ctx.status(404);
+            ctx.status(400);
         } catch (InvalidInputException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         } catch (NullPointerException e) {
             ctx.result("Invalid argument");
-            ctx.status(404);
+            ctx.status(400);
         } catch (DuplicateException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 
@@ -155,7 +155,7 @@ public class UserController {
             User returnUser = userService.serviceDeleteUserById(id);
             if (returnUser == null) {
                 ctx.result("User not found");
-                ctx.status(404);
+                ctx.status(400);
             } else {
                 Gson gson = new Gson();
                 ctx.result(gson.toJson(returnUser));
@@ -163,7 +163,7 @@ public class UserController {
             }
         } catch (InvalidInputException e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 }

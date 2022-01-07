@@ -36,10 +36,10 @@ public class PostController {
         Gson gson = new Gson();
         String jsonPost = gson.toJson(gotPost);
         ctx.result(jsonPost);
-        ctx.status(201);
+        ctx.status(200);
     }catch (PostNotFound e){
         ctx.result(e.getMessage());
-        ctx.status(404);
+        ctx.status(400);
     }catch (IllegalArgumentException e){
             ctx.result("Type error:" + e.getMessage());
             ctx.status(400);
@@ -51,7 +51,7 @@ public class PostController {
             Gson gson = new Gson();
             String jsonPost = gson.toJson(gotPost);
             ctx.result(jsonPost);
-            ctx.status(201);
+            ctx.status(200);
         }catch (IllegalArgumentException e){
             ctx.result("Type error:" + e.getMessage());
             ctx.status(400);
@@ -61,7 +61,7 @@ public class PostController {
         Gson gson = new Gson();
         String jsonPost = gson.toJson(gotPost);
         ctx.result(jsonPost);
-        ctx.status(201);
+        ctx.status(200);
 
     };
     public Handler deletePostById = ctx ->{
@@ -71,10 +71,10 @@ public class PostController {
         Gson gson = new Gson();
         String jsonPost = gson.toJson(gotPost);
         ctx.result(jsonPost);
-        ctx.status(201);
+        ctx.status(200);
     } catch (PostNotFound e){
         ctx.result(e.getMessage());
-        ctx.status(404);
+        ctx.status(400);
     }catch (IllegalArgumentException e){
             ctx.result("Type error:" + e.getMessage());
             ctx.status(400);
