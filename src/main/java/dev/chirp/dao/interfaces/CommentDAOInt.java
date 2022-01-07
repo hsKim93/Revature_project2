@@ -4,7 +4,7 @@ import dev.chirp.entities.Comment;
 
 import java.util.List;
 
-public interface CommentDAO {
+public interface CommentDAOInt {
 
     Comment createComment(Comment comment);
 

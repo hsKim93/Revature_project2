@@ -1,7 +1,7 @@
 package dev.chirp.dao.implementations;
 
 import dev.chirp.customexceptions.CommentNotFound;
-import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.dao.interfaces.CommentDAOInt;
 import dev.chirp.entities.Comment;
 import dev.chirp.utility.ConnectionDB;
 
@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommentDAOImp implements CommentDAO {
+public class CommentDAO implements CommentDAOInt {
 
     @Override
     public Comment createComment(Comment comment) {

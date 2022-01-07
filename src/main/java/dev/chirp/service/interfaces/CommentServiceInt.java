@@ -5,7 +5,7 @@ import dev.chirp.entities.Comment;
 
 import java.util.List;
 
-public interface CommentService {
+public interface CommentServiceInt {
     Comment serviceCreateComment(Comment comment);
 
     Comment serviceGetCommentById(int commentId);

@@ -1,10 +1,8 @@
 package service;
 
-import dev.chirp.dao.implementations.CommentDAOImp;
-import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.dao.implementations.CommentDAO;
 import dev.chirp.entities.Comment;
-import dev.chirp.service.implementations.CommentServiceImp;
-import dev.chirp.service.interfaces.CommentService;
+import dev.chirp.service.implementations.CommentService;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,8 +10,8 @@ import java.util.EmptyStackException;
 
 
 public class CommentServiceTests {
-    static CommentDAO commentDAO = new CommentDAOImp();
-    static CommentService commentService = new CommentServiceImp(commentDAO);
+    static CommentDAO commentDAO = new CommentDAO();
+    static CommentService commentService = new CommentService(commentDAO);
 
     @Test
     void createCommentWithEmptyContent(){

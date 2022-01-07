@@ -1,17 +1,17 @@
 package dev.chirp.service.implementations;
 
-import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.dao.implementations.CommentDAO;
 import dev.chirp.entities.Comment;
-import dev.chirp.service.interfaces.CommentService;
+import dev.chirp.service.interfaces.CommentServiceInt;
 
 import java.util.EmptyStackException;
 import java.util.List;
 
-public class CommentServiceImp implements CommentService {
+public class CommentService implements CommentServiceInt {
 
     CommentDAO commentDAO;
 
-    public CommentServiceImp(CommentDAO commentDAO){
+    public CommentService(CommentDAO commentDAO){
         this.commentDAO = commentDAO;
     }
 

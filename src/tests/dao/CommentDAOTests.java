@@ -1,7 +1,7 @@
 package dao;
 
 import dev.chirp.customexceptions.CommentNotFound;
-import dev.chirp.dao.implementations.CommentDAOImp;
+import dev.chirp.dao.implementations.CommentDAO;
 import dev.chirp.entities.Comment;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class CommentDAOTests {
 
-    CommentDAOImp commentDAO = new CommentDAOImp();
+    CommentDAO commentDAO = new CommentDAO();
 
     @Test
     void createComment() {

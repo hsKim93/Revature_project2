@@ -3,7 +3,8 @@ package dev.chirp.app.controller.controllers;
 import com.google.gson.Gson;
 import dev.chirp.customexceptions.CommentNotFound;
 import dev.chirp.entities.Comment;
-import dev.chirp.service.interfaces.CommentService;
+import dev.chirp.service.implementations.CommentService;
+import dev.chirp.service.interfaces.CommentServiceInt;
 import io.javalin.http.Handler;
 
 import java.util.List;
