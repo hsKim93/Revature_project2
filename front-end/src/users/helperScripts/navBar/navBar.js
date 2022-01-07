@@ -59,7 +59,6 @@ document.getElementById("logout").addEventListener("click", logout);
 const toHome = () => {
     location.href = "../homepage/homepage.html";
 }
-
 document.getElementById("home").addEventListener("click", toHome);
 
 /**

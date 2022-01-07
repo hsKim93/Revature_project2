@@ -19,13 +19,12 @@ const loadMyProfile = async () => {
 }
 
 const getFollowing = async () => {
-    const response = await fetch(url + "/following/" + 8000, {
+    const response = await fetch(url + "/following/" + userId, {
         method: "GET",
         mode: "cors"
     });
     if (response.status === 201) {
         const body = await response.json();
-        console.log(body);
         document.getElementById("following").innerText = body.length;
     } else {
         console.log("This should never happen - getFollowing");
@@ -33,14 +32,13 @@ const getFollowing = async () => {
 }
 
 const getFollower = async () => {
-    const response = await fetch(url + "/followers/" + 8000, {
+    const response = await fetch(url + "/followers/" + userId, {
         method: "GET",
         mode: "cors"
     });
     
     if (response.status === 201) {
         const body = await response.json();
-        console.log(body);
         document.getElementById("followers").innerText = body.length;
     } else {
         console.log("This should never happen - getFollower");
