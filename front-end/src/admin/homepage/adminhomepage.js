@@ -13,10 +13,7 @@ const loadUserList = async () => {
             userList.push(user);
         }
     } else {
-        /**
-         * @todo
-         * show error message instead of users
-         */
+        console.log("this should never happen - loadUserList");
     }
 }
 
@@ -32,10 +29,7 @@ const deleteUser = async (userId) => {
          * delete html of this user OR reload the users list
          */
     } else {
-        /**
-         * @todo
-         * show error message (failed to delete user)
-         */
+        console.log("this should never happen - deleteUser");
     }
 }
 
