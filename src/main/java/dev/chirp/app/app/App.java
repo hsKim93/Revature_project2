@@ -27,7 +27,7 @@ public class App {
         app.get("/followers/{id}", appController.relationshipsController.getFollowersById);
         app.post("/follow", appController.relationshipsController.followByIds);
         app.post("/unfollow", appController.relationshipsController.unfollowByIds);
-
+        app.get("post/oneUserModule/{id}", appController.mixedController.getOneUserModuleByUserId);
 //  Hyungsuk
         app.post("/login", appController.userController.requestLogin);
         app.post("/user", appController.userController.createAccount);

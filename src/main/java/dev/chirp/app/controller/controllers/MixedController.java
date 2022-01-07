@@ -45,5 +45,23 @@ public class MixedController {
             ctx.result("Type error:" + e.getMessage());
             ctx.status(400);
         }};
+    public Handler getOneUserModuleByUserId = ctx ->{
+        try {
+            int id = Integer.parseInt(ctx.pathParam("id"));
+                List<Post> posts = this.postService.serviceGetPostModuleByPostId(id);
+                List<Object> returnList = new ArrayList<>();
+                for(Post b :posts){
+                    b.setLikes(this.relationshipsService.serviceGetLikesByPostId(b.getPostId()));
+                    b.setComment(this.commentService.serviceGetCommentsByPostId(b.getPostId()));
+                    returnList.add(b);
 
+            }
+            Gson gson = new Gson();
+            String jsonPost = gson.toJson(returnList, List.class);
+            ctx.result(jsonPost);
+            ctx.status(200);
+        }catch (Exception e){
+            ctx.result("Type error:" + e.getMessage());
+            ctx.status(400);
+        }};
 }
