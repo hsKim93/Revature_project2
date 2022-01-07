@@ -28,8 +28,8 @@
                 style="color:orange; font-weight:bold"> CHIRP</span>
             </div>
   
-            <a class="btn btn-outline-warning text-white bold" id=home>Home</a>
-            <a class="btn btn-outline-warning text-white bold" href="#profile" id="myProfile">My Profile</a>
+            <a class="btn btn-outline-warning text-white bold" id="home">Home</a>
+            <a class="btn btn-outline-warning text-white bold" id="myProfile">My Profile</a>
   
        
               <div class="dropdown d-flex flex">
@@ -40,40 +40,30 @@
                 <ul id="searchList" class="dropdown-menu w-100" aria-labelledby="searchButton">
                 </ul>
             </div>
-            <a class="btn btn-outline-danger text-white bold " href="#logout" id="logout">Logout</a>
+            <a class="btn btn-outline-danger text-white bold " id="logout">Logout</a>
           </div>
         </div>
 
-        <div class="container mt-2 justify-content-end align-items-center">
-          <div class="profile border-bottom">
-            <div class="profile-pic-div">
-              <img
-                src="/front-end/src/resources/profile_pic.png"
-                class="img-thumbnail rounded-circle overflow-hidden"
-                width="200"
-                height="200"
-                alt=""
-              />
-            </div>
+      <div class="container mt-2 justify-content-end align-items-center">
+        <div class="profile border-bottom">
+          <div class="profile-pic-div">
+            <img src="/front-end/src/resources/profile_pic.png" class="img-thumbnail rounded-circle overflow-hidden"
+              width="200" height="200" alt="" />
+          </div>
 
-            <div class="profile-name">
-              <p>First and Last Name</p>
-              <p>@Username</p>
-              <p>Email</p>
-            </div>
+          <div class="profile-name">
+            <p>Name <span id="name"></span></p>
+            <p>@Username <span id="userName"></span></p>
+            <p>Email <span id="email"></span></p>
+          </div>
 
-            <button
-              type="button"
-              id="followButton"
-              class="btn btn-primary btn-md float-end"
-            >
-              Follow
-            </button>
+          <button type="button" id="followButton" class="btn btn-primary btn-md float-end">
+            Follow
+          </button>
 
-            <div class="follow">
-              <p>Following</p>
-              <p>Followers</p>
-            </div>
+          <div class="follow">
+            <p>Following <span id="following"></span></p>
+            <p>Followers <span id="followers"></span></p>
           </div>
           <div class="relationship"></div>
           <div class="follow"></div>
@@ -99,9 +89,11 @@
             </div>
           </div>
         </div>
+        <div class="relationship"></div>
+        <div class="follow"></div>
+        <div class="profile-edit"></div>
       </div>
     </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
   crossorigin="anonymous"></script>

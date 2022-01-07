@@ -19,7 +19,7 @@ const loadMyProfile = async () => {
 }
 
 const getFollowing = async () => {
-    const response = await fetch(url + "/following/" + 8000, {
+    const response = await fetch(url + "/following/" + userId, {
         method: "GET",
         mode: "cors"
     });
@@ -32,7 +32,7 @@ const getFollowing = async () => {
 }
 
 const getFollower = async () => {
-    const response = await fetch(url + "/followers/" + 8000, {
+    const response = await fetch(url + "/followers/" + userId, {
         method: "GET",
         mode: "cors"
     });
@@ -197,7 +197,7 @@ async function createPost() {
 }
 
 async function getOneUserModulebyUserId(id) {
-  let response = await fetch(url + `/post/module/${id}`, {
+  let response = await fetch(url + `/post/oneUserModule/${id}`, {
     method: "GET",
     mode: "cors",
     headers: {
