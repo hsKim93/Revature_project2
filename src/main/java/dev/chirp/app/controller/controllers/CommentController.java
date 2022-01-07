@@ -17,14 +17,19 @@ public class CommentController {
     }
 
     public Handler createComment = ctx -> {
-        Gson gson = new Gson();
-        Comment newComment = gson.fromJson(ctx.body(), Comment.class);
-        Comment createdComment = this.commentService.serviceCreateComment(newComment);
-        String createdCommentJSON = gson.toJson(createdComment);
-        ctx.result(createdCommentJSON);
-        ctx.status(201);
-    };
+        try {
+            Gson gson = new Gson();
+            Comment newComment = gson.fromJson(ctx.body(), Comment.class);
+            Comment createdComment = this.commentService.serviceCreateComment(newComment);
+            String createdCommentJSON = gson.toJson(createdComment);
+            ctx.result(createdCommentJSON);
+            ctx.status(201);
+        } catch (Exception e) {
+            ctx.result(e.getMessage());
+            ctx.status(400);
+        }
 
+    };
     public Handler getCommentById = ctx -> {
         int id = Integer.parseInt(ctx.pathParam("id"));
         try {
@@ -32,10 +37,10 @@ public class CommentController {
             Gson gson = new Gson();
             String commentJSON = gson.toJson(comment);
             ctx.result(commentJSON);
-            ctx.status(201);
+            ctx.status(200);
         } catch (CommentNotFound e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 
@@ -46,10 +51,10 @@ public class CommentController {
             Gson gson = new Gson();
             String commentJSON = gson.toJson(comments);
             ctx.result(commentJSON);
-            ctx.status(201);
+            ctx.status(200);
         } catch (CommentNotFound e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 
@@ -68,10 +73,10 @@ public class CommentController {
             Gson gson = new Gson();
             String commentJSON = gson.toJson(comment);
             ctx.result(commentJSON);
-            ctx.status(201);
+            ctx.status(200);
         } catch (CommentNotFound e) {
             ctx.result(e.getMessage());
-            ctx.status(404);
+            ctx.status(400);
         }
     };
 }

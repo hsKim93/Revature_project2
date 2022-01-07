@@ -40,7 +40,7 @@ public class MixedController {
             Gson gson = new Gson();
             String jsonPost = gson.toJson(returnList, List.class);
             ctx.result(jsonPost);
-            ctx.status(201);
+            ctx.status(200);
         }catch (Exception e){
             ctx.result("Type error:" + e.getMessage());
             ctx.status(400);
