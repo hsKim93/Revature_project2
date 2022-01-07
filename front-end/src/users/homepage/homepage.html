@@ -24,9 +24,14 @@
           <a class="btn btn-outline-warning text-white bold" id=home>Home</a>
           <a class="btn btn-outline-warning text-white bold" href="#profile" id="myProfile">My Profile</a>
 
-          <div class="d-flex flex">
-            <input type="search" id="search1" class="form-control" />
-            <button type="button" id="searchButton" class="btn btn-outline-info align-self-center  ">Search</button>
+     
+            <div class="dropdown d-flex flex">
+              <input type="search" id="search1" class="form-control" />
+              <button class="btn btn-outline-info align-self-center dropdown-toggle" type="button" id="searchButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Search
+              </button>
+              <ul id="searchList" class="dropdown-menu w-100" aria-labelledby="searchButton">
+              </ul>
           </div>
           <a class="btn btn-outline-danger text-white bold " href="#logout" id="logout">Logout</a>
         </div>
