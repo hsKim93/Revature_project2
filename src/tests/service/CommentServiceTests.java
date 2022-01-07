@@ -1,7 +1,6 @@
 package service;
 
-import dev.chirp.dao.implementations.CommentDAOImp;
-import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.dao.implementations.CommentDAO;
 import dev.chirp.entities.Comment;
 import dev.chirp.service.implementations.CommentServiceImp;
 import dev.chirp.service.interfaces.CommentService;
@@ -12,7 +11,7 @@ import java.util.EmptyStackException;
 
 
 public class CommentServiceTests {
-    static CommentDAO commentDAO = new CommentDAOImp();
+    static CommentDAO commentDAO = new CommentDAO();
     static CommentService commentService = new CommentServiceImp(commentDAO);
 
     @Test
