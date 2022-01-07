@@ -1,5 +1,3 @@
-const url = "http://localhost:8080/";
-
 document.getElementById("sendPostButton").addEventListener("click",createPost);
 
 async function createPost() {
@@ -9,7 +7,7 @@ async function createPost() {
     content: document.getElementById("postInput").value,
     date: "",
   };
-  let response = await fetch(url + "post/create", {
+  let response = await fetch(url + "/post/create", {
     method: "POST",
     mode: "cors",
     headers: {
@@ -27,7 +25,7 @@ async function createPost() {
 }
 
 async function getPostModulebyUserId(id) {
-  let response = await fetch(url + `post/module/${id}`, {
+  let response = await fetch(url + `/post/module/${id}`, {
     method: "GET",
     mode: "cors",
     headers: {
@@ -48,7 +46,7 @@ async function likePost(userId, postId) {
     postId: postId,
   };
 
-  let response = await fetch(url + "post/like", {
+  let response = await fetch(url + "/post/like", {
     method: "POST",
     mode: "cors",
     headers: {
@@ -72,7 +70,7 @@ async function unlikePost(userId, postId) {
     postId: postId,
   };
 
-  let response = await fetch(url + "post/unlike", {
+  let response = await fetch(url + "/post/unlike", {
     method: "POST",
     mode: "cors",
     headers: {
@@ -99,7 +97,7 @@ async function createComment1(postId) {
     date: ""
   };
 
-  let response = await fetch(url + "comment/create", {
+  let response = await fetch(url + "/comment/create", {
     method: "POST",
     mode: "cors",
     headers: {
@@ -119,13 +117,15 @@ async function createComment1(postId) {
 async function loadPostModule() {
   let userId = sessionStorage.getItem("userId");
   let posts = await getPostModulebyUserId(userId);
+  document.getElementById("accordionHome").innerHTML = "";
   posts.sort(function (a, b) {
-    return a.postId - b.postId;
+    return b.postId - a.postId;
   });
  if(posts.length == 0){
   document.getElementById("accordionHome").innerHTML += `<h1>NO POSTS</h1>`
  }
   for(let a of posts){
+    let slicedDate= a.date.slice(0,-10);
     document.getElementById("accordionHome").innerHTML += 
       `
     <div class="accordion-item bg-black border-dark p-1">
@@ -137,7 +137,7 @@ async function loadPostModule() {
       a.firstName + " " + a.lastName +
       `</a>
      <span style=" font-size: 0.8em;color:grey;">` +
-      a.date+
+     slicedDate+
       `<br><span>  </span><span style="color:rgb(69, 155, 212);font-size: 0.9em;">@` +
       a.userName +
       `</span></span>
