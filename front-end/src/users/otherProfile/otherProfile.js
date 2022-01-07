@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const targetId = sessionStorage.getItem("targetId");
 const userId = sessionStorage.getItem("userId");
 const followButton = document.getElementById("followButton");
@@ -128,7 +127,6 @@ const loadAll = async () => {
 console.log(followed);
 followButton.addEventListener("click", followButtonPressed.bind(followed));
 loadAll();
-=======
 async function getOneUserModulebyUserId(id) {
     let response = await fetch(url + `/post/module/${id}`, {
       method: "GET",
@@ -284,4 +282,3 @@ async function getOneUserModulebyUserId(id) {
     }
     }
   }
->>>>>>> sprint_2

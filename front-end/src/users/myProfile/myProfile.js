@@ -39,10 +39,7 @@ const getFollower = async () => {
     
     if (response.status === 201) {
         const body = await response.json();
-<<<<<<< HEAD
-=======
     
->>>>>>> sprint_2
         document.getElementById("followers").innerText = body.length;
     } else {
         console.log("This should never happen - getFollower");
@@ -200,7 +197,7 @@ async function createPost() {
 }
 
 async function getOneUserModulebyUserId(id) {
-  let response = await fetch(url + `/post/module/${id}`, {
+  let response = await fetch(url + `/post/oneUserModule/${id}`, {
     method: "GET",
     mode: "cors",
     headers: {
