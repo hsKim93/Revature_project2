@@ -47,28 +47,25 @@
       <div class="container mt-2 justify-content-end align-items-center">
         <div class="profile border-bottom">
           <div class="profile-pic-div">
-            <img src="/front-end/src/resources/profile_pic.png" class="img-thumbnail rounded-circle overflow-hidden"
+            <img src="/front-end/src/resources/other_profile_pic.png" class="img-thumbnail rounded-circle overflow-hidden"
               width="200" height="200" alt="" />
           </div>
-
-          <div class="profile-name">
-            <p>Name <span id="name"></span></p>
-            <p>@Username <span id="userName"></span></p>
-            <p>Email <span id="email"></span></p>
-          </div>
-
+          
           <button type="button" id="followButton" class="btn btn-primary btn-md float-end">
             Follow
           </button>
+          
+          <div class="profile-name">
+            <p><span id="name" class="fw-bold fs-4"></span></p>
+            <p><span id="userName" class="text-muted"></span></p>
+            <p><span id="email"></span></p>
+          </div>
 
           <div class="follow">
-            <p>Following <span id="following"></span></p>
-            <p>Followers <span id="followers"></span></p>
+            <span id="following" class="fw-bold"></span> Following
+            <span id="followers" class="fw-bold ps-4"></span> Followers 
           </div>
-          <div class="relationship"></div>
-          <div class="follow"></div>
-          <div class="profile-edit"></div>
-
+        </div>
           <div class="row justify-content-evenly">
             <div class="col-lg-6 col-md-6 col-sm-12 mt-2">
                 <p id="postInfo"></p>
@@ -84,14 +81,9 @@
                   cupiditate iste quas necessitatibus consequatur beatae, placeat aliquid quibusdam adipisci dolor
                   distinctio repudiandae autem laborum inventore.</p>
               </div>
-        
-  
             </div>
           </div>
-        </div>
-        <div class="relationship"></div>
-        <div class="follow"></div>
-        <div class="profile-edit"></div>
+        
       </div>
     </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

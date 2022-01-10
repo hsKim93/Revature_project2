@@ -43,12 +43,6 @@
               width="200" height="200" alt="" />
           </div>
 
-          <div class="profile-name">
-            <p>Name <span id="name"></span></p>
-            <p>@Username <span id="userName"></span></p>
-            <p>Email <span id="email"></span></p>
-          </div>
-
           <div class="modal fade text-black" id="exampleModalToggle" aria-hidden="true"
             aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
@@ -84,7 +78,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel2">
-                      Modal 2
+                      Edit Profile
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
@@ -101,9 +95,15 @@
           <a class="btn btn-primary float-end" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Edit
             Profile</a>
 
+            <div class="profile-name">
+              <p><span id="name" class="fw-bold fs-4"></span></p>
+              <p><span id="userName" class="text-muted pt-1"></span></p>
+              <p><span id="email"></span></p>
+            </div>
+
           <div class="follow">
-            <p>Following <span id="following"></span></p>
-            <p>Followers <span id="followers"></span></p>
+            <span id="following" class="fw-bold" ></span> Following
+            <span id="followers" class="fw-bold ps-4"></span> Followers 
           </div>
         </div>
         <div class="row justify-content-evenly">
