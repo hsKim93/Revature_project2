@@ -4,6 +4,7 @@ import dev.chirp.customexceptions.InvalidInputException;
 import dev.chirp.dao.implementations.RelationshipsDAO;
 import dev.chirp.service.implementations.RelationshipsService;
 import org.mockito.Mockito;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -30,24 +31,21 @@ public class RelationshipsServiceTests {
     @Test()
     void serviceLikeByIdsValid() {
         Mockito.when(relationshipsDAO.likeByIds(positiveId, positiveId)).thenReturn(true);
-        relationshipsService.serviceLikeByIds(positiveId, positiveId);
+        Assert.assertTrue(relationshipsService.serviceLikeByIds(positiveId, positiveId));
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceLikeByIdsNegativeUserId() {
-        Mockito.when(relationshipsDAO.likeByIds(negativeId, positiveId)).thenReturn(true);
         relationshipsService.serviceLikeByIds(negativeId, positiveId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceLikeByIdsNegativePostId() {
-        Mockito.when(relationshipsDAO.likeByIds(positiveId, negativeId)).thenReturn(true);
         relationshipsService.serviceLikeByIds(positiveId, negativeId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceLikeByIdsNegativeIds() {
-        Mockito.when(relationshipsDAO.likeByIds(negativeId, negativeId)).thenReturn(true);
         relationshipsService.serviceLikeByIds(negativeId, negativeId);
     }
 
@@ -58,24 +56,21 @@ public class RelationshipsServiceTests {
     @Test()
     void serviceUnlikeByIdsValid() {
         Mockito.when(relationshipsDAO.unlikeByIds(positiveId, positiveId)).thenReturn(true);
-        relationshipsService.serviceUnlikeByIds(positiveId, positiveId);
+        Assert.assertTrue(relationshipsService.serviceUnlikeByIds(positiveId, positiveId));
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceUnlikeByIdsNegativeUserId() {
-        Mockito.when(relationshipsDAO.unlikeByIds(negativeId, positiveId)).thenReturn(true);
         relationshipsService.serviceUnlikeByIds(negativeId, positiveId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceUnlikeByIdsNegativePostId() {
-        Mockito.when(relationshipsDAO.unlikeByIds(positiveId, negativeId)).thenReturn(true);
         relationshipsService.serviceUnlikeByIds(positiveId, negativeId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceUnlikeByIdsNegativeIds() {
-        Mockito.when(relationshipsDAO.unlikeByIds(negativeId, negativeId)).thenReturn(true);
         relationshipsService.serviceUnlikeByIds(negativeId, negativeId);
     }
 
@@ -88,13 +83,11 @@ public class RelationshipsServiceTests {
     void serviceGetFollowingByUserIdValid() {
         List<Integer> userIdList = new ArrayList<>();
         Mockito.when(relationshipsDAO.getFollowingByUserId(positiveId)).thenReturn(userIdList);
-        relationshipsService.serviceGetFollowingByUserId(positiveId);
+        Assert.assertEquals(relationshipsService.serviceGetFollowingByUserId(positiveId),userIdList);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceGetFollowingByUserIdNegativeUserId() {
-        List<Integer> userIdList = new ArrayList<>();
-        Mockito.when(relationshipsDAO.getFollowingByUserId(negativeId)).thenReturn(userIdList);
         relationshipsService.serviceGetFollowingByUserId(negativeId);
     }
 
@@ -106,13 +99,11 @@ public class RelationshipsServiceTests {
     void serviceGetFollowersByUserIdValid() {
         List<Integer> userIdList = new ArrayList<>();
         Mockito.when(relationshipsDAO.getFollowersByUserId(positiveId)).thenReturn(userIdList);
-        relationshipsService.serviceGetFollowersByUserId(positiveId);
+        Assert.assertEquals(relationshipsService.serviceGetFollowersByUserId(positiveId),userIdList);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceGetFollowersByUserIdNegativeUserId() {
-        List<Integer> userIdList = new ArrayList<>();
-        Mockito.when(relationshipsDAO.getFollowersByUserId(negativeId)).thenReturn(userIdList);
         relationshipsService.serviceGetFollowersByUserId(negativeId);
     }
 
@@ -123,24 +114,21 @@ public class RelationshipsServiceTests {
     @Test()
     void serviceFollowByIdsValid() {
         Mockito.when(relationshipsDAO.followByIds(positiveId, positiveId)).thenReturn(true);
-        relationshipsService.serviceFollowByIds(positiveId, positiveId);
+        Assert.assertTrue(relationshipsService.serviceFollowByIds(positiveId, positiveId));
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceFollowByIdsNegativeMyId() {
-        Mockito.when(relationshipsDAO.followByIds(negativeId, positiveId)).thenReturn(true);
         relationshipsService.serviceFollowByIds(negativeId, positiveId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceFollowByIdsNegativeTargetId() {
-        Mockito.when(relationshipsDAO.followByIds(positiveId, negativeId)).thenReturn(true);
         relationshipsService.serviceFollowByIds(positiveId, negativeId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceFollowByIdsNegativeIds() {
-        Mockito.when(relationshipsDAO.followByIds(negativeId, negativeId)).thenReturn(true);
         relationshipsService.serviceFollowByIds(negativeId, negativeId);
     }
 
@@ -151,24 +139,21 @@ public class RelationshipsServiceTests {
     @Test()
     void serviceUnfollowByIdsValid() {
         Mockito.when(relationshipsDAO.unfollowByIds(positiveId, positiveId)).thenReturn(true);
-        relationshipsService.serviceUnfollowByIds(positiveId, positiveId);
+        Assert.assertTrue(relationshipsService.serviceUnfollowByIds(positiveId, positiveId));
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceUnfollowByIdsNegativeMyId() {
-        Mockito.when(relationshipsDAO.unfollowByIds(negativeId, positiveId)).thenReturn(true);
         relationshipsService.serviceUnfollowByIds(negativeId, positiveId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceUnfollowByIdsNegativeTargetId() {
-        Mockito.when(relationshipsDAO.unfollowByIds(positiveId, negativeId)).thenReturn(true);
         relationshipsService.serviceUnfollowByIds(positiveId, negativeId);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceUnfollowByIdsNegativeIds() {
-        Mockito.when(relationshipsDAO.unfollowByIds(negativeId, negativeId)).thenReturn(true);
         relationshipsService.serviceUnfollowByIds(negativeId, negativeId);
     }
 }

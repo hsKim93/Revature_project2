@@ -5,6 +5,7 @@ import dev.chirp.dao.implementations.PostDAO;
 import dev.chirp.entities.Post;
 import dev.chirp.service.implementations.PostService;
 import org.mockito.Mockito;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -46,27 +47,24 @@ public class PostServiceTests {
     void serviceCreatePostValid() {
         Post postOb = new Post(positiveId, positiveId, validString, validString);
         Mockito.when(postDAO.createPost(postOb)).thenReturn(true);
-        postService.serviceCreatePost(postOb);
+        Assert.assertTrue(postService.serviceCreatePost(postOb));
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceCreatePostLongsString() {
         Post postOb = new Post(positiveId, positiveId, longString, validString);
-        Mockito.when(postDAO.createPost(postOb)).thenReturn(true);
         postService.serviceCreatePost(postOb);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceCreatePostEmptyString() {
         Post postOb = new Post(positiveId, positiveId, emptyString, validString);
-        Mockito.when(postDAO.createPost(postOb)).thenReturn(true);
         postService.serviceCreatePost(postOb);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceCreatePostNegativeUserId() {
         Post postOb = new Post(positiveId, negativeID, emptyString, validString);
-        Mockito.when(postDAO.createPost(postOb)).thenReturn(true);
         postService.serviceCreatePost(postOb);
     }
 
@@ -77,13 +75,11 @@ public class PostServiceTests {
     void serviceGetPostByIdValid() {
         Post postOb = new Post(positiveId, positiveId, validString, validString);
         Mockito.when(postDAO.getPostById(positiveId)).thenReturn(postOb);
-        postService.serviceGetPostById(positiveId);
+        Assert.assertEquals(postService.serviceGetPostById(positiveId),postOb);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceGetPostByIdInvalidId() {
-        Post postOb = new Post(positiveId, positiveId, validString, validString);
-        Mockito.when(postDAO.getPostById(negativeID)).thenReturn(postOb);
         postService.serviceGetPostById(negativeID);
     }
 
@@ -97,15 +93,11 @@ public class PostServiceTests {
         List<Post> postList = new ArrayList<>();
         postList.add(postOb);
         Mockito.when(postDAO.getPostModule(positiveId)).thenReturn(postList);
-        postService.serviceGetPostModuleByPostId(positiveId);
+        Assert.assertEquals(postService.serviceGetPostModuleByPostId(positiveId),postList);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceGetPostModuleByIdInvalidId() {
-        Post postOb = new Post(positiveId, positiveId, validString, validString);
-        List<Post> postList = new ArrayList<>();
-        postList.add(postOb);
-        Mockito.when(postDAO.getPostModule(negativeID)).thenReturn(postList);
         postService.serviceGetPostModuleByPostId(negativeID);
     }
 
@@ -119,15 +111,11 @@ public class PostServiceTests {
         List<Post> postList = new ArrayList<>();
         postList.add(postOb);
         Mockito.when(postDAO.getPostsByUserId(positiveId)).thenReturn(postList);
-        postService.serviceGetPostByUserId(positiveId);
+        Assert.assertEquals(postService.serviceGetPostByUserId(positiveId),postList);
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceGetPostByUserIdInvalidId() {
-        Post postOb = new Post(positiveId, positiveId, validString, validString);
-        List<Post> postList = new ArrayList<>();
-        postList.add(postOb);
-        Mockito.when(postDAO.getPostsByUserId(negativeID)).thenReturn(postList);
         postService.serviceGetPostByUserId(negativeID);
     }
 
@@ -138,12 +126,11 @@ public class PostServiceTests {
     @Test()
     void serviceDeletePostByIdValid() {
         Mockito.when(postDAO.deletePostById(positiveId)).thenReturn(true);
-        postService.serviceDeletePostById(positiveId);
+        Assert.assertTrue(postService.serviceDeletePostById(positiveId));
     }
 
     @Test(expectedExceptions = InvalidInputException.class, expectedExceptionsMessageRegExp = "Invalid Input")
     void serviceDeletePostByIdInvalidId() {
-        Mockito.when(postDAO.deletePostById(negativeID)).thenReturn(true);
         postService.serviceDeletePostById(negativeID);
     }
 
