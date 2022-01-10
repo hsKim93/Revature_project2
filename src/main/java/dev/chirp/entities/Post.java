@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Post {
-    private List<Comment> comment;
     private String userName;
     private String firstName;
     private String lastName;
@@ -13,10 +12,11 @@ public class Post {
     private String content;
     private String date;
     private int likes;
-    List<Comment> comments;
+    private List<Comment> comment;
 
 
-    public Post(){}
+    public Post() {
+    }
 
     public Post(int postId, int userId, String content, String date) {
         this.postId = postId;
@@ -24,6 +24,7 @@ public class Post {
         this.content = content;
         this.date = date;
     }
+
     public Post(int postId, int userId, String content, String date, String userName, String firstName, String lastName) {
         this.postId = postId;
         this.userId = userId;
@@ -32,27 +33,6 @@ public class Post {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Post post = (Post) o;
-        return postId == post.postId && userId == post.userId && likes == post.likes && comment.equals(post.comment) && userName.equals(post.userName) && firstName.equals(post.firstName) && lastName.equals(post.lastName) && content.equals(post.content) && date.equals(post.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(comment, userName, firstName, lastName, postId, userId, content, date, likes);
-    }
-
-    public List<Comment> getComment() {
-        return comment;
-    }
-
-    public void setComment(List<Comment> comment) {
-        this.comment = comment;
     }
 
     public String getUserName() {
@@ -117,5 +97,26 @@ public class Post {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public List<Comment> getComment() {
+        return comment;
+    }
+
+    public void setComment(List<Comment> comment) {
+        this.comment = comment;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return postId == post.postId && userId == post.userId && likes == post.likes && Objects.equals(userName, post.userName) && Objects.equals(firstName, post.firstName) && Objects.equals(lastName, post.lastName) && Objects.equals(content, post.content) && Objects.equals(date, post.date) && Objects.equals(comment, post.comment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userName, firstName, lastName, postId, userId, content, date, likes, comment);
     }
 }
