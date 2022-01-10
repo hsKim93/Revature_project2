@@ -10,58 +10,64 @@ import java.util.List;
 
 public class PostDAOTests {
     PostDAO postDao = new PostDAO();
+
     @Test
-    void createPost(){
-        Post samplePost = new Post(0,8000,"Sample Post", "0");
+    void createPost() {
+        Post samplePost = new Post(0, 8000, "Sample Post", "0");
         boolean post = postDao.createPost(samplePost);
         Assert.assertTrue(post);
     }
-    @Test
-    void createPostWrongUserId(){
 
-            Post samplePost = new Post(0, 0, "Sample Post", "0");
-            boolean post = postDao.createPost(samplePost);
-            Assert.assertFalse(post);
+    @Test
+    void createPostWrongUserId() {
+
+        Post samplePost = new Post(0, 0, "Sample Post", "0");
+        boolean post = postDao.createPost(samplePost);
+        Assert.assertFalse(post);
     }
 
     @Test
-    void getPostById(){
+    void getPostById() {
         Post post = postDao.getPostById(8000);
         Assert.assertTrue(post.getPostId() != 0);
     }
+
     @Test
-    void getPostByNonExistingId(){
-        try{
-        Post post = postDao.getPostById(0);
-        Assert.assertTrue(post.getPostId() != 0);
-    }catch (PostNotFound e){
+    void getPostByNonExistingId() {
+        try {
+            Post post = postDao.getPostById(0);
+            Assert.assertTrue(post.getPostId() != 0);
+        } catch (PostNotFound e) {
             Assert.assertSame(e.getMessage(), "Post not found");
         }
 
     }
 
     @Test
-    void getAllPosts(){
+    void getAllPosts() {
         List<Post> postList = postDao.getAllPosts();
         Assert.assertTrue(postList.size() > 0);
     }
+
     @Test
-    void getPostsByUserId(){
+    void getPostsByUserId() {
         List<Post> postList = postDao.getPostsByUserId(8000);
         Assert.assertTrue(postList.size() > 0);
     }
+
     @Test
-    void getPostsByNonExistingUserId(){
+    void getPostsByNonExistingUserId() {
         List<Post> postList = postDao.getPostsByUserId(1);
         Assert.assertEquals(postList.size(), 0);
     }
+
     @Test
     void deletePostsByPostId() {
-     try{
-        boolean deleted = postDao.deletePostById(8002);
-        Assert.assertTrue(deleted);
-    }catch (PostNotFound e){
-         Assert.assertSame(e.getMessage(), "Post not found");
+        try {
+            boolean deleted = postDao.deletePostById(8002);
+            Assert.assertTrue(deleted);
+        } catch (PostNotFound e) {
+            Assert.assertSame(e.getMessage(), "Post not found");
         }
     }
 }
