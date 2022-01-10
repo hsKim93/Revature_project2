@@ -1,5 +1,4 @@
 const url = "http://localhost:8080"
-let userList = [];
 
 const loadUserList = async () => {
     const response = await fetch(url + "/users", {
@@ -9,43 +8,53 @@ const loadUserList = async () => {
 
     if (response.status === 200) {
         const body = await response.json();
+        let tbody = document.getElementById("tableBody");
         for (user of body) {
-            userList.push(user);
-            document.getElementById("userDetail").innerHTML += 
-            `
-            <div class="list-group bg-black border-dark p-1">
-            <li href="#" class="list-group-item list-group-item-dark" style="font-weight: bold;">` + user.firstName + " " + user.lastName +
-            `
-            <button type="button" class="btn-close btn-close-dark float-end" aria-label="Close" id=user` + user.userId +  `
-            ></button>
-            </li>
-            </div>
-            `;
+            tbody.insertRow().innerHTML = createRow(user);
+            addEvents(user.userId);
         }
     } else {
-        document.getElementById("userDetail").innerHTML = "No User Found!";
+        console.log("this should never happen - loadUserList");
     }
 }
 
+const createRow = (user) => {
+    return createTd(user.userId, user.userName, user.firstName, user.lastName);
+}
 
+const createTd = (userId, userName, firstName, lastName) => {
+    return `<td class="center"># ` + userId + `</td>
+    <td class="center">@` + userName + `</td>
+    <td class="center">` + firstName + ` ` + lastName + `</td>
+    <td class="center">
+    <button id="` + userId + `d" class="btn btn-danger btn-w">delete</button>
+    </td>`;
+}
 
-const deleteUser = async (userId) => {
+const addEvents = (userId) => {
+    document.getElementById(userId + "d").addEventListener("click", deleteUser);
+}
+
+const deleteUser = async (e) => {
+    let userId = e.target.id.substring(0, e.target.id.length-1);
     const response = await fetch(url + "/user/" + userId, {
         method: "DELETE",
         mode: "cors"
     });
     let responseBody = await response.json();
     if (response.status === 200) {
-        /**
-         * @todo
-         * delete html of this user OR reload the users list
-         */
-        
+         let p = document.getElementById(userId + "d").parentNode.parentNode;
+         p.parentNode.removeChild(p);
     } else {
         console.log("this should never happen - deleteUser");
     }
 }
 
+
+const toAdminHomePage = () => {
+    location.href = "../homepage/adminhomepage.html";
+}
+document.getElementById("users").addEventListener("click", toAdminHomePage);
 
 const toAdminPostPage = () => {
     location.href = "../post/adminpostpage.html";
@@ -59,4 +68,3 @@ const logout = () => {
 document.getElementById("logout").addEventListener("click", logout);
 
 loadUserList();
-document.getElementById("").addEventListener("click", );
