@@ -16,22 +16,23 @@ public class MixedController {
     PostService postService;
     CommentService commentService;
     RelationshipsService relationshipsService;
+
     public MixedController(PostService postService, UserService userService, CommentService commentService, RelationshipsService relationshipsService) {
-        this.postService=postService;
-        this.userService=userService;
+        this.postService = postService;
+        this.userService = userService;
         this.commentService = commentService;
         this.relationshipsService = relationshipsService;
     }
 
-    public Handler getPostsModuleByUserId = ctx ->{
+    public Handler getPostsModuleByUserId = ctx -> {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
             List<Integer> gotFollowing = this.relationshipsService.serviceGetFollowingByUserId(id);
             gotFollowing.add(id);
             List<Object> returnList = new ArrayList<>();
-            for(int a : gotFollowing){
+            for (int a : gotFollowing) {
                 List<Post> posts = this.postService.serviceGetPostModuleByPostId(a);
-                for(Post b :posts){
+                for (Post b : posts) {
                     b.setLikes(this.relationshipsService.serviceGetLikesByPostId(b.getPostId()));
                     b.setComment(this.commentService.serviceGetCommentsByPostId(b.getPostId()));
                     returnList.add(b);
@@ -41,27 +42,31 @@ public class MixedController {
             String jsonPost = gson.toJson(returnList, List.class);
             ctx.result(jsonPost);
             ctx.status(200);
-        }catch (Exception e){
-            ctx.result("Type error:" + e.getMessage());
+        } catch (Exception e) {
+            ctx.result(e.getMessage());
             ctx.status(400);
-        }};
-    public Handler getOneUserModuleByUserId = ctx ->{
+        }
+    };
+
+
+    public Handler getOneUserModuleByUserId = ctx -> {
         try {
             int id = Integer.parseInt(ctx.pathParam("id"));
-                List<Post> posts = this.postService.serviceGetPostModuleByPostId(id);
-                List<Object> returnList = new ArrayList<>();
-                for(Post b :posts){
-                    b.setLikes(this.relationshipsService.serviceGetLikesByPostId(b.getPostId()));
-                    b.setComment(this.commentService.serviceGetCommentsByPostId(b.getPostId()));
-                    returnList.add(b);
+            List<Post> posts = this.postService.serviceGetPostModuleByPostId(id);
+            List<Object> returnList = new ArrayList<>();
+            for (Post b : posts) {
+                b.setLikes(this.relationshipsService.serviceGetLikesByPostId(b.getPostId()));
+                b.setComment(this.commentService.serviceGetCommentsByPostId(b.getPostId()));
+                returnList.add(b);
 
             }
             Gson gson = new Gson();
             String jsonPost = gson.toJson(returnList, List.class);
             ctx.result(jsonPost);
             ctx.status(200);
-        }catch (Exception e){
-            ctx.result("Type error:" + e.getMessage());
+        } catch (Exception e) {
+            ctx.result(e.getMessage());
             ctx.status(400);
-        }};
+        }
+    };
 }
