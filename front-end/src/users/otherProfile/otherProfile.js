@@ -127,9 +127,9 @@ const loadAll = async () => {
   getFollowing();
 }
 
-console.log(followed);
 followButton.addEventListener("click", followButtonPressed.bind(followed));
 loadAll();
+
 async function getOneUserModulebyUserId(id) {
   let response = await fetch(url + `/post/module/${id}`, {
     method: "GET",
