@@ -1,10 +1,10 @@
 package dev.chirp.service.implementations;
 
+import dev.chirp.customexceptions.InvalidInputException;
 import dev.chirp.dao.interfaces.CommentDAOInt;
 import dev.chirp.entities.Comment;
 import dev.chirp.service.interfaces.CommentService;
 
-import java.util.EmptyStackException;
 import java.util.List;
 
 public class CommentServiceImp implements CommentService {
@@ -18,20 +18,25 @@ public class CommentServiceImp implements CommentService {
     @Override
     public Comment serviceCreateComment(Comment comment) {
 
-        if (comment.getCommentContent().equals("")) {
-            throw new EmptyStackException();
-        } else {
-            return this.commentDAO.createComment(comment);
+        if (comment.getUserId() < 0 || comment.getPostId() < 0 || comment.getCommentContent().isEmpty() || comment.getCommentContent().length() > 500) {
+            throw new InvalidInputException();
         }
+            return this.commentDAO.createComment(comment);
     }
 
     @Override
     public Comment serviceGetCommentById(int commentId) {
+        if (commentId <= 0) {
+            throw new InvalidInputException();
+        }
         return this.commentDAO.getCommentById(commentId);
     }
 
     @Override
     public List<Comment> serviceGetCommentsByPostId(int postId) {
+        if (postId <= 0) {
+            throw new InvalidInputException();
+        }
         return this.commentDAO.getCommentsByPostId(postId);
     }
 
@@ -42,6 +47,9 @@ public class CommentServiceImp implements CommentService {
 
     @Override
     public boolean serviceDeleteCommentById(int commentId) {
+        if (commentId <= 0) {
+            throw new InvalidInputException();
+        }
         return this.commentDAO.deleteCommentById(commentId);
     }
 }
