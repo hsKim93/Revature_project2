@@ -1,5 +1,5 @@
 try {
-    if (!sessionStorage.getItem(isAdmin)) {
+    if (!sessionStorage.getItem("isAdmin")) {
         sessionStorage.clear;
         location.href = "../../login/index.html";
     }
