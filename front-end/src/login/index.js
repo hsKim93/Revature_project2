@@ -45,7 +45,6 @@ const login = async () => {
         sessionStorage.setItem("email", body.email);
         sessionStorage.setItem("isAdmin", body.isAdmin);
         const isAdmin = sessionStorage.getItem("isAdmin");
-        console.log(isAdmin);
         if (isAdmin == "true") {
             location.href = "../admin/homepage/adminhomepage.html";
         } else {
