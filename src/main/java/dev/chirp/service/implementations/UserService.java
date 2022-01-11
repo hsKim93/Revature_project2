@@ -9,10 +9,15 @@ import java.util.ArrayList;
 
 public class UserService implements UserServiceInt {
 
-    UserDAO userDAO = new UserDAO();
+
+    private UserDAO userDAO;
+
+    public UserService(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
     @Override
-    public User serviceRequestLogin(String userName, String password) throws InvalidInputException {
+    public User serviceRequestLogin(String userName, String password) {
         if (userName.length() > 20 || password.length() > 20 ||
                 userName.isEmpty() || password.isEmpty()) {
             throw new InvalidInputException();
@@ -22,7 +27,7 @@ public class UserService implements UserServiceInt {
 
     @Override
     public User serviceCreateAccount(String userName, String password, String firstName,
-                                     String lastName, String email) throws InvalidInputException {
+                                     String lastName, String email) {
         if (userName.length() > 20 || password.length() > 20 || firstName.length() > 20 ||
                 lastName.length() > 20 || email.length() > 40 ||
                 userName.isEmpty() || password.isEmpty() || firstName.isEmpty() ||
@@ -33,7 +38,12 @@ public class UserService implements UserServiceInt {
     }
 
     @Override
-    public User serviceGetUserById(int id) throws InvalidInputException {
+    public ArrayList<User> serviceGetUsers() {
+        return userDAO.getUsers();
+    }
+
+    @Override
+    public User serviceGetUserById(int id) {
         if (id < 0) {
             throw new InvalidInputException();
         }
@@ -41,7 +51,7 @@ public class UserService implements UserServiceInt {
     }
 
     @Override
-    public ArrayList<User> serviceGetUsersByFirstName(String firstName) throws InvalidInputException {
+    public ArrayList<User> serviceGetUsersByFirstName(String firstName) {
         if (firstName.length() > 20 || firstName.isEmpty()) {
             throw new InvalidInputException();
         }
@@ -50,10 +60,10 @@ public class UserService implements UserServiceInt {
 
     @Override
     public User serviceEditUserInformationById(int id, String userName, String password, String firstName, String lastName,
-                                               String email) throws InvalidInputException {
+                                               String email) {
         if (id < 0 || userName.length() > 20 || password.length() > 20 || firstName.length() > 20 ||
                 lastName.length() > 20 || email.length() > 40 ||
-                userName.isEmpty() || password.isEmpty() || firstName.isEmpty() ||
+                userName.isEmpty() || firstName.isEmpty() ||
                 lastName.isEmpty() || email.isEmpty()) {
             throw new InvalidInputException();
         }
@@ -61,7 +71,7 @@ public class UserService implements UserServiceInt {
     }
 
     @Override
-    public User serviceDeleteUserById(int id) throws InvalidInputException {
+    public User serviceDeleteUserById(int id) {
         if (id < 0) {
             throw new InvalidInputException();
         }

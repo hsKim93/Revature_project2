@@ -8,6 +8,7 @@ public class Comment {
     private int userId;
     private String commentContent;
     private String date;
+    private String userName;
 
     public Comment(){}
 
@@ -18,7 +19,14 @@ public class Comment {
         this.commentContent = commentContent;
         this.date = date;
     }
-
+    public Comment(int commentId, int postId, int userId, String commentContent, String date, String userName) {
+        this.commentId = commentId;
+        this.postId = postId;
+        this.userId = userId;
+        this.commentContent = commentContent;
+        this.date = date;
+        this.userName = userName;
+    }
     @Override
     public String toString() {
         return "Comment{" +

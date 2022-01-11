@@ -1,6 +1,7 @@
 package dao;
 
 
+import dev.chirp.customexceptions.DuplicateException;
 import dev.chirp.dao.implementations.UserDAO;
 import dev.chirp.entities.User;
 import org.testng.Assert;
@@ -75,14 +76,14 @@ public class UserDAOTests {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
+    @Test(expectedExceptions = DuplicateException.class, expectedExceptionsMessageRegExp = "duplicate email")
     void testCreateAccountExistingEmail() {
-        Assert.assertNull(userDAO.createAccount(username, password, firstName, lastName, existingEmail));
+        userDAO.createAccount(username + "1", password, firstName, lastName, existingEmail);
     }
 
-    @Test
+    @Test(expectedExceptions = DuplicateException.class, expectedExceptionsMessageRegExp = "duplicate user name")
     void testCreateAccountExistingUserName() {
-        Assert.assertNull(userDAO.createAccount(existingUserName, password, firstName, lastName, correctEmail));
+        userDAO.createAccount(existingUserName, password, firstName, lastName, correctEmail + "1");
     }
 
     /**
@@ -101,6 +102,20 @@ public class UserDAOTests {
     @Test
     void testGetUserByIdNonExistingId() {
         Assert.assertNull(userDAO.getUserById(nonExistingId));
+    }
+
+    /**
+     * getUsers
+     */
+
+    @Test
+    void testGetUsers() {
+        ArrayList<User> users = userDAO.getUsers();
+        if (users != null) {
+            Assert.assertTrue(true);
+        } else {
+            Assert.fail();
+        }
     }
 
     /**
@@ -162,28 +177,28 @@ public class UserDAOTests {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
+    @Test(expectedExceptions = DuplicateException.class, expectedExceptionsMessageRegExp = "duplicate user name")
     void testEditUserInformationByIdExistingName() {
-        Assert.assertNull(userDAO.editUserInformationById(
+        userDAO.editUserInformationById(
                 toBeEditedId,
                 existingUserName,
                 newPassword,
                 newFirstName,
                 newLastName,
-                newEmail
-        ));
+                newEmail+"1"
+        );
     }
 
-    @Test
+    @Test(expectedExceptions = DuplicateException.class, expectedExceptionsMessageRegExp = "duplicate email")
     void testEditUserInformationByIdExistingEmail() {
-        Assert.assertNull(userDAO.editUserInformationById(
+        userDAO.editUserInformationById(
                 toBeEditedId,
-                newUserName,
+                newUserName+"1",
                 newPassword,
                 newFirstName,
                 newLastName,
                 existingEmail
-        ));
+        );
     }
 
     @Test

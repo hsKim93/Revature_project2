@@ -1,20 +1,14 @@
 package dev.chirp.dao.implementations;
 
+import dev.chirp.customexceptions.DuplicateException;
 import dev.chirp.dao.interfaces.UserDAOInt;
 import dev.chirp.entities.User;
 import dev.chirp.utility.ConnectionDB;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class UserDAO implements UserDAOInt {
-
-    static Logger logger = LoggerFactory.getLogger(UserDAO.class);
 
     @Override
     public User requestLogin(String userName, String password) {
@@ -35,7 +29,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getBoolean("is_admin")
             );
         } catch (SQLException e) {
-            logger.error("SQLException in UserDAO.requestLogin");
+            e.printStackTrace();
             return null;
         }
     }
@@ -61,6 +55,37 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
+            if (e.getMessage().contains("user_name")) {
+                throw new DuplicateException("duplicate user name");
+            } else if (e.getMessage().contains("email")) {
+                throw new DuplicateException("duplicate email");
+            } else {
+                return null;
+            }
+        }
+    }
+
+    @Override
+    public ArrayList<User> getUsers() {
+        try (Connection connection = ConnectionDB.createConnection()) {
+            String sql = "select user_id, user_name, first_name, last_name, email from" +
+                    "\"project2\".users where is_admin = false";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            ArrayList<User> users = new ArrayList<>();
+            while (resultSet.next()) {
+                users.add(new User(
+                        resultSet.getInt("user_id"),
+                        resultSet.getString("user_name"),
+                        resultSet.getString("first_name"),
+                        resultSet.getString("last_name"),
+                        resultSet.getString("email")
+                ));
+            }
+            return users;
+        } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -82,6 +107,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -90,7 +116,7 @@ public class UserDAO implements UserDAOInt {
     public ArrayList<User> getUsersByFirstName(String firstName) {
         try (Connection connection = ConnectionDB.createConnection()) {
             String sql = "select user_id, user_name, first_name, last_name, email from " +
-                    "\"project2\".users where first_name like ? and is_admin = false";
+                    "\"project2\".users where first_name ilike ? and is_admin = false";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, "%" + firstName + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -108,6 +134,7 @@ public class UserDAO implements UserDAOInt {
             }
             return !users.isEmpty() ? users : null;
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }
@@ -116,16 +143,30 @@ public class UserDAO implements UserDAOInt {
     public User editUserInformationById(int id, String userName, String password,
                                         String firstName, String LastName, String email) {
         try (Connection connection = ConnectionDB.createConnection()) {
-            String sql = "update  \"project2\".users set user_name = ?, password = ?, first_name = ?, " +
-                    "last_name = ?, email = ? where user_id = ? " +
-                    "returning user_id, user_name, first_name, last_name, email";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, userName);
-            preparedStatement.setString(2, password);
-            preparedStatement.setString(3, firstName);
-            preparedStatement.setString(4, LastName);
-            preparedStatement.setString(5, email);
-            preparedStatement.setInt(6, id);
+            String sql;
+            PreparedStatement preparedStatement;
+            if (password.isEmpty()) {
+                sql = "update  \"project2\".users set user_name = ?, first_name = ?, " +
+                        "last_name = ?, email = ? where user_id = ? " +
+                        "returning user_id, user_name, first_name, last_name, email";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, userName);
+                preparedStatement.setString(2, firstName);
+                preparedStatement.setString(3, LastName);
+                preparedStatement.setString(4, email);
+                preparedStatement.setInt(5, id);
+            } else {
+                sql = "update  \"project2\".users set user_name = ?, password = ?, first_name = ?, " +
+                        "last_name = ?, email = ? where user_id = ? " +
+                        "returning user_id, user_name, first_name, last_name, email";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, userName);
+                preparedStatement.setString(2, password);
+                preparedStatement.setString(3, firstName);
+                preparedStatement.setString(4, LastName);
+                preparedStatement.setString(5, email);
+                preparedStatement.setInt(6, id);
+            }
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             return new User(
@@ -136,7 +177,14 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
-            return null;
+            e.printStackTrace();
+            if (e.getMessage().contains("user_name")) {
+                throw new DuplicateException("duplicate user name");
+            } else if (e.getMessage().contains("email")) {
+                throw new DuplicateException("duplicate email");
+            } else {
+                return null;
+            }
         }
     }
 
@@ -157,6 +205,7 @@ public class UserDAO implements UserDAOInt {
                     resultSet.getString("email")
             );
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
     }

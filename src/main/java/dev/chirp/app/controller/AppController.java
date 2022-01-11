@@ -1,26 +1,31 @@
 package dev.chirp.app.controller;
 
-import dev.chirp.app.controller.controllers.CommentController;
-import dev.chirp.app.controller.controllers.PostController;
-import dev.chirp.app.controller.controllers.RelationshipsController;
-import dev.chirp.app.controller.controllers.UserController;
-import dev.chirp.dao.implementations.CommentDAOImp;
-import dev.chirp.dao.interfaces.CommentDAO;
+import dev.chirp.app.controller.controllers.*;
+import dev.chirp.dao.implementations.CommentDAO;
+import dev.chirp.dao.implementations.PostDAO;
+import dev.chirp.dao.implementations.RelationshipsDAO;
+import dev.chirp.dao.implementations.UserDAO;
+import dev.chirp.dao.interfaces.CommentDAOInt;
 import dev.chirp.service.implementations.CommentServiceImp;
 import dev.chirp.service.implementations.PostService;
 import dev.chirp.service.implementations.RelationshipsService;
+import dev.chirp.service.implementations.UserService;
 import dev.chirp.service.interfaces.CommentService;
 
 public class AppController {
-    //   Irfan
-    public PostService postService = new PostService();
-    public RelationshipsService relationshipsService = new RelationshipsService();
-    public RelationshipsController relationshipsController = new RelationshipsController(relationshipsService);
-    public PostController postController = new PostController(postService);
-    //   Hyungsuk
-    public UserController userController = new UserController();
+   //   Hyungsuk
+    public UserController userController = new UserController(new UserService(new UserDAO()));
     // Loc
-    public CommentDAO commentDAO = new CommentDAOImp();
+    public CommentDAOInt commentDAO = new CommentDAO();
     public CommentService commentService = new CommentServiceImp(commentDAO);
     public CommentController commentController = new CommentController(commentService);
+    //   Irfan
+    public RelationshipsController relationshipsController = new RelationshipsController(new RelationshipsService(new RelationshipsDAO()));
+    public PostController postController = new PostController(new PostService(new PostDAO()));
+    public MixedController mixedController = new MixedController(
+            new PostService(new PostDAO()),
+            new UserService(new UserDAO()),
+            commentService,
+            new RelationshipsService(new RelationshipsDAO()));
+
 }
