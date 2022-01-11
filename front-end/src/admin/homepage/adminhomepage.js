@@ -18,6 +18,10 @@ const loadUserList = async () => {
     }
 }
 
+const sortUser = (userList) => {
+    userList.sort((user));
+}
+
 const createRow = (user) => {
     return createTd(user.userId, user.userName, user.firstName, user.lastName);
 }
