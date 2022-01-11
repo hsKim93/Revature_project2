@@ -41,6 +41,9 @@ public class CommentController {
         } catch (CommentNotFound e) {
             ctx.result(e.getMessage());
             ctx.status(400);
+        } catch (Exception e) {
+            ctx.result("Exception " + e.getMessage());
+            ctx.status(400);
         }
     };
 
@@ -55,15 +58,23 @@ public class CommentController {
         } catch (CommentNotFound e) {
             ctx.result(e.getMessage());
             ctx.status(400);
+        } catch (Exception e) {
+            ctx.result("Exception " + e.getMessage());
+            ctx.status(400);
         }
     };
 
     public Handler getAllComments = ctx -> {
-        List<Comment> comments = this.commentService.serviceGetAllComments();
-        Gson gson = new Gson();
-        String commentsJSONs = gson.toJson(comments);
-        ctx.result(commentsJSONs);
-        ctx.status(200);
+        try {
+            List<Comment> comments = this.commentService.serviceGetAllComments();
+            Gson gson = new Gson();
+            String commentsJSONs = gson.toJson(comments);
+            ctx.result(commentsJSONs);
+            ctx.status(200);
+        } catch (Exception e) {
+            ctx.result("Exception " + e.getMessage());
+            ctx.status(400);
+        }
     };
 
     public Handler deleteComment = ctx -> {
@@ -76,6 +87,9 @@ public class CommentController {
             ctx.status(200);
         } catch (CommentNotFound e) {
             ctx.result(e.getMessage());
+            ctx.status(400);
+        } catch (Exception e) {
+            ctx.result("Exception " + e.getMessage());
             ctx.status(400);
         }
     };
