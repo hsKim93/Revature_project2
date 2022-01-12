@@ -1,6 +1,8 @@
 package E2E.runner;
 
 import E2E.poms.LoginPage;
+import E2E.poms.admin.AdminHomePage;
+import E2E.poms.admin.AdminPostPage;
 import E2E.poms.user.UserHomepage;
 import E2E.poms.user.UserMyProfilePage;
 import E2E.poms.user.UserOtherProfilePage;
@@ -24,6 +26,9 @@ public class TestRunner {
 
     // POMs
     public static LoginPage loginPage;
+    public static AdminHomePage adminHomePage;
+    public static AdminPostPage adminPostPage;
+
     public static UserHomepage userHomepage;
     public static UserMyProfilePage userMyProfilePage;
     public static UserOtherProfilePage userOtherProfilePage;
@@ -36,6 +41,8 @@ public class TestRunner {
 
         // POMs
         loginPage = new LoginPage(driver);
+        adminHomePage = new AdminHomePage(driver);
+        adminPostPage = new AdminPostPage(driver);
         userHomepage = new UserHomepage(driver);
         userMyProfilePage = new UserMyProfilePage(driver);
         userOtherProfilePage = new UserOtherProfilePage(driver);
