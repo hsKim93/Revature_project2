@@ -88,9 +88,28 @@ Step 3: Set up your environment variables available from your client tool into y
 
 Step 4: Open Index.html and enjoy
 
-## Usage
+## Usage for user
 
-Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+> 1. Create an account of the login page.
+> 2. After being redirected to the homepage, simply create a post by typing content into the text box and clicking the chirp button.
+> 3. To create a comment, click on the comments button on the bottom of a post,insert comment content and click chirp next to the text box.
+> 4. To view all your posts click the My Profile button on the navigation bar.
+> 5. To delete posts go to your profile and click delete button on the top right corner of a post.
+> 6. To delete comment click the delete button the far right of the comment.(Note that you can only delete comments on your post or comments that were created by you)
+> 7. To search for a user, locate the search bar on the navigation var and type in the first name of the person you are searching for, click search and finally 
+> click on the search result to be redirected to their page.
+> 8. Click follow/Unfollow button on a user profile to unfollow or follow that user.
+> 9. Click Like button the like or unlike a post.
+
+
+## Usage for admin
+
+> 1. Login as an admin
+> 2. on the homepage click the delete bbutton to delete a user.
+> 3. Click posts page to see posts.
+> 4. Click delete button on post page to delete a post.
+> 5. Click show comments the post page to show the comments on a post.
+> 6. Click delete comment button to delete a comment after clicking show comments on the post page.
 
 ## Contributors
 - [Hyungsuk Kim](https://github.com/hsKim93)
