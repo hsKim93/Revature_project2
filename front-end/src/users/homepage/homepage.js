@@ -52,18 +52,6 @@ async function createPost() {
     document.getElementById("postInfo").innerHTML = `Post could not be sent`
   }
 }
-async function deleteComment1(commentId) {
-  const response = await fetch(url + "/comment/commentId/" + commentId, {
-    method: "DELETE",
-    mode: "cors"
-  });
-  const body = await response.json();
-  if (response.status === 200) {
-    document.getElementById("commentOb" + commentId).remove();
-  } else {
-    document.getElementById("commentOb" + commentId).innerHTML = + "Could not be deleted"
-  }
-}
 
 async function getPostModulebyUserId(id) {
   let response = await fetch(url + `/post/module/${id}`, {
@@ -214,13 +202,8 @@ async function loadPostModule() {
 
 
     for (let b of a.comment) {
+      document.getElementById("comment" + b.postId).innerHTML += `<li class="list-group-item bg-black text-white"><img src="../../resources/commentIcon.png" style="height:1.5em;width:1.5em;"><span class="font-weight-bold" style="color:rgb(69, 155, 212);">  @` + b.userName + `  </span>` + b.commentContent + `</li>`
 
-      document.getElementById("comment" + b.postId).innerHTML += `<li id="commentOb${b.commentId}"class="list-group-item bg-black text-white">
-      <img src="../../resources/commentIcon.png" style="height:1.5em;width:1.5em;">
-      <span class="font-weight-bold" style="color:rgb(69, 155, 212);">  @`+ b.userName + `</span> ` + b.commentContent + ` </li>`;
-      if (Number(sessionStorage.getItem("userId")) === b.userId) {
-        document.getElementById("commentOb" + b.commentId).innerHTML += `<a class="btn" style="text-align:end;color:red;Float:right;" id="deleteComment${b.commentId}" onclick="deleteComment1(${b.commentId})">delete</a>`
-      }
     }
   }
 }

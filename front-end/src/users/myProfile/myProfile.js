@@ -208,18 +208,6 @@ async function getOneUserModulebyUserId(id) {
 }
 
 
-async function deleteComment1(commentId) {
-  const response = await fetch(url + "/comment/commentId/" + commentId, {
-    method: "DELETE",
-    mode: "cors"
-  });
-  const body = await response.json();
-  if (response.status === 200) {
-    document.getElementById("commentOb" + commentId).remove();
-  } else {
-    document.getElementById("commentOb" + commentId).innerHTML = + "Could not be deleted"
-  }
-}
 
 async function deletePost1(postId) {
   const response = await fetch(url + "/post/delete/" + postId, {
@@ -326,7 +314,7 @@ async function loadPostModule() {
     <div class="accordion-header" id="heading` +
       a.postId +
       `">
-      <a class="btn" id="deletePost`+ a.postId + `" style="text-align:end;color:red;Float:right;" onclick="deletePost1(` + a.postId + `)">Delete</a>
+      <a class="btn" style="text-align:end;color:red;Float:right;" onclick="deletePost1(`+ a.postId + `)">Delete</a>
       <img src="../../resources/postIcon.png" style="height:2em;width:2em;">
       <a style="font-weight: bold;">` +
       a.firstName + " " + a.lastName +
@@ -367,12 +355,8 @@ async function loadPostModule() {
   </div>`;
 
 
-
     for (let b of a.comment) {
-
-      document.getElementById("comment" + b.postId).innerHTML += `<li id="commentOb${b.commentId}"class="list-group-item bg-black text-white">
-    <img src="../../resources/commentIcon.png" style="height:1.5em;width:1.5em;">
-    <span class="font-weight-bold" style="color:rgb(69, 155, 212);">  @`+ b.userName + `</span>  ` + b.commentContent + ` <a class="btn" style="text-align:end;color:red;Float:right;" id="deleteComment${b.commentId}" onclick="deleteComment1(${b.commentId})">delete</a></li>`;
+      document.getElementById("comment" + b.postId).innerHTML += `<li class="list-group-item bg-black text-white"><img src="../../resources/commentIcon.png" style="height:1.5em;width:1.5em;"><span class="font-weight-bold" style="color:rgb(69, 155, 212);">  @` + b.userName + `  </span>` + b.commentContent + `</li>`
 
     }
   }
