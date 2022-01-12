@@ -15,12 +15,12 @@ Feature: As a user I want to perform various actions to manage posts, likes, and
   Scenario:As a user I want to like a post so I can show my interest in a post
     Given the user is on homepage
     When the user clicks like post button
-    Then the like count will increment by 1
+    Then the like count will increment by one
 
   Scenario:As a user I want to unlike a post so I can undo my mistakes
     Given the user is on homepage
     When the user clicks unlike comment button
-    Then the like count will decrement by 1
+    Then the like count will decrement by one
 
   Scenario:As a user I want to leave a comment to a post to share my thoughts about the post
     Given the user is on homepage

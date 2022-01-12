@@ -19,7 +19,7 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="classpath:features", glue="E2E.steps")
+@CucumberOptions(features="classpath:features", glue="E2E.steps", plugin = {"pretty", "html:src/test/resources/reports/html-reports.html"})
 public class TestRunner {
     public static WebDriver driver;
     public static WebDriverWait explicitWait;
@@ -38,7 +38,7 @@ public class TestRunner {
         File file = new File("src/test/resources/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         driver = new ChromeDriver();
-
+        driver.manage().window().maximize();
         // POMs
         loginPage = new LoginPage(driver);
         adminHomePage = new AdminHomePage(driver);
@@ -49,7 +49,7 @@ public class TestRunner {
         driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        explicitWait = new WebDriverWait(driver, 1);
+        explicitWait = new WebDriverWait(driver, 20);
 
 
     }
