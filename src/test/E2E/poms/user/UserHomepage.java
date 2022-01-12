@@ -49,14 +49,14 @@ public class UserHomepage {
     public WebElement getPostContent;
 
     @FindBy(xpath = "//*[@id=\"heading950\"]/p[2]/a[2]")
-    public WebElement getCommentCollapse;
+    public WebElement getCommentCollapseForC;
+
+    @FindBy(xpath = "//*[@id=\"heading951\"]/p[2]/a[2]")
+    public WebElement getCommentCollapseForD;
 
     @FindBy(id = "inputComment950")
     public WebElement getCommentInput;
 
     @FindBy(xpath = "//*[@id=\"commentSection950\"]/button")
     public WebElement getSendCommentButton;
-
-    @FindBy(xpath = "//*[@id=\"commentOb23\"]/text()")
-    public WebElement getFirstComment;
 }
