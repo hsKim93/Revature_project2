@@ -13,6 +13,9 @@ public class UserMyProfilePage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(id = "email")
+    public WebElement getEmail;
+
     @FindBy(id = "editButton")
     public WebElement getEditButton;
 
@@ -31,4 +34,9 @@ public class UserMyProfilePage {
     @FindBy(id = "editProfileButton")
     public WebElement getUpdateProfileButton;
 
+    @FindBy(id = "deletePost951")
+    public WebElement getDeletePostButton;
+
+    @FindBy(id = "deleteComment951")
+    public WebElement getDeleteCommentButton;
 }

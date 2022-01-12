@@ -1,5 +1,6 @@
 package E2E.poms.user;
 
+import org.mockito.internal.matchers.Find;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,9 +33,30 @@ public class UserHomepage {
     @FindBy(id = "logout")
     public WebElement getLogoutButton;
 
-    @FindBy(id = "likeButton28")
+    @FindBy(id = "likeButton950")
     public WebElement getLikeButton;
 
     @FindBy(xpath = "//*[@id=\"searchList\"]/li[1]/a/span/p")
     public WebElement getFirstSearchResult;
+
+    @FindBy(id = "likeStatus950")
+    public WebElement getLikeCount;
+
+    @FindBy(xpath = "//*[@id=\"headingNew\"]")
+    public WebElement getFirstPost;
+
+    @FindBy(id = "heading950")
+    public WebElement getPostContent;
+
+    @FindBy(xpath = "//*[@id=\"heading950\"]/p[2]/a[2]")
+    public WebElement getCommentCollapse;
+
+    @FindBy(id = "inputComment950")
+    public WebElement getCommentInput;
+
+    @FindBy(xpath = "//*[@id=\"commentSection950\"]/button")
+    public WebElement getSendCommentButton;
+
+    @FindBy(xpath = "//*[@id=\"commentOb23\"]/text()")
+    public WebElement getFirstComment;
 }

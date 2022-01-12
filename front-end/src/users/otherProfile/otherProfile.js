@@ -70,6 +70,18 @@ const followButtonPressed = async () => {
     follow();
   }
 }
+async function deleteComment1(commentId) {
+  const response = await fetch(url + "/comment/commentId/" + commentId, {
+    method: "DELETE",
+    mode: "cors"
+  });
+  const body = await response.json();
+  if (response.status === 200) {
+    document.getElementById("commentOb" + commentId).remove();
+  } else {
+    document.getElementById("commentOb" + commentId).innerHTML = + "Could not be deleted"
+  }
+}
 
 
 const loadProfile = async () => {
@@ -280,8 +292,13 @@ async function loadPostModule() {
 
 
     for (let b of a.comment) {
-      document.getElementById("comment" + b.postId).innerHTML += `<li class="list-group-item bg-black text-white"><img src="../../resources/commentIcon.png" style="height:1.5em;width:1.5em;"><span class="font-weight-bold" style="color:rgb(69, 155, 212);">  @` + b.userName + `  </span>` + b.commentContent + `</li>`
 
+      document.getElementById("comment" + b.postId).innerHTML += `<li id="commentOb${b.commentId}"class="list-group-item bg-black text-white">
+      <img src="../../resources/commentIcon.png" style="height:1.5em;width:1.5em;">
+      <span class="font-weight-bold" style="color:rgb(69, 155, 212);">  @`+ b.userName + `</span> ` + b.commentContent + `  </li>`;
+      if (Number(sessionStorage.getItem("userId")) === b.userId) {
+        document.getElementById("commentOb" + b.commentId).innerHTML += `<a class="btn" style="text-align:end;color:green;Float:right;" id="deleteComment1${b.commentId}" onclick="deleteComment(${b.commentId})">delete</a>`
+      }
     }
   }
 }
