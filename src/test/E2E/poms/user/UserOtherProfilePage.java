@@ -20,6 +20,7 @@ public class UserOtherProfilePage {
     @FindBy(id = "followButton")
     public WebElement getFollowButton;
 
-
+    @FindBy(id="followers")
+    public WebElement getFollowersCount;
 
 }
