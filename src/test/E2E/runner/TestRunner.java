@@ -17,7 +17,7 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="classpath:features", glue="E2E.steps")
+@CucumberOptions(features="classpath:features", glue="E2E.steps", plugin = {"pretty", "html:src/test/resources/reports/html-reports.html"})
 public class TestRunner {
     public static WebDriver driver;
     public static WebDriverWait explicitWait;
