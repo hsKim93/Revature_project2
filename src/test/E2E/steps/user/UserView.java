@@ -48,6 +48,6 @@ public class UserView {
     public void the_user_should_be_redirected_to_the_searched_user_s_profile_page() {
         TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userOtherProfilePage.getName));
         String name = TestRunner.userOtherProfilePage.getName.getText();
-        Assert.assertEquals(name, "irfan uludag");
+        Assert.assertEquals(name, "Irfan Uludag");
     }
 }

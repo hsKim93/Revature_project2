@@ -9,519 +9,505 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default Suite</th></tr>
-<tr><td><a href="#t0">Revature_project2</a></td><td class="num">119</td><td class="num">0</td><td class="num">0</td><td class="num attn">3</td><td class="num">49,047</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Revature_project2</a></td><td class="num">123</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">47,946</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Revature_project2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="3">dao.RelationshipsDAOTests</td><td><a href="#m0">getFollowersByUserId</a></td><td rowspan="1">1642016055775</td><td rowspan="1">978</td></tr><tr class="failedeven"><td><a href="#m1">getLikesByPostId</a></td><td rowspan="1">1642016059685</td><td rowspan="1">1056</td></tr><tr class="failedeven"><td><a href="#m2">unlikeByIds</a></td><td rowspan="1">1642016065553</td><td rowspan="1">962</td></tr><tr><th colspan="4">Revature_project2 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">dao.CommentDAOTests</td><td><a href="#m3">createComment</a></td><td rowspan="1">1642016045228</td><td rowspan="1">1233</td></tr><tr class="passedeven"><td><a href="#m4">deleteCommentById</a></td><td rowspan="1">1642016046464</td><td rowspan="1">1010</td></tr><tr class="passedeven"><td><a href="#m5">getAllComments</a></td><td rowspan="1">1642016047475</td><td rowspan="1">976</td></tr><tr class="passedeven"><td><a href="#m6">getCommentsByPostId</a></td><td rowspan="1">1642016048452</td><td rowspan="1">976</td></tr><tr class="passedeven"><td><a href="#m7">selectCommentById</a></td><td rowspan="1">1642016049429</td><td rowspan="1">969</td></tr><tr class="passedeven"><td><a href="#m8">selectCommentByIdFail</a></td><td rowspan="1">1642016050398</td><td rowspan="1">991</td></tr><tr class="passedodd"><td rowspan="8">dao.PostDAOTests</td><td><a href="#m9">createPost</a></td><td rowspan="1">1642016086057</td><td rowspan="1">955</td></tr><tr class="passedodd"><td><a href="#m10">createPostWrongUserId</a></td><td rowspan="1">1642016087012</td><td rowspan="1">1022</td></tr><tr class="passedodd"><td><a href="#m11">deletePostsByPostId</a></td><td rowspan="1">1642016088034</td><td rowspan="1">1103</td></tr><tr class="passedodd"><td><a href="#m12">getAllPosts</a></td><td rowspan="1">1642016089137</td><td rowspan="1">1142</td></tr><tr class="passedodd"><td><a href="#m13">getPostById</a></td><td rowspan="1">1642016090279</td><td rowspan="1">1061</td></tr><tr class="passedodd"><td><a href="#m14">getPostByNonExistingId</a></td><td rowspan="1">1642016091341</td><td rowspan="1">964</td></tr><tr class="passedodd"><td><a href="#m15">getPostsByNonExistingUserId</a></td><td rowspan="1">1642016092305</td><td rowspan="1">970</td></tr><tr class="passedodd"><td><a href="#m16">getPostsByUserId</a></td><td rowspan="1">1642016093276</td><td rowspan="1">954</td></tr><tr class="passedeven"><td rowspan="14">dao.RelationshipsDAOTests</td><td><a href="#m17">followByIds</a></td><td rowspan="1">1642016051887</td><td rowspan="1">986</td></tr><tr class="passedeven"><td><a href="#m18">followByIdsNonExistingMyId</a></td><td rowspan="1">1642016052873</td><td rowspan="1">976</td></tr><tr class="passedeven"><td><a href="#m19">followByIdsNonExistingTargetId</a></td><td rowspan="1">1642016053850</td><td rowspan="1">968</td></tr><tr class="passedeven"><td><a href="#m20">getFollowersByNonExistingUserId</a></td><td rowspan="1">1642016054819</td><td rowspan="1">955</td></tr><tr class="passedeven"><td><a href="#m21">getFollowingByNonExistingUserId</a></td><td rowspan="1">1642016056756</td><td rowspan="1">978</td></tr><tr class="passedeven"><td><a href="#m22">getFollowingByUserId</a></td><td rowspan="1">1642016057734</td><td rowspan="1">983</td></tr><tr class="passedeven"><td><a href="#m23">getLikesByNonExistingPostId</a></td><td rowspan="1">1642016058718</td><td rowspan="1">966</td></tr><tr class="passedeven"><td><a href="#m24">likeByIdsNonExistingPostId</a></td><td rowspan="1">1642016060743</td><td rowspan="1">961</td></tr><tr class="passedeven"><td><a href="#m25">likeByIdsNonExistingUserId</a></td><td rowspan="1">1642016061704</td><td rowspan="1">952</td></tr><tr class="passedeven"><td><a href="#m26">unfollowByIds</a></td><td rowspan="1">1642016062657</td><td rowspan="1">969</td></tr><tr class="passedeven"><td><a href="#m27">unfollowByIdsNonExistingMyId</a></td><td rowspan="1">1642016063627</td><td rowspan="1">969</td></tr><tr class="passedeven"><td><a href="#m28">unfollowByIdsNonExistingTargetId</a></td><td rowspan="1">1642016064596</td><td rowspan="1">956</td></tr><tr class="passedeven"><td><a href="#m29">unlikeByIdsNonExistingPostId</a></td><td rowspan="1">1642016066516</td><td rowspan="1">970</td></tr><tr class="passedeven"><td><a href="#m30">unlikeByIdsNonExistingUserId</a></td><td rowspan="1">1642016067487</td><td rowspan="1">955</td></tr><tr class="passedodd"><td rowspan="18">dao.UserDAOTests</td><td><a href="#m31">testCreateAccountExistingEmail</a></td><td rowspan="1">1642016068470</td><td rowspan="1">954</td></tr><tr class="passedodd"><td><a href="#m32">testCreateAccountExistingUserName</a></td><td rowspan="1">1642016069424</td><td rowspan="1">963</td></tr><tr class="passedodd"><td><a href="#m33">testCreateAccountSuccess</a></td><td rowspan="1">1642016070387</td><td rowspan="1">969</td></tr><tr class="passedodd"><td><a href="#m34">testDeleteUserByIdNonExistingId</a></td><td rowspan="1">1642016071356</td><td rowspan="1">980</td></tr><tr class="passedodd"><td><a href="#m35">testDeleteUserByIdSuccess</a></td><td rowspan="1">1642016084945</td><td rowspan="1">1084</td></tr><tr class="passedodd"><td><a href="#m36">testEditUserInformationByIdExistingEmail</a></td><td rowspan="1">1642016072336</td><td rowspan="1">962</td></tr><tr class="passedodd"><td><a href="#m37">testEditUserInformationByIdExistingName</a></td><td rowspan="1">1642016073299</td><td rowspan="1">969</td></tr><tr class="passedodd"><td><a href="#m38">testEditUserInformationByIdNonExistingId</a></td><td rowspan="1">1642016074268</td><td rowspan="1">1006</td></tr><tr class="passedodd"><td><a href="#m39">testEditUserInformationByIdSuccess</a></td><td rowspan="1">1642016075275</td><td rowspan="1">950</td></tr><tr class="passedodd"><td><a href="#m40">testGetUserByIdNonExistingId</a></td><td rowspan="1">1642016076225</td><td rowspan="1">1051</td></tr><tr class="passedodd"><td><a href="#m41">testGetUserByIdSuccess</a></td><td rowspan="1">1642016077277</td><td rowspan="1">954</td></tr><tr class="passedodd"><td><a href="#m42">testGetUsers</a></td><td rowspan="1">1642016078232</td><td rowspan="1">967</td></tr><tr class="passedodd"><td><a href="#m43">testGetUsersByFirstNameNonExistingFirstName</a></td><td rowspan="1">1642016079199</td><td rowspan="1">964</td></tr><tr class="passedodd"><td><a href="#m44">testGetUsersByFirstNameSuccess</a></td><td rowspan="1">1642016080163</td><td rowspan="1">949</td></tr><tr class="passedodd"><td><a href="#m45">testRequestLoginIncorrectCredentialsCase1</a></td><td rowspan="1">1642016081113</td><td rowspan="1">958</td></tr><tr class="passedodd"><td><a href="#m46">testRequestLoginIncorrectCredentialsCase2</a></td><td rowspan="1">1642016082072</td><td rowspan="1">954</td></tr><tr class="passedodd"><td><a href="#m47">testRequestLoginIncorrectCredentialsCase3</a></td><td rowspan="1">1642016083026</td><td rowspan="1">959</td></tr><tr class="passedodd"><td><a href="#m48">testRequestLoginSuccess</a></td><td rowspan="1">1642016083985</td><td rowspan="1">960</td></tr><tr class="passedeven"><td rowspan="11">service.CommentServiceTests</td><td><a href="#m49">serviceCreateComment</a></td><td rowspan="1">1642016051869</td><td rowspan="1">11</td></tr><tr class="passedeven"><td><a href="#m50">serviceCreateEmptyComment</a></td><td rowspan="1">1642016051881</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m51">serviceCreateLongComment</a></td><td rowspan="1">1642016051881</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m52">serviceCreateNegativePostID</a></td><td rowspan="1">1642016051882</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m53">serviceCreateNegativeUserID</a></td><td rowspan="1">1642016051882</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m54">serviceDeleteCommentByID</a></td><td rowspan="1">1642016051882</td><td rowspan="1">2</td></tr><tr class="passedeven"><td><a href="#m55">serviceDeleteCommentByNegativeId</a></td><td rowspan="1">1642016051884</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m56">serviceGetCommentByID</a></td><td rowspan="1">1642016051885</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m57">serviceGetCommentByNegativeId</a></td><td rowspan="1">1642016051885</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m58">serviceGetCommentsByNegativePostID</a></td><td rowspan="1">1642016051886</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m59">serviceGetCommentsByPostID</a></td><td rowspan="1">1642016051886</td><td rowspan="1">1</td></tr><tr class="passedodd"><td rowspan="12">service.PostServiceTests</td><td><a href="#m60">serviceCreatePostEmptyString</a></td><td rowspan="1">1642016094246</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m61">serviceCreatePostLongsString</a></td><td rowspan="1">1642016094246</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m62">serviceCreatePostNegativeUserId</a></td><td rowspan="1">1642016094247</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m63">serviceCreatePostValid</a></td><td rowspan="1">1642016094247</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m64">serviceDeletePostByIdInvalidId</a></td><td rowspan="1">1642016094248</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m65">serviceDeletePostByIdValid</a></td><td rowspan="1">1642016094248</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m66">serviceGetPostByIdInvalidId</a></td><td rowspan="1">1642016094248</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m67">serviceGetPostByIdValid</a></td><td rowspan="1">1642016094248</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m68">serviceGetPostByUserIdInvalidId</a></td><td rowspan="1">1642016094248</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m69">serviceGetPostByUserIdValid</a></td><td rowspan="1">1642016094248</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m70">serviceGetPostModuleByIdInvalidId</a></td><td rowspan="1">1642016094249</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m71">serviceGetPostModuleByIdValid</a></td><td rowspan="1">1642016094249</td><td rowspan="1">0</td></tr><tr class="passedeven"><td rowspan="20">service.RelationshipsServiceTests</td><td><a href="#m72">serviceFollowByIdsNegativeIds</a></td><td rowspan="1">1642016068460</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m73">serviceFollowByIdsNegativeMyId</a></td><td rowspan="1">1642016068460</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m74">serviceFollowByIdsNegativeTargetId</a></td><td rowspan="1">1642016068461</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m75">serviceFollowByIdsValid</a></td><td rowspan="1">1642016068461</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m76">serviceGetFollowersByUserIdNegativeUserId</a></td><td rowspan="1">1642016068462</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m77">serviceGetFollowersByUserIdValid</a></td><td rowspan="1">1642016068462</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m78">serviceGetFollowingByUserIdNegativeUserId</a></td><td rowspan="1">1642016068463</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m79">serviceGetFollowingByUserIdValid</a></td><td rowspan="1">1642016068464</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m80">serviceLikeByIdsNegativeIds</a></td><td rowspan="1">1642016068465</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m81">serviceLikeByIdsNegativePostId</a></td><td rowspan="1">1642016068465</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m82">serviceLikeByIdsNegativeUserId</a></td><td rowspan="1">1642016068466</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m83">serviceLikeByIdsValid</a></td><td rowspan="1">1642016068466</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m84">serviceUnfollowByIdsNegativeIds</a></td><td rowspan="1">1642016068467</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m85">serviceUnfollowByIdsNegativeMyId</a></td><td rowspan="1">1642016068467</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m86">serviceUnfollowByIdsNegativeTargetId</a></td><td rowspan="1">1642016068468</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m87">serviceUnfollowByIdsValid</a></td><td rowspan="1">1642016068468</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m88">serviceUnlikeByIdsNegativeIds</a></td><td rowspan="1">1642016068469</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m89">serviceUnlikeByIdsNegativePostId</a></td><td rowspan="1">1642016068469</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m90">serviceUnlikeByIdsNegativeUserId</a></td><td rowspan="1">1642016068469</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m91">serviceUnlikeByIdsValid</a></td><td rowspan="1">1642016068470</td><td rowspan="1">0</td></tr><tr class="passedodd"><td rowspan="30">service.UserServiceTests</td><td><a href="#m92">serviceRequestLoginEmptyPassword</a></td><td rowspan="1">1642016086049</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m93">serviceRequestLoginEmptyUserName</a></td><td rowspan="1">1642016086049</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m94">serviceRequestLoginEmptyUserNameAndPassword</a></td><td rowspan="1">1642016086050</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m95">serviceRequestLoginLongPassword</a></td><td rowspan="1">1642016086050</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m96">serviceRequestLoginLongUserName</a></td><td rowspan="1">1642016086050</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m97">serviceRequestLoginLongUserNameAndPassword</a></td><td rowspan="1">1642016086050</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m98">testServiceCreateAccountEmptyEmail</a></td><td rowspan="1">1642016086051</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m99">testServiceCreateAccountEmptyFirstName</a></td><td rowspan="1">1642016086051</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m100">testServiceCreateAccountEmptyLastName</a></td><td rowspan="1">1642016086051</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m101">testServiceCreateAccountEmptyPassword</a></td><td rowspan="1">1642016086052</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m102">testServiceCreateAccountEmptyUserName</a></td><td rowspan="1">1642016086052</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m103">testServiceCreateAccountLongEmail</a></td><td rowspan="1">1642016086052</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m104">testServiceCreateAccountLongFirstName</a></td><td rowspan="1">1642016086052</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m105">testServiceCreateAccountLongLastName</a></td><td rowspan="1">1642016086053</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m106">testServiceCreateAccountLongPassword</a></td><td rowspan="1">1642016086053</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m107">testServiceCreateAccountLongUserName</a></td><td rowspan="1">1642016086053</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m108">testServiceDeleteUserByIdNegativeId</a></td><td rowspan="1">1642016086053</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m109">testServiceEditUserInformationByIdEmptyEmail</a></td><td rowspan="1">1642016086054</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m110">testServiceEditUserInformationByIdEmptyFirstName</a></td><td rowspan="1">1642016086054</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m111">testServiceEditUserInformationByIdEmptyLastName</a></td><td rowspan="1">1642016086054</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m112">testServiceEditUserInformationByIdEmptyUserName</a></td><td rowspan="1">1642016086054</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m113">testServiceEditUserInformationByIdLongEmail</a></td><td rowspan="1">1642016086054</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m114">testServiceEditUserInformationByIdLongFirstName</a></td><td rowspan="1">1642016086055</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m115">testServiceEditUserInformationByIdLongLastName</a></td><td rowspan="1">1642016086055</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m116">testServiceEditUserInformationByIdLongPassword</a></td><td rowspan="1">1642016086055</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m117">testServiceEditUserInformationByIdLongUserName</a></td><td rowspan="1">1642016086055</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m118">testServiceEditUserInformationByIdNegativeId</a></td><td rowspan="1">1642016086056</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m119">testServiceGetUserByFirstNameEmptyFirstName</a></td><td rowspan="1">1642016086056</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m120">testServiceGetUserByFirstNameLongFirstName</a></td><td rowspan="1">1642016086056</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m121">testServiceGetUserByIdNegativeId</a></td><td rowspan="1">1642016086057</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Revature_project2 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="6">dao.CommentDAOTests</td><td><a href="#m0">createComment</a></td><td rowspan="1">1642018701757</td><td rowspan="1">986</td></tr><tr class="passedeven"><td><a href="#m1">deleteCommentById</a></td><td rowspan="1">1642018702743</td><td rowspan="1">928</td></tr><tr class="passedeven"><td><a href="#m2">getAllComments</a></td><td rowspan="1">1642018703671</td><td rowspan="1">942</td></tr><tr class="passedeven"><td><a href="#m3">getCommentsByPostId</a></td><td rowspan="1">1642018704614</td><td rowspan="1">932</td></tr><tr class="passedeven"><td><a href="#m4">selectCommentById</a></td><td rowspan="1">1642018705547</td><td rowspan="1">944</td></tr><tr class="passedeven"><td><a href="#m5">selectCommentByIdFail</a></td><td rowspan="1">1642018706491</td><td rowspan="1">927</td></tr><tr class="passedodd"><td rowspan="8">dao.PostDAOTests</td><td><a href="#m6">createPost</a></td><td rowspan="1">1642018724414</td><td rowspan="1">1090</td></tr><tr class="passedodd"><td><a href="#m7">createPostWrongUserId</a></td><td rowspan="1">1642018725504</td><td rowspan="1">928</td></tr><tr class="passedodd"><td><a href="#m8">deletePostsByPostId</a></td><td rowspan="1">1642018726433</td><td rowspan="1">935</td></tr><tr class="passedodd"><td><a href="#m9">getAllPosts</a></td><td rowspan="1">1642018727368</td><td rowspan="1">984</td></tr><tr class="passedodd"><td><a href="#m10">getPostById</a></td><td rowspan="1">1642018728353</td><td rowspan="1">926</td></tr><tr class="passedodd"><td><a href="#m11">getPostByNonExistingId</a></td><td rowspan="1">1642018729279</td><td rowspan="1">926</td></tr><tr class="passedodd"><td><a href="#m12">getPostsByNonExistingUserId</a></td><td rowspan="1">1642018730205</td><td rowspan="1">925</td></tr><tr class="passedodd"><td><a href="#m13">getPostsByUserId</a></td><td rowspan="1">1642018731130</td><td rowspan="1">931</td></tr><tr class="passedeven"><td rowspan="18">dao.RelationshipsDAOTests</td><td><a href="#m14">followByIds</a></td><td rowspan="1">1642018707457</td><td rowspan="1">923</td></tr><tr class="passedeven"><td><a href="#m15">followByIdsNonExistingMyId</a></td><td rowspan="1">1642018708380</td><td rowspan="1">930</td></tr><tr class="passedeven"><td><a href="#m16">followByIdsNonExistingTargetId</a></td><td rowspan="1">1642018709310</td><td rowspan="1">1067</td></tr><tr class="passedeven"><td><a href="#m17">getFollowersByNonExistingUserId</a></td><td rowspan="1">1642018710377</td><td rowspan="1">920</td></tr><tr class="passedeven"><td><a href="#m18">getFollowersByUserId</a></td><td rowspan="1">1642018711297</td><td rowspan="1">927</td></tr><tr class="passedeven"><td><a href="#m19">getFollowingByNonExistingUserId</a></td><td rowspan="1">1642018712224</td><td rowspan="1">941</td></tr><tr class="passedeven"><td><a href="#m20">getFollowingByUserId</a></td><td rowspan="1">1642018713166</td><td rowspan="1">927</td></tr><tr class="passedeven"><td><a href="#m21">getLikesByNonExistingPostId</a></td><td rowspan="1">1642018714093</td><td rowspan="1">935</td></tr><tr class="passedeven"><td><a href="#m22">getLikesByPostId</a></td><td rowspan="1">1642018715029</td><td rowspan="1">951</td></tr><tr class="passedeven"><td><a href="#m23">likeByIds</a></td><td rowspan="1">1642018715981</td><td rowspan="1">933</td></tr><tr class="passedeven"><td><a href="#m24">likeByIdsNonExistingPostId</a></td><td rowspan="1">1642018716915</td><td rowspan="1">927</td></tr><tr class="passedeven"><td><a href="#m25">likeByIdsNonExistingUserId</a></td><td rowspan="1">1642018717843</td><td rowspan="1">930</td></tr><tr class="passedeven"><td><a href="#m26">unfollowByIds</a></td><td rowspan="1">1642018718774</td><td rowspan="1">930</td></tr><tr class="passedeven"><td><a href="#m27">unfollowByIdsNonExistingMyId</a></td><td rowspan="1">1642018719705</td><td rowspan="1">938</td></tr><tr class="passedeven"><td><a href="#m28">unfollowByIdsNonExistingTargetId</a></td><td rowspan="1">1642018720643</td><td rowspan="1">935</td></tr><tr class="passedeven"><td><a href="#m29">unlikeByIds</a></td><td rowspan="1">1642018721579</td><td rowspan="1">937</td></tr><tr class="passedeven"><td><a href="#m30">unlikeByIdsNonExistingPostId</a></td><td rowspan="1">1642018722516</td><td rowspan="1">933</td></tr><tr class="passedeven"><td><a href="#m31">unlikeByIdsNonExistingUserId</a></td><td rowspan="1">1642018723450</td><td rowspan="1">916</td></tr><tr class="passedodd"><td rowspan="18">dao.UserDAOTests</td><td><a href="#m32">testCreateAccountExistingEmail</a></td><td rowspan="1">1642018684141</td><td rowspan="1">1187</td></tr><tr class="passedodd"><td><a href="#m33">testCreateAccountExistingUserName</a></td><td rowspan="1">1642018685332</td><td rowspan="1">948</td></tr><tr class="passedodd"><td><a href="#m34">testCreateAccountSuccess</a></td><td rowspan="1">1642018686281</td><td rowspan="1">941</td></tr><tr class="passedodd"><td><a href="#m35">testDeleteUserByIdNonExistingId</a></td><td rowspan="1">1642018687223</td><td rowspan="1">935</td></tr><tr class="passedodd"><td><a href="#m36">testDeleteUserByIdSuccess</a></td><td rowspan="1">1642018700404</td><td rowspan="1">926</td></tr><tr class="passedodd"><td><a href="#m37">testEditUserInformationByIdExistingEmail</a></td><td rowspan="1">1642018688159</td><td rowspan="1">941</td></tr><tr class="passedodd"><td><a href="#m38">testEditUserInformationByIdExistingName</a></td><td rowspan="1">1642018689102</td><td rowspan="1">936</td></tr><tr class="passedodd"><td><a href="#m39">testEditUserInformationByIdNonExistingId</a></td><td rowspan="1">1642018690039</td><td rowspan="1">942</td></tr><tr class="passedodd"><td><a href="#m40">testEditUserInformationByIdSuccess</a></td><td rowspan="1">1642018690982</td><td rowspan="1">938</td></tr><tr class="passedodd"><td><a href="#m41">testGetUserByIdNonExistingId</a></td><td rowspan="1">1642018691921</td><td rowspan="1">943</td></tr><tr class="passedodd"><td><a href="#m42">testGetUserByIdSuccess</a></td><td rowspan="1">1642018692864</td><td rowspan="1">926</td></tr><tr class="passedodd"><td><a href="#m43">testGetUsers</a></td><td rowspan="1">1642018693790</td><td rowspan="1">934</td></tr><tr class="passedodd"><td><a href="#m44">testGetUsersByFirstNameNonExistingFirstName</a></td><td rowspan="1">1642018694725</td><td rowspan="1">981</td></tr><tr class="passedodd"><td><a href="#m45">testGetUsersByFirstNameSuccess</a></td><td rowspan="1">1642018695707</td><td rowspan="1">928</td></tr><tr class="passedodd"><td><a href="#m46">testRequestLoginIncorrectCredentialsCase1</a></td><td rowspan="1">1642018696635</td><td rowspan="1">946</td></tr><tr class="passedodd"><td><a href="#m47">testRequestLoginIncorrectCredentialsCase2</a></td><td rowspan="1">1642018697581</td><td rowspan="1">958</td></tr><tr class="passedodd"><td><a href="#m48">testRequestLoginIncorrectCredentialsCase3</a></td><td rowspan="1">1642018698540</td><td rowspan="1">941</td></tr><tr class="passedodd"><td><a href="#m49">testRequestLoginSuccess</a></td><td rowspan="1">1642018699481</td><td rowspan="1">923</td></tr><tr class="passedeven"><td rowspan="11">service.CommentServiceTests</td><td><a href="#m50">serviceCreateComment</a></td><td rowspan="1">1642018707437</td><td rowspan="1">13</td></tr><tr class="passedeven"><td><a href="#m51">serviceCreateEmptyComment</a></td><td rowspan="1">1642018707450</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m52">serviceCreateLongComment</a></td><td rowspan="1">1642018707451</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m53">serviceCreateNegativePostID</a></td><td rowspan="1">1642018707452</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m54">serviceCreateNegativeUserID</a></td><td rowspan="1">1642018707452</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m55">serviceDeleteCommentByID</a></td><td rowspan="1">1642018707453</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m56">serviceDeleteCommentByNegativeId</a></td><td rowspan="1">1642018707454</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m57">serviceGetCommentByID</a></td><td rowspan="1">1642018707455</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m58">serviceGetCommentByNegativeId</a></td><td rowspan="1">1642018707456</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m59">serviceGetCommentsByNegativePostID</a></td><td rowspan="1">1642018707456</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m60">serviceGetCommentsByPostID</a></td><td rowspan="1">1642018707456</td><td rowspan="1">1</td></tr><tr class="passedodd"><td rowspan="12">service.PostServiceTests</td><td><a href="#m61">serviceCreatePostEmptyString</a></td><td rowspan="1">1642018724410</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m62">serviceCreatePostLongsString</a></td><td rowspan="1">1642018724410</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m63">serviceCreatePostNegativeUserId</a></td><td rowspan="1">1642018724411</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m64">serviceCreatePostValid</a></td><td rowspan="1">1642018724411</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m65">serviceDeletePostByIdInvalidId</a></td><td rowspan="1">1642018724411</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m66">serviceDeletePostByIdValid</a></td><td rowspan="1">1642018724412</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m67">serviceGetPostByIdInvalidId</a></td><td rowspan="1">1642018724412</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m68">serviceGetPostByIdValid</a></td><td rowspan="1">1642018724412</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m69">serviceGetPostByUserIdInvalidId</a></td><td rowspan="1">1642018724413</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m70">serviceGetPostByUserIdValid</a></td><td rowspan="1">1642018724413</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m71">serviceGetPostModuleByIdInvalidId</a></td><td rowspan="1">1642018724414</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m72">serviceGetPostModuleByIdValid</a></td><td rowspan="1">1642018724414</td><td rowspan="1">0</td></tr><tr class="passedeven"><td rowspan="20">service.RelationshipsServiceTests</td><td><a href="#m73">serviceFollowByIdsNegativeIds</a></td><td rowspan="1">1642018724386</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m74">serviceFollowByIdsNegativeMyId</a></td><td rowspan="1">1642018724387</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m75">serviceFollowByIdsNegativeTargetId</a></td><td rowspan="1">1642018724387</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m76">serviceFollowByIdsValid</a></td><td rowspan="1">1642018724387</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m77">serviceGetFollowersByUserIdNegativeUserId</a></td><td rowspan="1">1642018724388</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m78">serviceGetFollowersByUserIdValid</a></td><td rowspan="1">1642018724389</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m79">serviceGetFollowingByUserIdNegativeUserId</a></td><td rowspan="1">1642018724389</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m80">serviceGetFollowingByUserIdValid</a></td><td rowspan="1">1642018724390</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m81">serviceLikeByIdsNegativeIds</a></td><td rowspan="1">1642018724390</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m82">serviceLikeByIdsNegativePostId</a></td><td rowspan="1">1642018724391</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m83">serviceLikeByIdsNegativeUserId</a></td><td rowspan="1">1642018724391</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m84">serviceLikeByIdsValid</a></td><td rowspan="1">1642018724391</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m85">serviceUnfollowByIdsNegativeIds</a></td><td rowspan="1">1642018724392</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m86">serviceUnfollowByIdsNegativeMyId</a></td><td rowspan="1">1642018724392</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m87">serviceUnfollowByIdsNegativeTargetId</a></td><td rowspan="1">1642018724392</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m88">serviceUnfollowByIdsValid</a></td><td rowspan="1">1642018724392</td><td rowspan="1">1</td></tr><tr class="passedeven"><td><a href="#m89">serviceUnlikeByIdsNegativeIds</a></td><td rowspan="1">1642018724393</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m90">serviceUnlikeByIdsNegativePostId</a></td><td rowspan="1">1642018724393</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m91">serviceUnlikeByIdsNegativeUserId</a></td><td rowspan="1">1642018724394</td><td rowspan="1">0</td></tr><tr class="passedeven"><td><a href="#m92">serviceUnlikeByIdsValid</a></td><td rowspan="1">1642018724394</td><td rowspan="1">0</td></tr><tr class="passedodd"><td rowspan="30">service.UserServiceTests</td><td><a href="#m93">serviceRequestLoginEmptyPassword</a></td><td rowspan="1">1642018701748</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m94">serviceRequestLoginEmptyUserName</a></td><td rowspan="1">1642018701749</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m95">serviceRequestLoginEmptyUserNameAndPassword</a></td><td rowspan="1">1642018701749</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m96">serviceRequestLoginLongPassword</a></td><td rowspan="1">1642018701749</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m97">serviceRequestLoginLongUserName</a></td><td rowspan="1">1642018701750</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m98">serviceRequestLoginLongUserNameAndPassword</a></td><td rowspan="1">1642018701750</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m99">testServiceCreateAccountEmptyEmail</a></td><td rowspan="1">1642018701750</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m100">testServiceCreateAccountEmptyFirstName</a></td><td rowspan="1">1642018701751</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m101">testServiceCreateAccountEmptyLastName</a></td><td rowspan="1">1642018701751</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m102">testServiceCreateAccountEmptyPassword</a></td><td rowspan="1">1642018701751</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m103">testServiceCreateAccountEmptyUserName</a></td><td rowspan="1">1642018701752</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m104">testServiceCreateAccountLongEmail</a></td><td rowspan="1">1642018701752</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m105">testServiceCreateAccountLongFirstName</a></td><td rowspan="1">1642018701752</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m106">testServiceCreateAccountLongLastName</a></td><td rowspan="1">1642018701753</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m107">testServiceCreateAccountLongPassword</a></td><td rowspan="1">1642018701753</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m108">testServiceCreateAccountLongUserName</a></td><td rowspan="1">1642018701753</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m109">testServiceDeleteUserByIdNegativeId</a></td><td rowspan="1">1642018701754</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m110">testServiceEditUserInformationByIdEmptyEmail</a></td><td rowspan="1">1642018701754</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m111">testServiceEditUserInformationByIdEmptyFirstName</a></td><td rowspan="1">1642018701754</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m112">testServiceEditUserInformationByIdEmptyLastName</a></td><td rowspan="1">1642018701754</td><td rowspan="1">1</td></tr><tr class="passedodd"><td><a href="#m113">testServiceEditUserInformationByIdEmptyUserName</a></td><td rowspan="1">1642018701755</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m114">testServiceEditUserInformationByIdLongEmail</a></td><td rowspan="1">1642018701755</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m115">testServiceEditUserInformationByIdLongFirstName</a></td><td rowspan="1">1642018701755</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m116">testServiceEditUserInformationByIdLongLastName</a></td><td rowspan="1">1642018701756</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m117">testServiceEditUserInformationByIdLongPassword</a></td><td rowspan="1">1642018701756</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m118">testServiceEditUserInformationByIdLongUserName</a></td><td rowspan="1">1642018701756</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m119">testServiceEditUserInformationByIdNegativeId</a></td><td rowspan="1">1642018701756</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m120">testServiceGetUserByFirstNameEmptyFirstName</a></td><td rowspan="1">1642018701757</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m121">testServiceGetUserByFirstNameLongFirstName</a></td><td rowspan="1">1642018701757</td><td rowspan="1">0</td></tr><tr class="passedodd"><td><a href="#m122">testServiceGetUserByIdNegativeId</a></td><td rowspan="1">1642018701757</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Revature_project2</h2><h3 id="m0">dao.RelationshipsDAOTests#getFollowersByUserId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at dao.RelationshipsDAOTests.getFollowersByUserId(RelationshipsDAOTests.java:69)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">dao.RelationshipsDAOTests#getLikesByPostId</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at dao.RelationshipsDAOTests.getLikesByPostId(RelationshipsDAOTests.java:15)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">dao.RelationshipsDAOTests#unlikeByIds</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at dao.RelationshipsDAOTests.unlikeByIds(RelationshipsDAOTests.java:39)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">dao.CommentDAOTests#createComment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">dao.CommentDAOTests#deleteCommentById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">dao.CommentDAOTests#getAllComments</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">dao.CommentDAOTests#getCommentsByPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">dao.CommentDAOTests#selectCommentById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">dao.CommentDAOTests#selectCommentByIdFail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.CommentNotFound: Comment not found
+<h2>Revature_project2</h2><h3 id="m0">dao.CommentDAOTests#createComment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">dao.CommentDAOTests#deleteCommentById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">dao.CommentDAOTests#getAllComments</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">dao.CommentDAOTests#getCommentsByPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">dao.CommentDAOTests#selectCommentById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">dao.CommentDAOTests#selectCommentByIdFail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.CommentNotFound: Comment not found
 	at dev.chirp.dao.implementations.CommentDAO.getCommentById(CommentDAO.java:51)
 	at dao.CommentDAOTests.selectCommentByIdFail(CommentDAOTests.java:30)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">dao.PostDAOTests#createPost</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">dao.PostDAOTests#createPostWrongUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">dao.PostDAOTests#deletePostsByPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m12">dao.PostDAOTests#getAllPosts</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m13">dao.PostDAOTests#getPostById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m14">dao.PostDAOTests#getPostByNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m15">dao.PostDAOTests#getPostsByNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m16">dao.PostDAOTests#getPostsByUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m17">dao.RelationshipsDAOTests#followByIds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m18">dao.RelationshipsDAOTests#followByIdsNonExistingMyId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m19">dao.RelationshipsDAOTests#followByIdsNonExistingTargetId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m20">dao.RelationshipsDAOTests#getFollowersByNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m21">dao.RelationshipsDAOTests#getFollowingByNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m22">dao.RelationshipsDAOTests#getFollowingByUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m23">dao.RelationshipsDAOTests#getLikesByNonExistingPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">dao.PostDAOTests#createPost</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">dao.PostDAOTests#createPostWrongUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">dao.PostDAOTests#deletePostsByPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">dao.PostDAOTests#getAllPosts</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">dao.PostDAOTests#getPostById</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">dao.PostDAOTests#getPostByNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">dao.PostDAOTests#getPostsByNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">dao.PostDAOTests#getPostsByUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">dao.RelationshipsDAOTests#followByIds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">dao.RelationshipsDAOTests#followByIdsNonExistingMyId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">dao.RelationshipsDAOTests#followByIdsNonExistingTargetId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">dao.RelationshipsDAOTests#getFollowersByNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">dao.RelationshipsDAOTests#getFollowersByUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">dao.RelationshipsDAOTests#getFollowingByNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">dao.RelationshipsDAOTests#getFollowingByUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m21">dao.RelationshipsDAOTests#getLikesByNonExistingPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m22">dao.RelationshipsDAOTests#getLikesByPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m23">dao.RelationshipsDAOTests#likeByIds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m24">dao.RelationshipsDAOTests#likeByIdsNonExistingPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m25">dao.RelationshipsDAOTests#likeByIdsNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m26">dao.RelationshipsDAOTests#unfollowByIds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m27">dao.RelationshipsDAOTests#unfollowByIdsNonExistingMyId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m28">dao.RelationshipsDAOTests#unfollowByIdsNonExistingTargetId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m29">dao.RelationshipsDAOTests#unlikeByIdsNonExistingPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m30">dao.RelationshipsDAOTests#unlikeByIdsNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m31">dao.UserDAOTests#testCreateAccountExistingEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate email
+<h3 id="m29">dao.RelationshipsDAOTests#unlikeByIds</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m30">dao.RelationshipsDAOTests#unlikeByIdsNonExistingPostId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m31">dao.RelationshipsDAOTests#unlikeByIdsNonExistingUserId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m32">dao.UserDAOTests#testCreateAccountExistingEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate email
 	at dev.chirp.dao.implementations.UserDAO.createAccount(UserDAO.java:62)
 	at dao.UserDAOTests.testCreateAccountExistingEmail(UserDAOTests.java:81)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m32">dao.UserDAOTests#testCreateAccountExistingUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate user name
+<h3 id="m33">dao.UserDAOTests#testCreateAccountExistingUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate user name
 	at dev.chirp.dao.implementations.UserDAO.createAccount(UserDAO.java:60)
 	at dao.UserDAOTests.testCreateAccountExistingUserName(UserDAOTests.java:86)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m33">dao.UserDAOTests#testCreateAccountSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m34">dao.UserDAOTests#testDeleteUserByIdNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m35">dao.UserDAOTests#testDeleteUserByIdSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m36">dao.UserDAOTests#testEditUserInformationByIdExistingEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate email
+<h3 id="m34">dao.UserDAOTests#testCreateAccountSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m35">dao.UserDAOTests#testDeleteUserByIdNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m36">dao.UserDAOTests#testDeleteUserByIdSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m37">dao.UserDAOTests#testEditUserInformationByIdExistingEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate email
 	at dev.chirp.dao.implementations.UserDAO.editUserInformationById(UserDAO.java:184)
 	at dao.UserDAOTests.testEditUserInformationByIdExistingEmail(UserDAOTests.java:194)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m37">dao.UserDAOTests#testEditUserInformationByIdExistingName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate user name
+<h3 id="m38">dao.UserDAOTests#testEditUserInformationByIdExistingName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.DuplicateException: duplicate user name
 	at dev.chirp.dao.implementations.UserDAO.editUserInformationById(UserDAO.java:182)
 	at dao.UserDAOTests.testEditUserInformationByIdExistingName(UserDAOTests.java:182)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m38">dao.UserDAOTests#testEditUserInformationByIdNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m39">dao.UserDAOTests#testEditUserInformationByIdSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m40">dao.UserDAOTests#testGetUserByIdNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m41">dao.UserDAOTests#testGetUserByIdSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m42">dao.UserDAOTests#testGetUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m43">dao.UserDAOTests#testGetUsersByFirstNameNonExistingFirstName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m44">dao.UserDAOTests#testGetUsersByFirstNameSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m45">dao.UserDAOTests#testRequestLoginIncorrectCredentialsCase1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m46">dao.UserDAOTests#testRequestLoginIncorrectCredentialsCase2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m47">dao.UserDAOTests#testRequestLoginIncorrectCredentialsCase3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m48">dao.UserDAOTests#testRequestLoginSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m49">service.CommentServiceTests#serviceCreateComment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m50">service.CommentServiceTests#serviceCreateEmptyComment</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m39">dao.UserDAOTests#testEditUserInformationByIdNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m40">dao.UserDAOTests#testEditUserInformationByIdSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m41">dao.UserDAOTests#testGetUserByIdNonExistingId</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m42">dao.UserDAOTests#testGetUserByIdSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m43">dao.UserDAOTests#testGetUsers</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m44">dao.UserDAOTests#testGetUsersByFirstNameNonExistingFirstName</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m45">dao.UserDAOTests#testGetUsersByFirstNameSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m46">dao.UserDAOTests#testRequestLoginIncorrectCredentialsCase1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m47">dao.UserDAOTests#testRequestLoginIncorrectCredentialsCase2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m48">dao.UserDAOTests#testRequestLoginIncorrectCredentialsCase3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m49">dao.UserDAOTests#testRequestLoginSuccess</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m50">service.CommentServiceTests#serviceCreateComment</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m51">service.CommentServiceTests#serviceCreateEmptyComment</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.CommentServiceImp.serviceCreateComment(CommentServiceImp.java:23)
 	at service.CommentServiceTests.serviceCreateEmptyComment(CommentServiceTests.java:50)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m51">service.CommentServiceTests#serviceCreateLongComment</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m52">service.CommentServiceTests#serviceCreateLongComment</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.CommentServiceImp.serviceCreateComment(CommentServiceImp.java:23)
 	at service.CommentServiceTests.serviceCreateLongComment(CommentServiceTests.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m52">service.CommentServiceTests#serviceCreateNegativePostID</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m53">service.CommentServiceTests#serviceCreateNegativePostID</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.CommentServiceImp.serviceCreateComment(CommentServiceImp.java:23)
 	at service.CommentServiceTests.serviceCreateNegativePostID(CommentServiceTests.java:56)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m53">service.CommentServiceTests#serviceCreateNegativeUserID</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m54">service.CommentServiceTests#serviceCreateNegativeUserID</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.CommentServiceImp.serviceCreateComment(CommentServiceImp.java:23)
 	at service.CommentServiceTests.serviceCreateNegativeUserID(CommentServiceTests.java:62)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m54">service.CommentServiceTests#serviceDeleteCommentByID</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m55">service.CommentServiceTests#serviceDeleteCommentByNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m55">service.CommentServiceTests#serviceDeleteCommentByID</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m56">service.CommentServiceTests#serviceDeleteCommentByNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.CommentServiceImp.serviceDeleteCommentById(CommentServiceImp.java:52)
 	at service.CommentServiceTests.serviceDeleteCommentByNegativeId(CommentServiceTests.java:109)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m56">service.CommentServiceTests#serviceGetCommentByID</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m57">service.CommentServiceTests#serviceGetCommentByNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m57">service.CommentServiceTests#serviceGetCommentByID</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m58">service.CommentServiceTests#serviceGetCommentByNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.CommentServiceImp.serviceGetCommentById(CommentServiceImp.java:31)
 	at service.CommentServiceTests.serviceGetCommentByNegativeId(CommentServiceTests.java:77)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m58">service.CommentServiceTests#serviceGetCommentsByNegativePostID</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m59">service.CommentServiceTests#serviceGetCommentsByNegativePostID</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.CommentServiceImp.serviceGetCommentsByPostId(CommentServiceImp.java:39)
 	at service.CommentServiceTests.serviceGetCommentsByNegativePostID(CommentServiceTests.java:92)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m59">service.CommentServiceTests#serviceGetCommentsByPostID</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m60">service.PostServiceTests#serviceCreatePostEmptyString</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m60">service.CommentServiceTests#serviceGetCommentsByPostID</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m61">service.PostServiceTests#serviceCreatePostEmptyString</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.PostService.serviceCreatePost(PostService.java:21)
 	at service.PostServiceTests.serviceCreatePostEmptyString(PostServiceTests.java:62)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m61">service.PostServiceTests#serviceCreatePostLongsString</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m62">service.PostServiceTests#serviceCreatePostLongsString</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.PostService.serviceCreatePost(PostService.java:21)
 	at service.PostServiceTests.serviceCreatePostLongsString(PostServiceTests.java:56)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m62">service.PostServiceTests#serviceCreatePostNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m63">service.PostServiceTests#serviceCreatePostNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.PostService.serviceCreatePost(PostService.java:21)
 	at service.PostServiceTests.serviceCreatePostNegativeUserId(PostServiceTests.java:68)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m63">service.PostServiceTests#serviceCreatePostValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m64">service.PostServiceTests#serviceDeletePostByIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m64">service.PostServiceTests#serviceCreatePostValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m65">service.PostServiceTests#serviceDeletePostByIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.PostService.serviceDeletePostById(PostService.java:58)
 	at service.PostServiceTests.serviceDeletePostByIdInvalidId(PostServiceTests.java:134)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m65">service.PostServiceTests#serviceDeletePostByIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m66">service.PostServiceTests#serviceGetPostByIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m66">service.PostServiceTests#serviceDeletePostByIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m67">service.PostServiceTests#serviceGetPostByIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.PostService.serviceGetPostById(PostService.java:29)
 	at service.PostServiceTests.serviceGetPostByIdInvalidId(PostServiceTests.java:83)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m67">service.PostServiceTests#serviceGetPostByIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m68">service.PostServiceTests#serviceGetPostByUserIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m68">service.PostServiceTests#serviceGetPostByIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m69">service.PostServiceTests#serviceGetPostByUserIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.PostService.serviceGetPostByUserId(PostService.java:50)
 	at service.PostServiceTests.serviceGetPostByUserIdInvalidId(PostServiceTests.java:119)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m69">service.PostServiceTests#serviceGetPostByUserIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m70">service.PostServiceTests#serviceGetPostModuleByIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m70">service.PostServiceTests#serviceGetPostByUserIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m71">service.PostServiceTests#serviceGetPostModuleByIdInvalidId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.PostService.serviceGetPostModuleByPostId(PostService.java:37)
 	at service.PostServiceTests.serviceGetPostModuleByIdInvalidId(PostServiceTests.java:101)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m71">service.PostServiceTests#serviceGetPostModuleByIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m72">service.RelationshipsServiceTests#serviceFollowByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m72">service.PostServiceTests#serviceGetPostModuleByIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m73">service.RelationshipsServiceTests#serviceFollowByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceFollowByIds(RelationshipsService.java:60)
 	at service.RelationshipsServiceTests.serviceFollowByIdsNegativeIds(RelationshipsServiceTests.java:132)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m73">service.RelationshipsServiceTests#serviceFollowByIdsNegativeMyId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m74">service.RelationshipsServiceTests#serviceFollowByIdsNegativeMyId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceFollowByIds(RelationshipsService.java:60)
 	at service.RelationshipsServiceTests.serviceFollowByIdsNegativeMyId(RelationshipsServiceTests.java:122)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m74">service.RelationshipsServiceTests#serviceFollowByIdsNegativeTargetId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m75">service.RelationshipsServiceTests#serviceFollowByIdsNegativeTargetId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceFollowByIds(RelationshipsService.java:60)
 	at service.RelationshipsServiceTests.serviceFollowByIdsNegativeTargetId(RelationshipsServiceTests.java:127)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m75">service.RelationshipsServiceTests#serviceFollowByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m76">service.RelationshipsServiceTests#serviceGetFollowersByUserIdNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m76">service.RelationshipsServiceTests#serviceFollowByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m77">service.RelationshipsServiceTests#serviceGetFollowersByUserIdNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceGetFollowersByUserId(RelationshipsService.java:52)
 	at service.RelationshipsServiceTests.serviceGetFollowersByUserIdNegativeUserId(RelationshipsServiceTests.java:107)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m77">service.RelationshipsServiceTests#serviceGetFollowersByUserIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m78">service.RelationshipsServiceTests#serviceGetFollowingByUserIdNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m78">service.RelationshipsServiceTests#serviceGetFollowersByUserIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m79">service.RelationshipsServiceTests#serviceGetFollowingByUserIdNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceGetFollowingByUserId(RelationshipsService.java:44)
 	at service.RelationshipsServiceTests.serviceGetFollowingByUserIdNegativeUserId(RelationshipsServiceTests.java:91)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m79">service.RelationshipsServiceTests#serviceGetFollowingByUserIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m80">service.RelationshipsServiceTests#serviceLikeByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m80">service.RelationshipsServiceTests#serviceGetFollowingByUserIdValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m81">service.RelationshipsServiceTests#serviceLikeByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceLikeByIds(RelationshipsService.java:28)
 	at service.RelationshipsServiceTests.serviceLikeByIdsNegativeIds(RelationshipsServiceTests.java:49)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m81">service.RelationshipsServiceTests#serviceLikeByIdsNegativePostId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m82">service.RelationshipsServiceTests#serviceLikeByIdsNegativePostId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceLikeByIds(RelationshipsService.java:28)
 	at service.RelationshipsServiceTests.serviceLikeByIdsNegativePostId(RelationshipsServiceTests.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m82">service.RelationshipsServiceTests#serviceLikeByIdsNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m83">service.RelationshipsServiceTests#serviceLikeByIdsNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceLikeByIds(RelationshipsService.java:28)
 	at service.RelationshipsServiceTests.serviceLikeByIdsNegativeUserId(RelationshipsServiceTests.java:39)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m83">service.RelationshipsServiceTests#serviceLikeByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m84">service.RelationshipsServiceTests#serviceUnfollowByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m84">service.RelationshipsServiceTests#serviceLikeByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m85">service.RelationshipsServiceTests#serviceUnfollowByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceUnfollowByIds(RelationshipsService.java:68)
 	at service.RelationshipsServiceTests.serviceUnfollowByIdsNegativeIds(RelationshipsServiceTests.java:157)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m85">service.RelationshipsServiceTests#serviceUnfollowByIdsNegativeMyId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m86">service.RelationshipsServiceTests#serviceUnfollowByIdsNegativeMyId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceUnfollowByIds(RelationshipsService.java:68)
 	at service.RelationshipsServiceTests.serviceUnfollowByIdsNegativeMyId(RelationshipsServiceTests.java:147)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m86">service.RelationshipsServiceTests#serviceUnfollowByIdsNegativeTargetId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m87">service.RelationshipsServiceTests#serviceUnfollowByIdsNegativeTargetId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceUnfollowByIds(RelationshipsService.java:68)
 	at service.RelationshipsServiceTests.serviceUnfollowByIdsNegativeTargetId(RelationshipsServiceTests.java:152)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m87">service.RelationshipsServiceTests#serviceUnfollowByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m88">service.RelationshipsServiceTests#serviceUnlikeByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m88">service.RelationshipsServiceTests#serviceUnfollowByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m89">service.RelationshipsServiceTests#serviceUnlikeByIdsNegativeIds</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceUnlikeByIds(RelationshipsService.java:36)
 	at service.RelationshipsServiceTests.serviceUnlikeByIdsNegativeIds(RelationshipsServiceTests.java:74)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m89">service.RelationshipsServiceTests#serviceUnlikeByIdsNegativePostId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m90">service.RelationshipsServiceTests#serviceUnlikeByIdsNegativePostId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceUnlikeByIds(RelationshipsService.java:36)
 	at service.RelationshipsServiceTests.serviceUnlikeByIdsNegativePostId(RelationshipsServiceTests.java:69)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m90">service.RelationshipsServiceTests#serviceUnlikeByIdsNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m91">service.RelationshipsServiceTests#serviceUnlikeByIdsNegativeUserId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.RelationshipsService.serviceUnlikeByIds(RelationshipsService.java:36)
 	at service.RelationshipsServiceTests.serviceUnlikeByIdsNegativeUserId(RelationshipsServiceTests.java:64)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m91">service.RelationshipsServiceTests#serviceUnlikeByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m92">service.UserServiceTests#serviceRequestLoginEmptyPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m92">service.RelationshipsServiceTests#serviceUnlikeByIdsValid</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m93">service.UserServiceTests#serviceRequestLoginEmptyPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceRequestLogin(UserService.java:23)
 	at service.UserServiceTests.serviceRequestLoginEmptyPassword(UserServiceTests.java:54)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m93">service.UserServiceTests#serviceRequestLoginEmptyUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m94">service.UserServiceTests#serviceRequestLoginEmptyUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceRequestLogin(UserService.java:23)
 	at service.UserServiceTests.serviceRequestLoginEmptyUserName(UserServiceTests.java:49)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m94">service.UserServiceTests#serviceRequestLoginEmptyUserNameAndPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m95">service.UserServiceTests#serviceRequestLoginEmptyUserNameAndPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceRequestLogin(UserService.java:23)
 	at service.UserServiceTests.serviceRequestLoginEmptyUserNameAndPassword(UserServiceTests.java:59)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m95">service.UserServiceTests#serviceRequestLoginLongPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m96">service.UserServiceTests#serviceRequestLoginLongPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceRequestLogin(UserService.java:23)
 	at service.UserServiceTests.serviceRequestLoginLongPassword(UserServiceTests.java:39)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m96">service.UserServiceTests#serviceRequestLoginLongUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m97">service.UserServiceTests#serviceRequestLoginLongUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceRequestLogin(UserService.java:23)
 	at service.UserServiceTests.serviceRequestLoginLongUserName(UserServiceTests.java:34)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m97">service.UserServiceTests#serviceRequestLoginLongUserNameAndPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m98">service.UserServiceTests#serviceRequestLoginLongUserNameAndPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceRequestLogin(UserService.java:23)
 	at service.UserServiceTests.serviceRequestLoginLongUserNameAndPassword(UserServiceTests.java:44)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m98">service.UserServiceTests#testServiceCreateAccountEmptyEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m99">service.UserServiceTests#testServiceCreateAccountEmptyEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountEmptyEmail(UserServiceTests.java:115)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m99">service.UserServiceTests#testServiceCreateAccountEmptyFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m100">service.UserServiceTests#testServiceCreateAccountEmptyFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountEmptyFirstName(UserServiceTests.java:105)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m100">service.UserServiceTests#testServiceCreateAccountEmptyLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m101">service.UserServiceTests#testServiceCreateAccountEmptyLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountEmptyLastName(UserServiceTests.java:110)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m101">service.UserServiceTests#testServiceCreateAccountEmptyPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m102">service.UserServiceTests#testServiceCreateAccountEmptyPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountEmptyPassword(UserServiceTests.java:100)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m102">service.UserServiceTests#testServiceCreateAccountEmptyUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m103">service.UserServiceTests#testServiceCreateAccountEmptyUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountEmptyUserName(UserServiceTests.java:95)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m103">service.UserServiceTests#testServiceCreateAccountLongEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m104">service.UserServiceTests#testServiceCreateAccountLongEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountLongEmail(UserServiceTests.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m104">service.UserServiceTests#testServiceCreateAccountLongFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m105">service.UserServiceTests#testServiceCreateAccountLongFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountLongFirstName(UserServiceTests.java:80)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m105">service.UserServiceTests#testServiceCreateAccountLongLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m106">service.UserServiceTests#testServiceCreateAccountLongLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountLongLastName(UserServiceTests.java:85)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m106">service.UserServiceTests#testServiceCreateAccountLongPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m107">service.UserServiceTests#testServiceCreateAccountLongPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountLongPassword(UserServiceTests.java:74)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m107">service.UserServiceTests#testServiceCreateAccountLongUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m108">service.UserServiceTests#testServiceCreateAccountLongUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceCreateAccount(UserService.java:35)
 	at service.UserServiceTests.testServiceCreateAccountLongUserName(UserServiceTests.java:69)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m108">service.UserServiceTests#testServiceDeleteUserByIdNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m109">service.UserServiceTests#testServiceDeleteUserByIdNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceDeleteUserById(UserService.java:76)
 	at service.UserServiceTests.testServiceDeleteUserByIdNegativeId(UserServiceTests.java:201)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m109">service.UserServiceTests#testServiceEditUserInformationByIdEmptyEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m110">service.UserServiceTests#testServiceEditUserInformationByIdEmptyEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdEmptyEmail(UserServiceTests.java:192)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m110">service.UserServiceTests#testServiceEditUserInformationByIdEmptyFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m111">service.UserServiceTests#testServiceEditUserInformationByIdEmptyFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdEmptyFirstName(UserServiceTests.java:182)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m111">service.UserServiceTests#testServiceEditUserInformationByIdEmptyLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m112">service.UserServiceTests#testServiceEditUserInformationByIdEmptyLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdEmptyLastName(UserServiceTests.java:187)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m112">service.UserServiceTests#testServiceEditUserInformationByIdEmptyUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m113">service.UserServiceTests#testServiceEditUserInformationByIdEmptyUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdEmptyUserName(UserServiceTests.java:177)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m113">service.UserServiceTests#testServiceEditUserInformationByIdLongEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m114">service.UserServiceTests#testServiceEditUserInformationByIdLongEmail</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdLongEmail(UserServiceTests.java:172)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m114">service.UserServiceTests#testServiceEditUserInformationByIdLongFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m115">service.UserServiceTests#testServiceEditUserInformationByIdLongFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdLongFirstName(UserServiceTests.java:162)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m115">service.UserServiceTests#testServiceEditUserInformationByIdLongLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m116">service.UserServiceTests#testServiceEditUserInformationByIdLongLastName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdLongLastName(UserServiceTests.java:167)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m116">service.UserServiceTests#testServiceEditUserInformationByIdLongPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m117">service.UserServiceTests#testServiceEditUserInformationByIdLongPassword</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdLongPassword(UserServiceTests.java:157)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m117">service.UserServiceTests#testServiceEditUserInformationByIdLongUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m118">service.UserServiceTests#testServiceEditUserInformationByIdLongUserName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdLongUserName(UserServiceTests.java:152)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m118">service.UserServiceTests#testServiceEditUserInformationByIdNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m119">service.UserServiceTests#testServiceEditUserInformationByIdNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceEditUserInformationById(UserService.java:68)
 	at service.UserServiceTests.testServiceEditUserInformationByIdNegativeId(UserServiceTests.java:147)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m119">service.UserServiceTests#testServiceGetUserByFirstNameEmptyFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m120">service.UserServiceTests#testServiceGetUserByFirstNameEmptyFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceGetUsersByFirstName(UserService.java:56)
 	at service.UserServiceTests.testServiceGetUserByFirstNameEmptyFirstName(UserServiceTests.java:138)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m120">service.UserServiceTests#testServiceGetUserByFirstNameLongFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m121">service.UserServiceTests#testServiceGetUserByFirstNameLongFirstName</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceGetUsersByFirstName(UserService.java:56)
 	at service.UserServiceTests.testServiceGetUserByFirstNameLongFirstName(UserServiceTests.java:133)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m121">service.UserServiceTests#testServiceGetUserByIdNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
+<h3 id="m122">service.UserServiceTests#testServiceGetUserByIdNegativeId</h3><table class="result"><tr><th>Expected Exception</th></tr><tr><td><div class="stacktrace">dev.chirp.customexceptions.InvalidInputException: Invalid Input
 	at dev.chirp.service.implementations.UserService.serviceGetUserById(UserService.java:48)
 	at service.UserServiceTests.testServiceGetUserByIdNegativeId(UserServiceTests.java:124)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
