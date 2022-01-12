@@ -18,7 +18,8 @@ public class CommentServiceImp implements CommentService {
     @Override
     public Comment serviceCreateComment(Comment comment) {
 
-        if (comment.getUserId() < 0 || comment.getPostId() < 0 || comment.getCommentContent().isEmpty() || comment.getCommentContent().length() > 500) {
+        if (comment.getUserId() < 0 || comment.getPostId() < 0 || comment.getCommentContent().isEmpty() ||
+                comment.getCommentContent().length() > 500) {
             throw new InvalidInputException();
         }
             return this.commentDAO.createComment(comment);
