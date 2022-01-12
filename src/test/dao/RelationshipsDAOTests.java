@@ -9,22 +9,30 @@ import java.util.List;
 public class RelationshipsDAOTests {
     RelationshipsDAO relationshipsDAO = new RelationshipsDAO();
 
+
+
+
+    @Test
+    void likeByIds() {
+        boolean unliked = relationshipsDAO.unlikeByIds(8001, 8000);
+        Assert.assertTrue(unliked);
+    }
+
     @Test
     void getLikesByPostId() {
         int likeNumber = relationshipsDAO.getLikesByPostId(8000);
         Assert.assertTrue(likeNumber > 0);
+    }
+    @Test
+    void likeByIdsNonExistingUserId() {
+        boolean liked = relationshipsDAO.likeByIds(0, 8000);
+        Assert.assertFalse(liked);
     }
 
     @Test
     void getLikesByNonExistingPostId() {
         int likeNumber = relationshipsDAO.getLikesByPostId(0);
         Assert.assertEquals(likeNumber, 0);
-    }
-
-    @Test
-    void likeByIdsNonExistingUserId() {
-        boolean liked = relationshipsDAO.likeByIds(0, 8001);
-        Assert.assertFalse(liked);
     }
 
     @Test
@@ -35,7 +43,7 @@ public class RelationshipsDAOTests {
 
     @Test
     void unlikeByIds() {
-        boolean unliked = relationshipsDAO.unlikeByIds(8000, 8001);
+        boolean unliked = relationshipsDAO.unlikeByIds(8003, 8000);
         Assert.assertTrue(unliked);
     }
 
@@ -49,6 +57,11 @@ public class RelationshipsDAOTests {
     void unlikeByIdsNonExistingPostId() {
         boolean unliked = relationshipsDAO.unlikeByIds(8000, 0);
         Assert.assertFalse(unliked);
+    }
+    @Test
+    void followByIds() {
+        boolean follow = relationshipsDAO.followByIds(8000, 8001);
+        Assert.assertTrue(follow);
     }
 
     @Test
@@ -75,11 +88,6 @@ public class RelationshipsDAOTests {
         Assert.assertEquals(followers.size(), 0);
     }
 
-    @Test
-    void followByIds() {
-        boolean follow = relationshipsDAO.followByIds(8000, 8003);
-        Assert.assertTrue(follow);
-    }
 
     @Test
     void followByIdsNonExistingMyId() {
@@ -95,7 +103,7 @@ public class RelationshipsDAOTests {
 
     @Test
     void unfollowByIds() {
-        boolean unfollow = relationshipsDAO.unfollowByIds(8000, 8003);
+        boolean unfollow = relationshipsDAO.unfollowByIds(8003, 8000);
         Assert.assertTrue(unfollow);
     }
 

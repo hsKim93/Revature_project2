@@ -57,14 +57,14 @@ public class PostDAOTests {
 
     @Test
     void getPostsByNonExistingUserId() {
-        List<Post> postList = postDao.getPostsByUserId(1);
+        List<Post> postList = postDao.getPostsByUserId(0);
         Assert.assertEquals(postList.size(), 0);
     }
 
     @Test
     void deletePostsByPostId() {
         try {
-            boolean deleted = postDao.deletePostById(8002);
+            boolean deleted = postDao.deletePostById(8001);
             Assert.assertTrue(deleted);
         } catch (PostNotFound e) {
             Assert.assertSame(e.getMessage(), "Post not found");
