@@ -2,7 +2,6 @@ Feature:  As a user I want create account, log in, and log out
 
   Scenario: As a user I want to create an account so I can use the web service
     Given the user is on login page
-    When the user clicks on register button
     When the user enters username
     When the user enters password
     When the user enters first name

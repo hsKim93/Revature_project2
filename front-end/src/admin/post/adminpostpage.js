@@ -46,7 +46,7 @@ async function showComments(postId) {
         <td scope="row">#${comments.commentId}</td>
         <td>${comments.commentContent}</td>
         <td>${comments.date}</td>
-        <td><button class="btn btn-danger" onclick="deleteComment1(${comments.commentId})">delete</button></td>
+        <td><button class="btn btn-danger" id="deleteComment${comments.commentId}" onclick="deleteComment1(${comments.commentId})">delete</button></td>
       </tr>`;
        }
     } else {
@@ -70,8 +70,8 @@ const loadPostList = async () => {
             <td>#${post.postId}</td>
             <td>${post.content}</td>
             <td>${post.date}</td>
-            <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalComments"  onclick="showComments(${post.postId})">Comments</button></td>
-            <td><button class="btn btn-danger" onclick="deletePost(${post.postId})">delete</button></td>
+            <td><button class="btn btn-primary" id="showComments${post.postId}" data-bs-toggle="modal" data-bs-target="#modalComments"  onclick="showComments(${post.postId})">Comments</button></td>
+            <td><button class="btn btn-danger" id="deletePost${post.postId}" onclick="deletePost(${post.postId})">delete</button></td>
           </tr>
 
             `;
@@ -92,5 +92,3 @@ const logout = () => {
     location.href = "../../login/index.html";
 }
 document.getElementById("logout").addEventListener("click", logout);
-
-loadPostList();

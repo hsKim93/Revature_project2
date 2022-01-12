@@ -8,6 +8,7 @@ Feature: As a user I want to perform various actions to manage posts, likes, and
 
   Scenario: As a user I want to delete a post so I can undo my mistakes
     Given the user is on homepage
+    When the user goes to their profile
     When the user clicks delete post button
     Then the post will be deleted
 
@@ -19,13 +20,13 @@ Feature: As a user I want to perform various actions to manage posts, likes, and
   Scenario:As a user I want to unlike a post so I can undo my mistakes
     Given the user is on homepage
     When the user clicks unlike comment button
-    Then the like count will decrement 1
+    Then the like count will decrement by 1
 
   Scenario:As a user I want to leave a comment to a post to share my thoughts about the post
     Given the user is on homepage
     When the user enters their comment
     When the user clicks comment button
-    Then the like count will decrement 1
+    Then the comment will be displayed
 
   Scenario:As a user I want to delete my comment from a post
     Given the user is on homepage
