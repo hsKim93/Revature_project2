@@ -46,7 +46,7 @@ public class TestRunner {
         userHomepage = new UserHomepage(driver);
         userMyProfilePage = new UserMyProfilePage(driver);
         userOtherProfilePage = new UserOtherProfilePage(driver);
-
+        driver.manage().window().maximize();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         explicitWait = new WebDriverWait(driver, 1);
