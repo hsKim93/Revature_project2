@@ -96,6 +96,3 @@ Here, you instruct other people on how to use your project after they’ve insta
 - [Hyungsuk Kim](https://github.com/hsKim93)
 - [Irfan Uludag](https://github.com/Uirfan)
 - [Loc Phan](https://github.com/LocPhanRevature)
-
-## License
-This project uses the following license: [<license_name>](<link>).
