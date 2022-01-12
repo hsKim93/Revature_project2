@@ -1,19 +1,19 @@
 package E2E.runner;
 
-
 import E2E.poms.LoginPage;
+import E2E.poms.admin.AdminHomePage;
+import E2E.poms.admin.AdminPostPage;
 import E2E.poms.user.UserHomepage;
 import E2E.poms.user.UserMyProfilePage;
 import E2E.poms.user.UserOtherProfilePage;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -22,11 +22,16 @@ import java.util.concurrent.TimeUnit;
 @CucumberOptions(features="classpath:features", glue="E2E.steps")
 public class TestRunner {
     public static WebDriver driver;
+    public static WebDriverWait explicitWait;
+
+    // POMs
     public static LoginPage loginPage;
+    public static AdminHomePage adminHomePage;
+    public static AdminPostPage adminPostPage;
+
     public static UserHomepage userHomepage;
     public static UserMyProfilePage userMyProfilePage;
     public static UserOtherProfilePage userOtherProfilePage;
-    public static WebDriverWait explicitWait;
 
     @BeforeClass
     public static void setup() {
@@ -35,15 +40,16 @@ public class TestRunner {
         driver = new ChromeDriver();
 
         // POMs
-
         loginPage = new LoginPage(driver);
+        adminHomePage = new AdminHomePage(driver);
+        adminPostPage = new AdminPostPage(driver);
         userHomepage = new UserHomepage(driver);
         userMyProfilePage = new UserMyProfilePage(driver);
         userOtherProfilePage = new UserOtherProfilePage(driver);
 
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        explicitWait = new WebDriverWait(driver, 10);
+        explicitWait = new WebDriverWait(driver, 1);
 
 
     }

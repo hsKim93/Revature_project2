@@ -12,8 +12,8 @@ Feature:  As a user I want create account, log in, and log out
 
   Scenario: As a user I want to log in so I can access my profile
     Given the user is on login page
-    When the user enters username
-    When the user enters password
+    When the user enters username for signIn
+    When the user enters password for signIn
     When the user clicks login button
     Then the user will be redirected to the homepage
 
