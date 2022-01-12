@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Revature_project2(failed)">
+    <classes>
+      <class name="dao.RelationshipsDAOTests">
+        <methods>
+          <include name="getLikesByPostId"/>
+          <include name="unlikeByIds"/>
+          <include name="getFollowersByUserId"/>
+        </methods>
+      </class> <!-- dao.RelationshipsDAOTests -->
+    </classes>
+  </test> <!-- Revature_project2(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->
