@@ -5,16 +5,39 @@
     border-radius: 1em;
      padding: 1em;
 }
-
+.navbarButton {
+    font-weight: 400;
+}
+a {
+    color: #f0f6fc;
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: #f0f6fc;
+}
+a:hover {
+    color: rgb(171 181 187);
+}
 input {
-    width: 100%;
     background-color: rgb(1 4 9);
     color:rgb(226, 234, 243);
-    border-style: solid;
-    border-color: rgb(48 54 61);
-    border-radius: 0.5em;
-    height: 2.3em;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-color: #6c757d;
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    width: 100%;
+
 }
+#searchbarDiv {
+    width: 20em;
+    transition: width 1s;
+}
+
+#searchbarDiv:hover {
+    width: 30%;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
