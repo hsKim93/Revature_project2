@@ -10,64 +10,56 @@
   <link href="index.css" rel="stylesheet">
   </head>
   <body>
-    <div class="content min-vh-100 bg-black text-white">
+    <div class="content min-vh-100 text-white" style="background-color: #010409;">
       <div class="d-flex flex-column justify-content-start">
-        <div class="navbar border-bottom" style="background-color: rgb(22, 22, 22);">
-          <div class="logo align-self-start container">   <div>
-       <img src="../resources/logo.png" width="40" height="52" alt=""/><span class="h3" style="color:orange; font-weight:bold"> CHIRP</span></div>      
+        <div class="navbar" style="background-color: #161b22;">
+          <div class="logo align-self-start container">   <div style="display:flex; align-items:center;">
+       <img src="../resources/logo.png" width="32" height="40" alt=""/><span class="h3" style="color:rgb(240, 240, 240); font-weight:600;margin-top: 0.23em; margin-left: 1em;"> CHIRP</span></div>      
      </div>
         </div>
       </div>
       
-      <!-- login -->
-      <div class="container mt-5 align-self-center">
+  
+      <div class="container mt-5 align-self-center" style="color:#c9d1d9" >
+            <!-- login -->
         <div class="row justify-content-evenly">
-          <div class="col-lg-4 col-md-4 col-sm-12" id="signInContainer">
+          <div class="col-lg-4 col-md-4 col-sm-12 boxstyle" id="signInContainer">
             <div class="form-group">
-              <h3>Login</h3>
+              <h4 style="text-align: center;">Login</h4>
 
-              <label for="inputUserName">Username:</label>
-              <input type="text" class="form-control" id="inputUserName" aria-describedby="emailHelp" />
+              <label for="inputUserName">Username</label>
+              <input type="text" id="inputUserName" aria-describedby="emailHelp" />
             </div>
 
             <div class="form-group">
-              <label for="inputPassword">Password:</label>
-              <input type="password" class="form-control" id="inputPassword" />
+              <label for="inputPassword">Password</label>
+              <input type="password" id="inputPassword" />
             </div>
-            <div class="form-group form-check"></div>
-            <button id="signInButton" type="submit" class="btn btn-primary">
+
+            <button id="signInButton" style=" margin-top:2em;width:50%;margin-left:25%; margin-right:25%;color: #ffffff; background-color: #238636;" class="btn ">
               Sign In
             </button>
           </div>
 
           <!-- register -->
-          <div class="col-lg-4 col-md-4 col-sm-12">
-            <img class="img-fluid" src="img/logo.png" alt="" />
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12" id = "signUpContainter">
+
+          <div class="col-lg-4 col-md-4 col-sm-12 boxstyle" id = "signUpContainter">
             <div class="form-group">
-              <h3>Create Account</h3>
+              <h4 style="text-align: center;">Create Account</h4>
               <div class="form-group">
-                <label for="inputName">First Name:</label>
-                <input type="text" class="form-control" id="createFirstName" />
-              </div>
-              <div class="form-group">
-                <label for="inputName">Last Name:</label>
-                <input type="text" class="form-control" id="createUserLastName" />
-              </div>
-              <label for="inputUserName">Username:</label>
-              <input type="text" class="form-control" id="createUserName" />
-            </div>
-            <div class="form-group">
-              <label for="inputPassword">Password:</label>
-              <input type="password" class="form-control" id="createPassword" />
-            </div>
-            <div class="form-group">
-              <label for="inputEmail">Email:</label>
-              <input type="text" class="form-control" id="createEmail" />
+                <label for="createFirstName">First Name</label>
+                <input type="text"  id="createFirstName" />
+                <label for="createUserLastName">Last Name</label>
+                <input type="text"  id="createUserLastName" />
+              <label for="createUserName">Username</label>
+              <input type="text"  id="createUserName" />
+              <label for="createPassword">Password</label>
+              <input type="password"  id="createPassword" />
+              <label for="createEmail">Email</label>
+              <input type="text"  id="createEmail" />
             </div>
             <div class="form-group form-check"></div>
-            <button class="btn btn-primary" id="signUpButton">
+            <button class="btn" style="width:50%;margin-left:25%; margin-right:25%;color: #ffffff; background-color: #238636;" id="signUpButton">
               Register
             </button>
           </div>

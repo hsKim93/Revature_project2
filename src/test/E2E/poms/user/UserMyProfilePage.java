@@ -34,7 +34,7 @@ public class UserMyProfilePage {
     @FindBy(id = "editProfileButton")
     public WebElement getUpdateProfileButton;
 
-    @FindBy(xpath = "//*[@id=\"heading952\"]/a[1]")
+    @FindBy(xpath = "//*[@id=\"heading952\"]/a[2]")
     public WebElement getDeletePostButton;
 
     @FindBy(id = "deleteComment951")

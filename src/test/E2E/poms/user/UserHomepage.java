@@ -48,10 +48,10 @@ public class UserHomepage {
     @FindBy(id = "heading950")
     public WebElement getPostContent;
 
-    @FindBy(xpath = "//*[@id=\"heading950\"]/p[2]/a[2]")
+    @FindBy(xpath = "//*[@id=\"heading950\"]/div[2]/p[1]/a[2]")
     public WebElement getCommentCollapseForC;
 
-    @FindBy(xpath = "//*[@id=\"heading951\"]/p[2]/a[2]")
+    @FindBy(xpath = "//*[@id=\"heading951\"]/div[2]/p[1]/a[2]")
     public WebElement getCommentCollapseForD;
 
     @FindBy(id = "inputComment950")
