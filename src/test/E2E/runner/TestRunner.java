@@ -49,7 +49,7 @@ public class TestRunner {
 
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        explicitWait = new WebDriverWait(driver, 1);
+        explicitWait = new WebDriverWait(driver, 20);
 
 
     }

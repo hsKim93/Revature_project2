@@ -4,6 +4,7 @@ import E2E.runner.TestRunner;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class UserAction {
@@ -55,12 +56,15 @@ public class UserAction {
 
     @Then("the like count will increment by {int}")
     public void the_like_count_will_increment_by() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userHomepage.getLikeButton));
+        String result = TestRunner.userHomepage.getLikeStatus.getText();
+        Assert.assertEquals(result, "1");
     }
+
     /*Unlike Post*/
     @When("the user clicks unlike comment button")
     public void the_user_clicks_unlike_comment_button() {
+        TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userHomepage.getLikeButton));
         TestRunner.userHomepage.getLikeButton.click();
         TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userHomepage.getLikeButton));
         TestRunner.userHomepage.getLikeButton.click();
@@ -68,14 +72,14 @@ public class UserAction {
 
     @Then("the like count will decrement by {int}")
     public void the_like_count_will_decrement() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userHomepage.getLikeButton));
+        String result = TestRunner.userHomepage.getLikeStatus.getText();
+        Assert.assertEquals(result, "0");
     }
 
     /*Create Comment*/
     @When("the user enters their comment")
     public void the_user_enters_their_comment() {
-        TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userHomepage.getPostContent));
         TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userHomepage.getCommentCollapse));
         TestRunner.userHomepage.getCommentCollapse.click();
         TestRunner.explicitWait.until(ExpectedConditions.elementToBeClickable(TestRunner.userHomepage.getCommentInput));
@@ -92,7 +96,6 @@ public class UserAction {
     public void the_comment_will_be_displayed() {
         Assert.assertNotNull(TestRunner.userHomepage.getFirstComment);
     }
-
 
     /*Delete Comment*/
     @When("the user clicks on delete comment button")

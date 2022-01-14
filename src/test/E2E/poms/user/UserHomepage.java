@@ -36,11 +36,11 @@ public class UserHomepage {
     @FindBy(id = "likeButton950")
     public WebElement getLikeButton;
 
+    @FindBy(id = "likeStatus950")
+    public WebElement getLikeStatus;
+
     @FindBy(xpath = "//*[@id=\"searchList\"]/li[1]/a/span/p")
     public WebElement getFirstSearchResult;
-
-    @FindBy(id = "likeStatus950")
-    public WebElement getLikeCount;
 
     @FindBy(xpath = "//*[@id=\"headingNew\"]")
     public WebElement getFirstPost;
