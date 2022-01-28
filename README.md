@@ -4,8 +4,6 @@
 
 A social media platform where you can intereact with your friends.
 
-[test](#contributors)
-
 ## Technologies Used
 
 * Tech 1 - JAVA 17
